@@ -1,0 +1,31 @@
+getgenv().Config = {
+    ["AutoReplay"] = true,
+    ["AutoJoinMatch"] = true,
+    ["TPLobbyIfPlayer"] = true,
+    ["SelectMap"] = "Egg Island",
+    ["AutoVoteDifficulty"] = "true",
+    ["SelectDifficulty"] = "Nightmare",
+    ["SelectMacro"] = "Nousigi Hub/Macro/loisprite",
+    ["AutoSkip"] = true,
+    ["DeleteMap"] = true,
+    ["PlayMacro"] = true,
+    ["AutoSave"] = true,
+    ["BoostFPS"] = true,
+    ["AutoClaimQuest"] = true,
+    ["AutoClaimEasterQuest"] = true,
+    ["AutoClaimEventPass"] = true,
+    ["WhiteScreen"] = true,
+    ["DelayJoin"] = "20",
+    ["PlacingFailsafe"] = true,
+    ["ExchangeTier"] = "3",
+    ["AutoExchangeEgg"] = "true",
+    ["MailName"] = "hugecatsaidzy",
+    ["RequiredGem"] = 1000,
+    ["AutoMail"] = true,
+    ["WH_MatchComplete"] = true,
+    ["IgnoreMacroTiming"] = true,
+    ["WebhookURL"] = "https://discord.com/api/webhooks/1090910529658302464/gOtVs1OA1KZPAYtNm_R_aGeWcSEl8n8KbIeVSqusbIw6DXXfetVzrEOgKhOrWkHmBPvP",
+}
+getgenv().Key = "k38b80a7891ceb96ef8ba16f"
+
+loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
