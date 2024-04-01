@@ -26,6 +26,12 @@ getgenv().Config = {
     ["WH_MatchComplete"] = true,
     ["IgnoreMacroTiming"] = true,
     ["WebhookURL"] = "https://discordapp.com/api/webhooks/1224350445086969946/J0dJparBSTV98GRUKwjulEApfJH8dnZH_K79gsCy50xi04fDK5RCxZstbWpV94r9_IHK",
+        ["AutoUseBoost"] = true,
+    ["UseBoosts"] = {
+        ["2xCoinsBoost"] = true,
+        ["2xEggsBoost"] = true,
+    },
+    ["UseAll"] = true,
 }
 getgenv().Key = "k6dffba0c2a2ec5b5cd8d1fd"
 
