@@ -1,6 +1,6 @@
 getgenv().Config = {
     ["SellRarities"] = {
-        ["Legendary"] = true,
+        ["Legendary"] = false,
         ["Basic"] = true,
         ["Epic"] = true,
         ["Uncommon"] = true,
