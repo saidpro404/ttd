@@ -1,10 +1,10 @@
 getgenv().Config = {
     ["SellRarities"] = {
         ["Legendary"] = false,
-        ["Basic"] = true,
-        ["Epic"] = true,
-        ["Uncommon"] = true,
-        ["Rare"] = true,
+        ["Basic"] = false,
+        ["Epic"] = false,
+        ["Uncommon"] = false,
+        ["Rare"] = false,
     },
     ["SelectCase"] = "JesterCrate",
     ["AutoSummonTroop"] = false,
@@ -20,7 +20,7 @@ getgenv().Config = {
     ["SelectMap"] = "Egg Island",
     ["AutoVoteDifficulty"] = "true",
     ["SelectDifficulty"] = "Endless",
-    ["SelectMacro"] = "Nousigi Hub/Macro/lili3",
+    ["SelectMacro"] = "Nousigi Hub/Macro/lili8",
     ["AutoSkip"] = true,
     ["DeleteMap"] = true,
     ["PlayMacro"] = true,
