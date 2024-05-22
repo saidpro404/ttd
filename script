@@ -15,7 +15,7 @@ getgenv().Config = {
         ["2xLuckBoost"] = false,
     },
     ["AutoReplay"] = true,
-    ["AutoJoinMatch"] = false,
+    ["AutoJoinMatch"] = true,
     ["TPLobbyIfPlayer"] = true,
     ["SelectMap"] = "TimeFactory (Rewind)",
     ["AutoVoteDifficulty"] = "true",
@@ -48,6 +48,6 @@ getgenv().Config = {
     },
     ["UseAll"] = true,
 }
-getgenv().Key = "k51882ec5c978f50e45d7de9"
+getgenv().Key = "kff61613f9cea86da2144f5e"
 
 loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
