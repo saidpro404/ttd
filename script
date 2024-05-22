@@ -1,5 +1,3 @@
-task.wait(10)
-
 getgenv().Config = {
     ["SellRarities"] = {
         ["Legendary"] = false,
@@ -22,7 +20,7 @@ getgenv().Config = {
     ["SelectMap"] = "TimeFactory (Rewind)",
     ["AutoVoteDifficulty"] = "true",
     ["SelectDifficulty"] = "Endless",
-    ["SelectMacro"] = "message",
+    ["SelectMacro"] = "Nousigi Hub/Macro/message",
     ["AutoSkip"] = true,
     ["DeleteMap"] = true,
     ["PlayMacro"] = true,
@@ -34,14 +32,14 @@ getgenv().Config = {
     ["WhiteScreen"] = false,
     ["DelayJoin"] = "10",
     ["PlacingFailsafe"] = true,
-    ["IgnoreTiming"] = true,
+    ["IgnoreTiming"] = false,
     ["ExchangeTier"] = "1",
     ["AutoExchangeEgg"] = "true",
     ["MailName"] = "hugecatsaidzy",
     ["RequiredGem"] = 1000,
     ["AutoMail"] = true,
     ["WH_MatchComplete"] = true,
-    ["IgnoreMacroTiming"] = true,
+    ["IgnoreMacroTiming"] = false,
     ["WebhookURL"] = "",
         ["AutoUseBoost"] = true,
     ["UseBoosts"] = {
