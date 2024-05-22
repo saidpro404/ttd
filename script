@@ -15,7 +15,7 @@ getgenv().Config = {
         ["2xLuckBoost"] = false,
     },
     ["AutoReplay"] = true,
-    ["AutoJoinMatch"] = true,
+    ["AutoJoinMatch"] = false,
     ["TPLobbyIfPlayer"] = true,
     ["SelectMap"] = "TimeFactory (Rewind)",
     ["AutoVoteDifficulty"] = "true",
