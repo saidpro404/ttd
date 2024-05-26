@@ -48,7 +48,6 @@ getgenv().Config = {
 	["AutoClaimEventQuest"] = true,
 	["DeleteMap"] = true,
 	["WebhookURL"] = "https://discord.com/api/webhooks/1224350445086969946/J0dJparBSTV98GRUKwjulEApfJH8dnZH_K79gsCy50xi04fDK5RCxZstbWpV94r9_IHK",
-	["AutoBuyEvent"] = false,
 	["SelectMap"] = "TimeFactory (Rewind)",
 	["RequiredGem"] = 1000,
 	["RequireRoll"] = 0,
