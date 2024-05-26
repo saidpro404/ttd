@@ -1,3 +1,58 @@
-getgenv().Key = "k6dffba0c2a2ec5b5cd8d1fd"
+getgenv().Config = {
+    ["SellRarities"] = {
+        ["Legendary"] = false,
+        ["Basic"] = false,
+        ["Epic"] = false,
+        ["Uncommon"] = false,
+        ["Rare"] = false,
+    },
+    ["SelectCase"] = "JesterCrate",
+    ["AutoSummonTroop"] = false,
+    ["Summonx10"] = false,
+    ["RequireRoll"] = 50,
+    ["AutoUseBoost"] = false,
+    ["UseBoosts"] = {
+        ["2xLuckBoost"] = false,
+    },
+    ["AutoReplay"] = true,
+    ["AutoJoinMatch"] = true,
+    ["TPLobbyIfPlayer"] = true,
+    ["SelectMap"] = "TimeFactory (Rewind)",
+    ["AutoVoteDifficulty"] = "true",
+    ["ABE_Gift"] = true,
+    ["AutoBuyEvent"] = true,
+    ["BuyEventName"] = "sayanampungcrate",
+    ["SelectDifficulty"] = "Endless",
+    ["SelectMacro"] = "gojo3",
+    ["AutoSkip"] = true,
+    ["DeleteMap"] = true,
+    ["PlayMacro"] = true,
+    ["AutoSave"] = true,
+    ["BoostFPS"] = true,
+    ["AutoClaimQuest"] = true,
+    ["AutoClaimEasterQuest"] = true,
+    ["AutoClaimEventPass"] = true,
+    ["WhiteScreen"] = false,
+    ["DelayJoin"] = "10",
+    ["PlacingFailsafe"] = true,
+    ["IgnoreTiming"] = false,
+    ["ExchangeTier"] = "1",
+    ["AutoExchangeEvent"] = false,
+    ["MailName"] = "sayanampungcrate",
+    ["RequiredGem"] = 1000,
+    ["AutoMail"] = true,
+    ["WH_MatchComplete"] = true,
+    ["IgnoreMacroTiming"] = false,
+    ["WebhookURL"] = "https://discord.com/api/webhooks/1224350445086969946/J0dJparBSTV98GRUKwjulEApfJH8dnZH_K79gsCy50xi04fDK5RCxZstbWpV94r9_IHK",
+        ["AutoUseBoost"] = true,
+    ["UseBoosts"] = {
+        ["2xCoinsBoost"] = true,
+        ["2xEggsBoost"] = true,
+    },
+    ["UseAll"] = true,
+}
+
+
+getgenv().Key = "k8d9a655272935552131b3c0"
 
 loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
