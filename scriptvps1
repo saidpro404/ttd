@@ -1,4 +1,4 @@
-etgenv().Config = {
+getgenv().Config = {
     ["SellRarities"] = {
         ["Legendary"] = false,
         ["Basic"] = false,
