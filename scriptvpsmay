@@ -52,11 +52,6 @@ getgenv().Config = {
     ["UseAll"] = true,
 }
 
-
-getgenv().Key = "k8d9a655272935552131b3c0"
-
-loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
-
 getgenv().Key = "k8d9a655272935552131b3c0"
 
 loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
