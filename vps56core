@@ -38,7 +38,7 @@ getgenv().Config = {
     ["IgnoreTiming"] = false,
     ["ExchangeTier"] = "1",
     ["AutoExchangeEvent"] = false,
-    ["MailName"] = "sayanampungcrate",
+    ["MailName"] = "daycarengentot1",
     ["RequiredGem"] = 1000,
     ["AutoMail"] = true,
     ["WH_MatchComplete"] = true,
@@ -53,6 +53,6 @@ getgenv().Config = {
 }
 
 
-getgenv().Key = "k17af85152129c3caf5b56e2"
+getgenv().Key = "k38b80a7891ceb96ef8ba16f"
 
 loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()
