@@ -52,6 +52,6 @@ getgenv().Config = {
     ["AutoClaimQuest"] = true,
     ["SelectMacro"] = "edan",
 }
-getgenv().Key = "KEY"
+getgenv().Key = "k5f5ad3204fbc863c0bcb82b"
 
 repeat wait()spawn(function()loadstring(game:HttpGet("https://nousigi.com/loader.lua"))()end)wait(10)until Joebiden
