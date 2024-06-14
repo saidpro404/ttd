@@ -1,6 +1,6 @@
 --print("GACHA SUMMON") --GACHA SUMMON INI
 getgenv().EquipMacroUnit = true
-getgenv().ImportMacro = "https://cdn.discordapp.com/GANTUASU"
+getgenv().ImportMacro = "https://cdn.discordapp.com/attachments/1094375113312444526/1247779193421565972/edan.txt?ex=666dcaae&is=666c792e&hm=968c2e31dc7a73b999bb4ac87412153a9115c4082fc3c75b98e5e21991b95453&"
 getgenv().Config = {
 ["AutoSummonStandard"] = true,
 ["UnselectIfSummoned"] = true, --jika hero sudah dapat dia gk summon terus
