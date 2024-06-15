@@ -9,7 +9,7 @@ getgenv().Config = {
         ["Legendary"] = false,
         ["Rare"] = false
 },
-["AutoSummonLimited"] = true,
+["AutoSummonLimited"] = false,
 ["LimitedSummonUnit"] = {
         ["Donut Warrior"] = true,
         ["The Cursed Knight"] = true,
