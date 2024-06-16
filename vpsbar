@@ -1,4 +1,4 @@
-etgenv().Config = {
+getgenv().Config = {
 	["SelectChapter"] = "Infinite",
 	["AutoSave"] = true,
 	["WH_MatchComplete"] = true,
