@@ -7,7 +7,7 @@ getgenv().Config = {
 ["DeleteRarity"] = {
         ["Epic"] = false,
         ["Legendary"] = false,
-        ["Rare"] = false
+        ["Rare"] = true
 },
 ["AutoSummonLimited"] = false,
 ["LimitedSummonUnit"] = {
