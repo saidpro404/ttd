@@ -25,6 +25,7 @@ getgenv().Config = {
 	["AutoSell"] = false,
 	["AutoReplay"] = true,
 	["AutoReturnLobby"] = true,
+	["Setx2GameSpeed"]=true,
 	["StandardSummonUnit"] = {
 		["Dragon Slayer"] = false,
 		["Shinobi Form 3"] = false,
