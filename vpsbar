@@ -1,5 +1,3 @@
-task.wait(15)
-
 getgenv().Config = {
 	["AutoVoteDifficulty"] = false,
 	["RequiredGem"] = 1000,
