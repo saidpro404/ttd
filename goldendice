@@ -1,3 +1,18 @@
-script_key="rRzGmCXtvOyhTRUmeQsvyEjGvhmHQpic";
-getgenv().LoadSettings = {["ExclusiveDaycare"] = {["UseMachine"] = false, ["Equips"] = false, ["DayTier"] = 3}, ["Charms"] = {["Start"] = false, ["Mode"] = "Add", ["Charm"] = "", ["Amount"] = 1}, ["Lootboxes"] = {["OpenGiftbags"] = false, ["Lootboxes"] = {}, ["DisableConfetti"] = true, ["OpenLootboxes"] = false, ["Giftbags"] = {}}, ["UIScale"] = 0.75, ["Potions"] = {["PotionsToUse"] = {}, ["MaxTier"] = 3, ["UsePotions"] = false, ["UpgradePotions"] = false}, ["Optimization"] = {["Map"] = false, ["JoinInstance"] = false, ["Instance"] = "None", ["Breakables"] = false, ["Orbs"] = false, ["Pets"] = false, ["Ultimate"] = false}, ["Rainbow"] = {["UseMachine"] = false}, ["LoadSettings"] = true, ["Machines"] = {["Golden"] = {["PetsToGolden"] = {}, ["UseMachine"] = false}, ["UseBestEgg"] = false, ["Rainbow"] = {["UseMachine"] = false, ["PetsToRainbow"] = {}}, ["Fuse"] = {["UseMachine"] = false, ["PetsToFuse"] = {}}, ["UseVouchers"] = false, ["VouchersToUse"] = {}}, ["Hatching"] = {["Start"] = true, ["Mailbox"] = {["Send"] = true, ["Player"] = "mhazw1"}, ["Egg"] = {["id"] = "0 - Best Unlocked Egg", ["type"] = "Normal"}, ["HatchAmount"] = 103}, ["Worlds"] = {["Treehouse"] = false, ["Woodcutting"] = {["Start"] = false, ["BuyAxes"] = false, ["Quests"] = false}, ["Digging"] = {["Start"] = false, ["BuyShovels"] = false}, ["Fishing"] = {["Start"] = false, ["BuyRods"] = false}, ["Garden"] = {["Start"] = false, ["Seed"] = "None"}}, ["Webhooks"] = {["Statistics"] = {["Send"] = false, ["Minutes"] = 10, ["Webhook"] = "", ["ShowUsername"] = false}, ["DiscordUserId"] = "474925167886336001", ["Daycare"] = {["Send"] = false, ["PingUser"] = false, ["Webhook"] = "", ["ShowUsername"] = false}, ["Hatching"] = {["Rarities"] = {}, ["Webhook"] = "https://discord.com/api/webhooks/1081685246086496336/mj9xCY3Zre-M-Ryl72dDh0XYHv7ypb_IohYm_xM6qbnuDVQSXwQmDLCPF3OxGpu72IM_", ["Send"] = true, ["PingUser"] = false, ["ShowUsername"] = true}}, ["Events"] = {["CandyGifts"] = false, ["EventUpgrades"] = false, ["MinimumCubes"] = 1000, ["TrickOrTreat"] = false, ["Neighborhoods"] = {}, ["AutoCatchPets"] = false}, ["Farming"] = {["AreaEvents"] = {["Event"] = "", ["Spawn"] = false}, ["IgnoreElementalChest"] = false, ["Zone"] = "0 - Current Zone", ["Progress"] = false, ["UseUltimate"] = false, ["MaxEggSlots"] = 4, ["PetsPerBreakable"] = 3, ["Flags"] = {["Flag"] = "Fortune Flag", ["Place"] = false, ["Amount"] = 1}, ["BuyEggSlots"] = false, ["Fruits"] = {["Fruits"] = {}, ["Use"] = false}, ["Sprinklers"] = {["Place"] = false, ["Amount"] = 1}, ["Start"] = false, ["Buffs"] = {["Buffs"] = {}, ["Use"] = false}, ["MaxPetSlots"] = 4, ["BuyPetSlots"] = false}, ["ForceVIP"] = false, ["Golden"] = {["UseMachine"] = false}, ["Daycare"] = {["UseMachine"] = false}, ["KeysVouchers"] = {["UseTickets"] = false, ["CombineKeys"] = false, ["UseSecretKeys"] = false, ["SkipSpinAnimation"] = true, ["KeysToUse"] = {}, ["UseKeys"] = false, ["KeysToCombine"] = {}, ["UsePrisonKeys"] = false, ["TicketsToUse"] = {}}}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a2369ce34d44187610ac9bf5039c37ab.lua"))()
+script_key="TXWLMImWJOgdGzdvjhWEmGfnnakydkQs";
+
+getgenv().petsGoConfig = {
+    EVENT_EGG = false,
+
+    HIDE_NAME = true,  -- hide webhook username
+    WEBHOOK_URL = "https://discord.com/api/webhooks/1081685246086496336/mj9xCY3Zre-M-Ryl72dDh0XYHv7ypb_IohYm_xM6qbnuDVQSXwQmDLCPF3OxGpu72IM_",
+    MAILING_WEBHOOK_URL = "https://discord.com/api/webhooks/1081685246086496336/mj9xCY3Zre-M-Ryl72dDh0XYHv7ypb_IohYm_xM6qbnuDVQSXwQmDLCPF3OxGpu72IM_",
+    DISCORD_ID = "474925167886336001",
+    WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger Webhook
+    
+    MAIL_PET = true,  -- Mail Pet
+    MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
+    MAIL_PET_ODDS = 100000000,  -- Minimum Pet Odds To Mail
+    USERNAME_TO_MAIL = "hugecatsaidzy" -- Mail Pet To Username
+}
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e81ea00ef49a917bb1242da4f41dc4f9.lua"))()
