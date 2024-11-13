@@ -1,18 +1,18 @@
-script_key="pvuLCagyNYhcDqUMOqoLhkMNQvTFzUhR";
-
-getgenv().petsGoConfig = {
-    EVENT_EGG = false,
-
-    HIDE_NAME = true,  -- hide webhook username
-    WEBHOOK_URL = "https://discord.com/api/webhooks/1081685246086496336/mj9xCY3Zre-M-Ryl72dDh0XYHv7ypb_IohYm_xM6qbnuDVQSXwQmDLCPF3OxGpu72IM_",
-    MAILING_WEBHOOK_URL = "https://discord.com/api/webhooks/1081685246086496336/mj9xCY3Zre-M-Ryl72dDh0XYHv7ypb_IohYm_xM6qbnuDVQSXwQmDLCPF3OxGpu72IM_",
-    DISCORD_ID = "474925167886336001",
-    WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger Webhook
-    
-    MAIL_PET = true,  -- Mail Pet
-    MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
-    MAIL_PET_ODDS = 100000000,  -- Minimum Pet Odds To Mail
-    USERNAME_TO_MAIL = "hugecatsaidzy" -- Mail Pet To Username
-}
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e81ea00ef49a917bb1242da4f41dc4f9.lua"))()
+-- Please Read FAQ channel for more info! Make sure you understand these parameters
+-- If not sure ask info in channel
+script_key = "QYTKuxzjwQBvLrvIpZmopqiMZmwlJWIT";
+_G.GPROGRESS_MODE = "Hybrid"
+_G.GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
+_G.GRANK_TO = 99
+_G.GZONE_TO = 99 -- PLEASE READ FAQ about this property!!! it's important to understand.
+_G.GMAX_EGG_SLOTS = 25
+_G.GMAX_EQUIP_SLOTS = 40
+_G.GHOLD_GIFTS = false
+_G.GHOLD_BUNDLES = false
+_G.GMAX_ZONE_UPGRADE_COST = 200000
+_G.GPOTIONS = {"Coins","Lucky","Treasure Hunter","Walkspeed","Diamonds","Damage"}
+_G.GPOTIONS_MAX_TIER = 19
+_G.GENCHANTS = {"Tap Power", "Coins", "Treasure Hunter", "Strong Pets", "Criticals", "Diamonds"}
+_G.GWEBHOOK_USERID = "" -- your discord userID, not your name. numerical id.
+_G.GWEBHOOK_LINK = "" -- a webhook URL from your private discord channel.
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34915da4ad87a5028e1fd64efbe3543f.lua"))()
