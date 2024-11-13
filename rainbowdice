@@ -9,6 +9,7 @@ _G.GMAX_EGG_SLOTS = 25
 _G.GMAX_EQUIP_SLOTS = 40
 _G.GHOLD_GIFTS = false
 _G.GHOLD_BUNDLES = false
+_G.GREBIRTH_TO = 9 -- number, limits the amount of rebirths
 _G.GMAX_ZONE_UPGRADE_COST = 2000000000000
 _G.GPOTIONS = {"Coins","Lucky","Treasure Hunter","Walkspeed","Diamonds","Damage"}
 _G.GPOTIONS_MAX_TIER = 19
