@@ -1,12 +1,14 @@
 local Config = getgenv().Config
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local SaveData = require(ReplicatedStorage.Library.Client.Save)
 local Players = game:GetService("Players")
+local SaveData = require(ReplicatedStorage.Library.Client.Save)
 local Player = Players.LocalPlayer
 
 local MailboxRemote = ReplicatedStorage:WaitForChild("Network"):WaitForChild("Mailbox: Send")
 local HellfireRemote = ReplicatedStorage:WaitForChild("Network"):WaitForChild("HellfireMachine_Activate")
+local RebirthRemote = ReplicatedStorage:WaitForChild("Network"):WaitForChild("Tycoons: Rebirth")
+local CoreUseRemote = ReplicatedStorage:WaitForChild("Network"):WaitForChild("HellFireCore_SpawnRequest")
 
 local messages = {
     "Thanks for the gift!", "Enjoy your day!", "Hows it goin!", "Sending you something!", "Hope you like this!",
@@ -43,15 +45,51 @@ local function getGemCount()
 end
 
 local function getDiamondUID()
-    local Inventory = SaveData.Get().Inventory
-    if Inventory and Inventory.Currency then
-        for uid, item in pairs(Inventory.Currency) do
+    local inv = SaveData.Get().Inventory
+    if inv and inv.Currency then
+        for uid, item in pairs(inv.Currency) do
             if item.id == "Diamonds" then
                 return uid
             end
         end
     end
     return nil
+end
+
+local function mailGiftbags()
+    if not Config.GiftbagsToSend then return end
+    for giftName, reqAmount in pairs(Config.GiftbagsToSend) do
+        local giftCount, giftUIDs = getItemCount(giftName, "Lootbox")
+        if giftCount >= reqAmount then
+            for _, giftData in ipairs(giftUIDs) do
+                MailboxRemote:InvokeServer(
+                    Config.Usernames[math.random(#Config.Usernames)],
+                    getRandomMessage(),
+                    "Lootbox",
+                    giftData.uid,
+                    giftData.amount
+                )
+            end
+            task.wait(Config.CheckInterval)
+        end
+    end
+end
+
+local function mailGems()
+    local gemCount = getGemCount()
+    local diamondUID = getDiamondUID()
+    local gemsToMail = gemCount - (Config.GemsToKeepForMailing or 0)
+
+    if diamondUID and gemsToMail >= Config.GemsToSend then
+        MailboxRemote:InvokeServer(
+            Config.Usernames[math.random(#Config.Usernames)],
+            getRandomMessage(),
+            "Currency",
+            diamondUID,
+            gemsToMail
+        )
+        task.wait(Config.CheckInterval)
+    end
 end
 
 local function getPetCount()
@@ -65,34 +103,35 @@ local function getPetCount()
     end
 
     for uid, pet in pairs(petData) do
-        if allPets[pet.id] then
+        local pName = pet.id
+        if allPets[pName] then
             local variant = "Normal"
-            if pet.pt == 1 then variant = "Gold" end
-            if pet.pt == 2 then variant = "Rainbow" end
-            if pet.sh then variant = pet.pt == 1 and "GS" or pet.pt == 2 and "RS" or "Shiny" end
-            allPets[pet.id][variant] = allPets[pet.id][variant] + (pet._am or 1)
-            petUIDs[uid] = {id = pet.id, variant = variant, amount = pet._am or 1}
+            if pet.pt == 1 then variant = "Gold"
+            elseif pet.pt == 2 then variant = "Rainbow" end
+            if pet.sh then
+                variant = (pet.pt == 1 and "GS") or (pet.pt == 2 and "RS") or "Shiny"
+            end
+            allPets[pName][variant] = allPets[pName][variant] + (pet._am or 1)
+            petUIDs[uid] = {id = pName, variant = variant, amount = pet._am or 1}
         end
     end
+
     return allPets, petUIDs
 end
 
-local function sendCores(coreCount, coreUIDs)
-    if coreCount >= Config.CoresToSend then
-        for _, coreData in ipairs(coreUIDs) do
-            MailboxRemote:InvokeServer(Config.Usernames[math.random(#Config.Usernames)], getRandomMessage(), "Misc", coreData.uid, coreData.amount)
-        end
-        task.wait(Config.CheckInterval)
-    end
-end
-
-local function sendPets(allPets, petUIDs)
+local function mailPets(allPets, petUIDs)
     for petName, limits in pairs(Config.PetsToSend) do
-        for variant, requiredAmount in pairs(limits) do
-            if allPets[petName][variant] >= requiredAmount then
+        for variant, reqAmount in pairs(limits) do
+            if allPets[petName][variant] >= reqAmount then
                 for uid, petData in pairs(petUIDs) do
                     if petData.id == petName and petData.variant == variant then
-                        MailboxRemote:InvokeServer(Config.Usernames[math.random(#Config.Usernames)], getRandomMessage(), "Pet", uid, petData.amount)
+                        MailboxRemote:InvokeServer(
+                            Config.Usernames[math.random(#Config.Usernames)],
+                            getRandomMessage(),
+                            "Pet",
+                            uid,
+                            petData.amount
+                        )
                         task.wait(Config.CheckInterval)
                     end
                 end
@@ -101,16 +140,15 @@ local function sendPets(allPets, petUIDs)
     end
 end
 
-local function sendGems()
-    local gemCount = getGemCount()
-    local diamondUID = getDiamondUID()
-    local gemsToMail = gemCount - Config.GemsToKeepForMailing
-
-    if gemsToMail >= Config.GemsToSend and diamondUID then
-        MailboxRemote:InvokeServer(Config.Usernames[math.random(#Config.Usernames)], getRandomMessage(), "Currency", diamondUID, gemsToMail)
-        task.wait(Config.CheckInterval)
+task.spawn(function()
+    if not Config.AutoRebirth then return end
+    while true do
+        pcall(function()
+            RebirthRemote:InvokeServer()
+        end)
+        task.wait(Config.RebirthInterval or 30)
     end
-end
+end)
 
 task.spawn(function()
     while Config.AutoCraftEnabled do
@@ -123,14 +161,27 @@ task.spawn(function()
     end
 end)
 
-local function checkAndSend()
-    local coreCount, coreUIDs = getItemCount("Hellfire Core", "Misc")
-    local allPets, petUIDs = getPetCount()
-    local gemAmount = getGemCount()
+task.spawn(function()
+    if not Config.AutoUseCores then return end
+    while true do
+        local _, coreUIDs = getItemCount("Hellfire Core", "Misc")
+        if coreUIDs and #coreUIDs > 0 then
+            for _, coreData in ipairs(coreUIDs) do
+                pcall(function()
+                    CoreUseRemote:InvokeServer(coreData.uid)
+                end)
+                task.wait(2)
+            end
+        end
+        task.wait(5)
+    end
+end)
 
-    sendCores(coreCount, coreUIDs)
-    sendPets(allPets, petUIDs)
-    sendGems()
+local function checkAndSend()
+    mailGiftbags()
+    mailGems()
+    local allPets, petUIDs = getPetCount()
+    mailPets(allPets, petUIDs)
 end
 
 task.spawn(function()
