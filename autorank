@@ -20,7 +20,7 @@ _G.GPOTIONS_MAX_TIER = 19
 _G.GENCHANTS = {"Fortune","Diamonds","Diamonds","Diamonds","Mini Chest Fortune","Fruity","Treasure Hunter","Treasure Hunter","Treasure Hunter"}
 _G.GWEBHOOK_USERID = ""
 _G.GWEBHOOK_LINK = ""
-_G.GMAIL_RECEIVERS = {""} -- for Mailing items/pets
+_G.GMAIL_RECEIVERS = {"laptopgod2020"} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
     ["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
     ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "20m"}, -- mail diamonds, to enable lower MinAmount..
