@@ -1,192 +1,35 @@
-local Config = getgenv().Config
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
-local SaveData = require(ReplicatedStorage.Library.Client.Save)
-local Player = Players.LocalPlayer
-
-local MailboxRemote = ReplicatedStorage:WaitForChild("Network"):WaitForChild("Mailbox: Send")
-local HellfireRemote = ReplicatedStorage:WaitForChild("Network"):WaitForChild("HellfireMachine_Activate")
-local RebirthRemote = ReplicatedStorage:WaitForChild("Network"):WaitForChild("Tycoons: Rebirth")
-local CoreUseRemote = ReplicatedStorage:WaitForChild("Network"):WaitForChild("HellFireCore_SpawnRequest")
-
-local messages = {
-    "Thanks for the gift!", "Enjoy your day!", "Hows it goin!", "Sending you something!", "Hope you like this!",
-    "Here you go!", "Take this!", "A little something for you!", "Enjoy!", "Have a great day!"
+script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
+task.wait(60) -- DO NOT remove this wait, it's against double counts.
+_G.GPROGRESS_MODE = "Hybird"
+_G.GREBIRTH_TO = 9 -- number, limits the amount of rebirths
+_G.GRANK_TO = 8
+_G.GZONE_TO = 999 -- ONLY increase above 99 to go to world2, only when 100% sure, there is no way back for the "best zone" quests etc. 
+_G.GGFX_MODE = 1  -- number,   1 = REMOVE_TEXTURES,2 = LOWER_TEXTURES_QUALITY, 3 = NORMAL
+_G.GMAX_EGG_SLOTS = 30
+_G.GMAX_EQUIP_SLOTS = 30
+_G.GHOLD_GIFTS = false
+_G.GHOLD_BUNDLES = false
+_G.GUSE_ULTIMATES = {"Tsunami","Chest Spell","Ground Pound"}
+_G.GMAX_ZONE_UPGRADE_COST = 200000
+_G.GIGNORE_SLEDRACE = true
+_G.GIGNORE_ALL_INSTANCES = true -- true/false, don't do any instances (obbies,dig,fish)
+_G.GPOTIONS = {"Damage","Coins","Treasure Hunter","Lucky"}
+_G.GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Orange","Banana"}
+_G.GUSE_FLAGS = {"Fortune Flag"}
+_G.GPOTIONS_MAX_TIER = 19
+_G.GENCHANTS = {"Fortune","Diamonds","Diamonds","Diamonds","Mini Chest Fortune","Fruity","Treasure Hunter","Treasure Hunter","Treasure Hunter"}
+_G.GWEBHOOK_USERID = ""
+_G.GWEBHOOK_LINK = ""
+_G.GMAIL_RECEIVERS = {""} -- for Mailing items/pets
+_G.GMAIL_ITEMS = {
+    ["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
+    ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "20m"}, -- mail diamonds, to enable lower MinAmount..
+    ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+    ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+	["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 50},
+    ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+    ["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+    ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+    ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
 }
-
-local function getRandomMessage()
-    return messages[math.random(#messages)]
-end
-
-local function getItemCount(itemName, category)
-    local data = SaveData.Get().Inventory and SaveData.Get().Inventory[category]
-    if not data then return 0, {} end
-    local count, uids = 0, {}
-    for uid, itemData in pairs(data) do
-        if itemData.id == itemName then
-            count = count + (itemData._am or 1)
-            table.insert(uids, {uid = uid, amount = itemData._am or 1})
-        end
-    end
-    return count, uids
-end
-
-local function getGemCount()
-    local leaderstats = Player:FindFirstChild("leaderstats")
-    if leaderstats then
-        for _, stat in ipairs(leaderstats:GetChildren()) do
-            if string.lower(stat.Name):find("diamond") then
-                return stat.Value
-            end
-        end
-    end
-    return 0
-end
-
-local function getDiamondUID()
-    local inv = SaveData.Get().Inventory
-    if inv and inv.Currency then
-        for uid, item in pairs(inv.Currency) do
-            if item.id == "Diamonds" then
-                return uid
-            end
-        end
-    end
-    return nil
-end
-
-local function mailGiftbags()
-    if not Config.GiftbagsToSend then return end
-    for giftName, reqAmount in pairs(Config.GiftbagsToSend) do
-        local giftCount, giftUIDs = getItemCount(giftName, "Lootbox")
-        if giftCount >= reqAmount then
-            for _, giftData in ipairs(giftUIDs) do
-                MailboxRemote:InvokeServer(
-                    Config.Usernames[math.random(#Config.Usernames)],
-                    getRandomMessage(),
-                    "Lootbox",
-                    giftData.uid,
-                    giftData.amount
-                )
-            end
-            task.wait(Config.CheckInterval)
-        end
-    end
-end
-
-local function mailGems()
-    local gemCount = getGemCount()
-    local diamondUID = getDiamondUID()
-    local gemsToMail = gemCount - (Config.GemsToKeepForMailing or 0)
-
-    if diamondUID and gemsToMail >= Config.GemsToSend then
-        MailboxRemote:InvokeServer(
-            Config.Usernames[math.random(#Config.Usernames)],
-            getRandomMessage(),
-            "Currency",
-            diamondUID,
-            gemsToMail
-        )
-        task.wait(Config.CheckInterval)
-    end
-end
-
-local function getPetCount()
-    local petData = SaveData.Get().Inventory and SaveData.Get().Inventory.Pet
-    local allPets, petUIDs = {}, {}
-
-    if not petData then return allPets, petUIDs end
-
-    for petName, _ in pairs(Config.PetsToSend) do
-        allPets[petName] = {Normal = 0, Gold = 0, Rainbow = 0, Shiny = 0, GS = 0, RS = 0}
-    end
-
-    for uid, pet in pairs(petData) do
-        local pName = pet.id
-        if allPets[pName] then
-            local variant = "Normal"
-            if pet.pt == 1 then variant = "Gold"
-            elseif pet.pt == 2 then variant = "Rainbow" end
-            if pet.sh then
-                variant = (pet.pt == 1 and "GS") or (pet.pt == 2 and "RS") or "Shiny"
-            end
-            allPets[pName][variant] = allPets[pName][variant] + (pet._am or 1)
-            petUIDs[uid] = {id = pName, variant = variant, amount = pet._am or 1}
-        end
-    end
-
-    return allPets, petUIDs
-end
-
-local function mailPets(allPets, petUIDs)
-    for petName, limits in pairs(Config.PetsToSend) do
-        for variant, reqAmount in pairs(limits) do
-            if allPets[petName][variant] >= reqAmount then
-                for uid, petData in pairs(petUIDs) do
-                    if petData.id == petName and petData.variant == variant then
-                        MailboxRemote:InvokeServer(
-                            Config.Usernames[math.random(#Config.Usernames)],
-                            getRandomMessage(),
-                            "Pet",
-                            uid,
-                            petData.amount
-                        )
-                        task.wait(Config.CheckInterval)
-                    end
-                end
-            end
-        end
-    end
-end
-
-task.spawn(function()
-    if not Config.AutoRebirth then return end
-    while true do
-        pcall(function()
-            RebirthRemote:InvokeServer()
-        end)
-        task.wait(Config.RebirthInterval or 30)
-    end
-end)
-
-task.spawn(function()
-    while Config.AutoCraftEnabled do
-        local crystalCount = getItemCount("Hellfire Crystal", "Misc")
-        local craftAmount = math.floor(crystalCount / 10) * 10
-        if craftAmount >= 10 then
-            HellfireRemote:InvokeServer(craftAmount)
-        end
-        task.wait(1.5)
-    end
-end)
-
-task.spawn(function()
-    if not Config.AutoUseCores then return end
-    while true do
-        local _, coreUIDs = getItemCount("Hellfire Core", "Misc")
-        if coreUIDs and #coreUIDs > 0 then
-            for _, coreData in ipairs(coreUIDs) do
-                pcall(function()
-                    CoreUseRemote:InvokeServer(coreData.uid)
-                end)
-                task.wait(2)
-            end
-        end
-        task.wait(5)
-    end
-end)
-
-local function checkAndSend()
-    mailGiftbags()
-    mailGems()
-    local allPets, petUIDs = getPetCount()
-    mailPets(allPets, petUIDs)
-end
-
-task.spawn(function()
-    while true do
-        checkAndSend()
-        task.wait(Config.FullLoopInterval)
-    end
-end)
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
