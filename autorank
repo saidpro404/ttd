@@ -1,8 +1,8 @@
 script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
 task.wait(60) -- DO NOT remove this wait, it's against double counts.
 _G.GPROGRESS_MODE = "Hybird"
-_G.GREBIRTH_TO = 9 -- number, limits the amount of rebirths
-_G.GRANK_TO = 33
+_G.GREBIRTH_TO = 5 -- number, limits the amount of rebirths
+_G.GRANK_TO = 4
 _G.GZONE_TO = 999 -- ONLY increase above 99 to go to world2, only when 100% sure, there is no way back for the "best zone" quests etc. 
 _G.GGFX_MODE = 1  -- number,   1 = REMOVE_TEXTURES,2 = LOWER_TEXTURES_QUALITY, 3 = NORMAL
 _G.GMAX_EGG_SLOTS = 30
