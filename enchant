@@ -1,3 +1,5 @@
+task.wait(20)
+
 script_key = ""pGSqgMgyLWiqatipENLfngAoWenidqQx";
 _G.GDO_MINING_EVENT = true
 _G.GEVENT_FPS  = 30
