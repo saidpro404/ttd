@@ -1,3 +1,5 @@
+setfpscap(5)
+
 task.wait(15)
 
 script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
