@@ -22,8 +22,8 @@ _G.GMAX_MAIL_COST = "5M"
 _G.GGFX_MODE = 1 -- or 2 to still see something
 _G.GZONE_TO = 100 -- to enter event from W3 intead put 999
 _G.GWEBHOOK_USERID = ""
-_G.GWEBHOOK_LINK = "https://discord.com/api/webhooks/1244936772400451594/VYTE9ZQ63SQzpd2f3AL3eQWNcQsmB0oxKLlkYeuO3taFZ5ZALNLBaAY-ph_8xCbU1_wq"
-_G.GMAIL_RECEIVERS = {"smerf000321"} -- for Mail items
+_G.GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk"
+_G.GMAIL_RECEIVERS = {"laptopgod2020"} -- for Mail items
 _G.GMAIL_ITEMS = {
 ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "100m"}, -- mail diamonds, to enable lower MinAmount..
 ["Onyx Gem"] = {Class = "Misc", Id = "Onyx Gem", MinAmount = 50},
