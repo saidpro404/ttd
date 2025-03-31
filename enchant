@@ -1,6 +1,6 @@
 task.wait(20)
 
-script_key = ""pGSqgMgyLWiqatipENLfngAoWenidqQx";
+script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
 _G.GDO_MINING_EVENT = true
 _G.GEVENT_FPS  = 30
 _G.GMINING_EVENT_ZONE_TO = 7
