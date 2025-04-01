@@ -1,4 +1,4 @@
-setfpscap(5)
+setfpscap(15)
 
 script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
 task.wait(1) -- DO NOT remove this wait, it's against double counts.
