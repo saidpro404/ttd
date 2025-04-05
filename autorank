@@ -1,6 +1,6 @@
 setfpscap(15)
 
-script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
+script_key = "HnvAwPROihBbrsduomUabOIOtyEEyeOQ";
 task.wait(1) -- DO NOT remove this wait, it's against double counts.
 -- INSERT YOUR CONFIG HERE --
 _G.GDO_MINING_EVENT = true
@@ -35,4 +35,5 @@ _G.GMAIL_ITEMS = {
 ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
 ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
+
