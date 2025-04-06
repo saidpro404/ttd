@@ -20,7 +20,7 @@ _G.GEVENT_UPGRADES = {
 "ConveyorFasterBreakableSpawning",
 }
 _G.GENCHANTS = {"Chest Breaker", "Criticals", "Strong Pets", "Happy Pets", "Explosive", "Strong Pets", "Criticals", "Tap Power", "Strong Pets"}
-_G.GEVENT_FPS  = 5
+_G.GEVENT_FPS  = 10
 _G.GLOOTBOXES = {"Locked Hype Egg"}
 _G.GGFX_MODE = 1 -- or 2 to still see something
 _G.GZONE_TO = 999 -- to enter event from W3 intead put 999
