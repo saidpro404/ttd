@@ -10,7 +10,7 @@ _G.GUSE_BOOSTS = true
 _G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
 _G.GCONVEYOR_MAX_PETS_TO_BUY = 6
 _G.GCONVEYOR_RESET_UPGRADES = false
-_G.GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive"}
+_G.GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive","Chest Breaker"}
 _G.GEVENT_UPGRADES = {
 "ConveyorBetterChestLoot",
 "ConveyorHugeChest",
