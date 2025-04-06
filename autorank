@@ -6,7 +6,7 @@ task.wait(1) -- DO NOT remove this wait, it's against double counts.
 _G.GDO_CONVEYOR_INSTANCE = true
 _G.GCONVEYOR_MAX_PETS_LEVEL = 149
 _G.GCONVEYOR_MAX_PETS_TO_BUY = 6
-_G.GCONVEYOR_RESET_UPGRADES = true
+_G.GCONVEYOR_RESET_UPGRADES = false
 _G.GENCHANTS = {"Chest Breaker","Criticals","Tap Power","Large Taps","Strong Pets"}
 _G.GEVENT_UPGRADES = {
 "ConveyorBetterChestLoot",
