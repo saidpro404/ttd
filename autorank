@@ -5,9 +5,12 @@ task.wait(1) -- DO NOT remove this wait, it's against double counts.
 -- INSERT YOUR CONFIG HERE --
 _G.GDO_CONVEYOR_INSTANCE = true
 _G.GCONVEYOR_MAX_PETS_LEVEL = 149
+_G.GMASTERY_TO_MAX = "Enchants"
+_G.GUSE_BOOSTS = true
+_G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
 _G.GCONVEYOR_MAX_PETS_TO_BUY = 6
 _G.GCONVEYOR_RESET_UPGRADES = false
-_G.GENCHANTS = {"Chest Breaker","Criticals","Tap Power","Large Taps","Strong Pets"}
+_G.GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive"}
 _G.GEVENT_UPGRADES = {
 "ConveyorBetterChestLoot",
 "ConveyorHugeChest",
@@ -29,7 +32,7 @@ _G.GWEBHOOK_USERID = ""
 _G.GWEBHOOK_LINK = ""
 _G.GMAIL_RECEIVERS = {"laptopgod2020"}
 _G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "100m"}, -- mail diamonds, to enable lower MinAmount..
+["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "1b"}, -- mail diamonds, to enable lower MinAmount..
 ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
 ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
 ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
