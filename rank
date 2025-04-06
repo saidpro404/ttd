@@ -1,15 +1,15 @@
-setfpscap(5)
+setfpscap(10)
 
-task.wait(15)
-
-script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
+script_key = "HnvAwPROihBbrsduomUabOIOtyEEyeOQ";
+task.wait(1) -- DO NOT remove this wait, it's against double counts.
+-- INSERT YOUR CONFIG HERE --
 _G.GPROGRESS_MODE = "Hybird"
-_G.GREBIRTH_TO = 4 -- number, limits the amount of rebirths
-_G.GRANK_TO = 5
+_G.GREBIRTH_TO = 9 -- number, limits the amount of rebirths
+_G.GRANK_TO = 11
 _G.GZONE_TO = 999 -- ONLY increase above 99 to go to world2, only when 100% sure, there is no way back for the "best zone" quests etc. 
 _G.GGFX_MODE = 1  -- number,   1 = REMOVE_TEXTURES,2 = LOWER_TEXTURES_QUALITY, 3 = NORMAL
 _G.GMAX_EGG_SLOTS = 30
-_G.GMAX_EQUIP_SLOTS = 30
+_G.GMAX_EQUIwP_SLOTS = 30
 _G.GHOLD_GIFTS = false
 _G.GHOLD_BUNDLES = false
 _G.GUSE_ULTIMATES = {"Tsunami","Chest Spell","Ground Pound"}
@@ -34,4 +34,5 @@ _G.GMAIL_ITEMS = {
     ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
     ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
+
