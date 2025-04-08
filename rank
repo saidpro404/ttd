@@ -14,6 +14,7 @@ _G.GHOLD_GIFTS = false
 _G.GHOLD_BUNDLES = false
 _G.GUSE_ULTIMATES = {"Tsunami","Chest Spell","Ground Pound"}
 _G.GMAX_ZONE_UPGRADE_COST = 200000
+_G.GMASTERY_TO_MAX = "Enchants"
 _G.GIGNORE_SLEDRACE = true
 _G.GIGNORE_ALL_INSTANCES = true -- true/false, don't do any instances (obbies,dig,fish)
 _G.GPOTIONS = {"Damage","Coins","Treasure Hunter","Lucky"}
