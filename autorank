@@ -24,7 +24,7 @@ _G.GEVENT_UPGRADES = {
 "ConveyorBreakableHugeChance",
 "ConveyorFasterBreakableSpawning",
 }
-_G.GEVENT_FPS  = 5
+_G.GEVENT_FPS  = 10
 _G.GLOOTBOXES = {"Locked Hype Egg"}
 _G.GGFX_MODE = 1
 _G.GZONE_TO = 999
