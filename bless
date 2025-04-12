@@ -1,32 +1,38 @@
-setfpscap(15)
+setfpscap(5)
 
-script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
+script_key = "cEENcDXnlUWsoaiQNsFwoYHaDYyVouMW";
 task.wait(1) -- DO NOT remove this wait, it's against double counts.
 -- INSERT YOUR CONFIG HERE --
-_G.GDO_MINING_EVENT = true
-_G.GEVENT_FPS  = 15
-_G.GMINING_EVENT_ZONE_TO = 6
-_G.GMINING_EVENT_HATCH_PET_CHANCE = 30
-_G.GMINING_EVENT_MAX_AUTO_CRAFT_RECIPE = 7
+_G.GDO_CONVEYOR_INSTANCE = true
+_G.GCONVEYOR_MAX_PETS_LEVEL = 149
+_G.GMASTERY_TO_MAX = "Enchants"
+_G.GUSE_BOOSTS = true
+_G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
+_G.GCONVEYOR_MAX_PETS_TO_BUY = 6
+_G.GCONVEYOR_RESET_UPGRADES = false
+_G.GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive","Chest Breaker"}
 _G.GEVENT_UPGRADES = {
-    "MiningEventLessPetsRequiredToComboThem2",
-    --"MiningEventIncreaseTierUpChance2",
+"ConveyorBetterChestLoot",
+"ConveyorHugeChest",
+"ConveyorTitanicChest",
+"ConveyorBetterDrops",
+"ConveyorMoreDamage",
+"ConveyorMoreCoins",
+"ConveyorBetterEggChance",
+"ConveyorFasterConveyor",
+"ConveyorMoreBreakables",
+"ConveyorBreakableHugeChance",
+"ConveyorFasterBreakableSpawning",
 }
+_G.GEVENT_FPS  = 5
 _G.GLOOTBOXES = {"Locked Hype Egg"}
-_G.GPOTIONS = {"Lucky","Damage","Coins","Treasure Hunter","Diamonds"}
-_G.GENCHANTS = {"Strong Pets", "Strong Pets", "Strong Pets", "Criticals", "Criticals", "Happy Pets", "Exotic Pet"}
-_G.GHOLD_BUNDLES = true
-_G.GCLEAR_FAVORITE_PETS = true
-_G.GUSE_FLAGS = {"Fortune Flag","Hasty Flag"}
-_G.GMAX_MAIL_COST = "5M" 
-_G.GGFX_MODE = 1 -- or 2 to still see something
-_G.GZONE_TO = 999 -- to enter event from W3 intead put 999
-_G.GWEBHOOK_USERID = ""
+_G.GGFX_MODE = 1
+_G.GZONE_TO = 999
+_G.GWEBHOOK_USERID = "474925167886336001"
 _G.GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk"
-_G.GMAIL_RECEIVERS = {"laptopgod2020"} -- for Mail items
+_G.GMAIL_RECEIVERS = {"laptopgod2020"}
 _G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "100m"}, -- mail diamonds, to enable lower MinAmount..
-["Onyx Gem"] = {Class = "Misc", Id = "Onyx Gem", MinAmount = 50},
+["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "1b"}, -- mail diamonds, to enable lower MinAmount..
 ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
 ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
 ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
@@ -34,4 +40,5 @@ _G.GMAIL_ITEMS = {
 ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
 ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
+
