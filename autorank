@@ -4,25 +4,28 @@ script_key = "cEENcDXnlUWsoaiQNsFwoYHaDYyVouMW";
 task.wait(1) -- DO NOT remove this wait, it's against double counts.
 -- INSERT YOUR CONFIG HERE --
 _G.GDO_CONVEYOR_INSTANCE = true
-_G.GCONVEYOR_MAX_PETS_LEVEL = 149
+_G.GCONVEYOR_MAX_PETS_LEVEL = 200
 _G.GMASTERY_TO_MAX = "Enchants"
 _G.GUSE_BOOSTS = true
 _G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
 _G.GCONVEYOR_MAX_PETS_TO_BUY = 6
 _G.GCONVEYOR_RESET_UPGRADES = false
 _G.GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive","Chest Breaker"}
-_G.GEVENT_UPGRADES = {
+getgenv().GEVENT_UPGRADES = {
 "ConveyorBetterChestLoot",
 "ConveyorHugeChest",
 "ConveyorTitanicChest",
 "ConveyorBetterDrops",
 "ConveyorMoreDamage",
 "ConveyorMoreCoins",
-"ConveyorBetterEggChance",
+--"ConveyorBetterEggChance",
 "ConveyorFasterConveyor",
 "ConveyorMoreBreakables",
 "ConveyorBreakableHugeChance",
 "ConveyorFasterBreakableSpawning",
+"ConveyorEasierSlimeMachine",
+"ConveyorMoreGiftBags",
+"ConveyorMoreSlimeTokens",
 }
 _G.GEVENT_FPS  = 10
 _G.GLOOTBOXES = {"Locked Hype Egg"}
