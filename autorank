@@ -18,7 +18,7 @@ getgenv().GEVENT_UPGRADES = {
 "ConveyorBetterDrops",
 "ConveyorMoreDamage",
 "ConveyorMoreCoins",
---"ConveyorBetterEggChance",
+"ConveyorBetterEggChance",
 "ConveyorFasterConveyor",
 "ConveyorMoreBreakables",
 "ConveyorBreakableHugeChance",
