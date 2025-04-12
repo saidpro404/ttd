@@ -11,18 +11,21 @@ _G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
 _G.GCONVEYOR_MAX_PETS_TO_BUY = 6
 _G.GCONVEYOR_RESET_UPGRADES = false
 _G.GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive","Chest Breaker"}
-_G.GEVENT_UPGRADES = {
+getgenv().GEVENT_UPGRADES = {
 "ConveyorBetterChestLoot",
 "ConveyorHugeChest",
 "ConveyorTitanicChest",
 "ConveyorBetterDrops",
 "ConveyorMoreDamage",
 "ConveyorMoreCoins",
-"ConveyorBetterEggChance",
+--"ConveyorBetterEggChance",
 "ConveyorFasterConveyor",
 "ConveyorMoreBreakables",
 "ConveyorBreakableHugeChance",
 "ConveyorFasterBreakableSpawning",
+"ConveyorEasierSlimeMachine",
+"ConveyorMoreGiftBags",
+"ConveyorMoreSlimeTokens",
 }
 _G.GEVENT_FPS  = 5
 _G.GLOOTBOXES = {"Locked Hype Egg"}
