@@ -1,0 +1,10 @@
+task.wait(10)
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local network = replicatedStorage:WaitForChild("Network")
+local slimeMachineClaim = network:WaitForChild("SlimeMachine_Claim")
+
+while true do
+    slimeMachineClaim:InvokeServer()
+    wait(0.5) -- Wait for 0.5 seconds before the next iteration
+end
