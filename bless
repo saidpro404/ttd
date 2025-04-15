@@ -33,7 +33,7 @@ _G.GGFX_MODE = 1
 _G.GZONE_TO = 999
 _G.GWEBHOOK_USERID = "474925167886336001"
 _G.GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk"
-_G.GMAIL_RECEIVERS = {"laptopgod2020"}
+_G.GMAIL_RECEIVERS = {"}
 _G.GMAIL_ITEMS = {
 ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "1b"}, -- mail diamonds, to enable lower MinAmount..
 ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
