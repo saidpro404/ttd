@@ -4,13 +4,14 @@ script_key = "cEENcDXnlUWsoaiQNsFwoYHaDYyVouMW";
 task.wait(1) -- DO NOT remove this wait, it's against double counts.
 -- INSERT YOUR CONFIG HERE --
 getgenv().GDO_CONVEYOR_INSTANCE = true
-getgenv().GCONVEYOR_MAX_PETS_LEVEL = 200
+getgenv().GCONVEYOR_MAX_PETS_LEVEL = 70
 getgenv().GMASTERY_TO_MAX = "Enchants"
 getgenv().GUSE_BOOSTS = true
 getgenv().GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
 getgenv().GCONVEYOR_MAX_PETS_TO_BUY = 10
 getgenv().GMAX_EGG_TIER = 15 --or lower
-getgenv().GCONVEYOR_RESET_UPGRADES = false
+getgenv().GCONVEYOR_RESET_PETS = true
+getgenv().GCONVEYOR_RESET_UPGRADES = true
 getgenv().GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive","Chest Breaker"}
 getgenv().GEVENT_UPGRADES = {
     "ConveyorBetterChestLoot",
