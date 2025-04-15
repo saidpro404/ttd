@@ -10,6 +10,7 @@ getgenv().GUSE_BOOSTS = true
 getgenv().GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
 getgenv().GCONVEYOR_MAX_PETS_TO_BUY = 10
 getgenv().GMAX_EGG_TIER = 15 --or lower
+getgenv().GCONVEYOR_RESET_PETS = true
 getgenv().GCONVEYOR_RESET_UPGRADES = true
 getgenv().GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive","Chest Breaker"}
 getgenv().GEVENT_UPGRADES = {
