@@ -4,7 +4,7 @@ script_key = "cEENcDXnlUWsoaiQNsFwoYHaDYyVouMW";
 task.wait(1) -- DO NOT remove this wait, it's against double counts.
 -- INSERT YOUR CONFIG HERE --
 getgenv().GDO_CONVEYOR_INSTANCE = true
-getgenv().GCONVEYOR_MAX_PETS_LEVEL = 70
+getgenv().GCONVEYOR_MAX_PETS_LEVEL = 130
 getgenv().GMASTERY_TO_MAX = "Enchants"
 getgenv().GUSE_BOOSTS = true
 getgenv().GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
