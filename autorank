@@ -2,16 +2,25 @@ script_key="JdsPSSdUzrgxVzizMHqasQvKmxVQjLoF";
 setfpscap(10)  -- number = fps
 
 getgenv().bgsInfConfig = {
+    HATCH_INFERNO_CUBE_AMOUNT = 6,  -- Legendary Team (For Fresh Accounts)
+    ENCHANT_TEAMUP = false,
+    ENCHANT_TEAMUP_TIER = 3,
+    IGNORE_STARTER_HATCH = false,  -- Ignore Starter Hatch (For P2W/Progressed Accounts)
+    PURCHASE_BLACKMARKET = false,  -- Purchase All Blackmarket Items [Works After Mastery MAXED]
+    FARM_MIN_GEMS = 1000000,  -- Farms Minimum Gems Before Hatching 1x Egg
+    POTIONS_TO_CRAFT = {""},  -- Coins, Mythic, Lucky, Speed (Craft ALL Tiers) [Works After Mastery MAXED]
+    IGNORE_MYSTERY_BOX_GEM_CAP = false,  -- true = Use Mystery Box Even When Gems Capped
+    MASTERY_BUFFS_LEVEL = 15,  -- Buffs Level To Reach Before Hatching Secret Etc
     AUTO_UPDATE_RESTART = true,
     PURCHASE_ALIENSHOP = true,
     USE_ROYAL_KEY = true,
     USE_GOLDEN_KEY = true,
     USE_MYSTERY_BOX = true,
-    RARITY_TO_DELETE = {"Common", "Unique", "Rare"},  -- Delete if max inventory
+    RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic"},  -- Delete if max inventory
     LEGENDARY_TIER_TO_DELETE = 2,  -- Ignore Shiny/Mythic/Shiny Mythic
 
     RIFT_EGGS = {"Aura Egg", "Bunny Egg", "Pastel Egg", "Nightmare Egg"},  -- Add Any Egg Name
-    HATCH_1X_EGG = "Pastel Egg",  -- Hatch 1x Egg If No Rift & FARM_MIN_GEMS Completed
+    HATCH_1X_EGG = "Nightmare Egg",  -- Hatch 1x Egg If No Rift & FARM_MIN_GEMS Completed
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
     DISCORD_ID = "474925167886336001",
@@ -19,5 +28,6 @@ getgenv().bgsInfConfig = {
     LEGENDARY_TIER = 3,  -- Ignore if set not set "Legendary"
     SHOW_PET_WEBHOOK_USERNAME = true,  -- shows username in private webhook only
 }
+
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3dc52e6a2fc4f671b66757e93f4fd38b.lua"))()
