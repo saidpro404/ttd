@@ -3,37 +3,28 @@ setfpscap(10)
 script_key = "cEENcDXnlUWsoaiQNsFwoYHaDYyVouMW";
 task.wait(1) -- DO NOT remove this wait, it's against double counts.
 -- INSERT YOUR CONFIG HERE --
-_G.GPROGRESS_MODE = "Hybird"
-_G.GREBIRTH_TO = 9 -- number, limits the amount of rebirths
-_G.GRANK_TO = 33
-_G.GZONE_TO = 999 -- ONLY increase above 99 to go to world2, only when 100% sure, there is no way back for the "best zone" quests etc. 
-_G.GGFX_MODE = 1  -- number,   1 = REMOVE_TEXTURES,2 = LOWER_TEXTURES_QUALITY, 3 = NORMAL
-_G.GMAX_EGG_SLOTS = 83
-_G.GMAX_EQUIP_SLOTS = 80
-_G.GHOLD_GIFTS = false
-_G.GHOLD_BUNDLES = false
-_G.GUSE_ULTIMATES = {"Tsunami"}
-_G.GMAX_ZONE_UPGRADE_COST = 200000
-_G.GMASTERY_TO_MAX = "Enchants"
-_G.GIGNORE_SLEDRACE = true
-_G.GIGNORE_ALL_INSTANCES = true -- true/false, don't do any instances (obbies,dig,fish)
-_G.GPOTIONS = {"Damage","Coins","Treasure Hunter","Lucky","Diamonds"}
-_G.GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Orange","Banana"}
-_G.GUSE_FLAGS = {"Fortune Flag"}
-_G.GPOTIONS_MAX_TIER = 19
-_G.GENCHANTS = {"Fortune","Diamonds","Diamonds","Diamonds","Mini Chest Fortune","Fruity","Treasure Hunter","Treasure Hunter","Treasure Hunter"}
-_G.GWEBHOOK_USERID = "957324855353704589"
-_G.GWEBHOOK_LINK = ""
-_G.GMAIL_RECEIVERS = {""} -- for Mailing items/pets
-_G.GMAIL_ITEMS = {
-    ["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
-    ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "100m"}, -- mail diamonds, to enable lower MinAmount..
-    ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-    ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-    ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-    ["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-    ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-    ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
+getgenv().GDO_EASTER_EVENT = true
+getgenv().GEASTER_EVENT_FINAL_EGG = "Easter Bunny Egg"
+getgenv().GMASTERY_TO_MAX = "Enchants"
+getgenv().GUSE_BOOSTS = true
+getgenv().GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
+getgenv().GENCHANTS = {"Lucky Eggs", "Coins", "Treasure Hunter", "Huge Hunter", "Lucky Eggs", "Tap Power"}
+getgenv().GEVENT_FPS  = 10
+getgenv().GLOOTBOXES = {"Locked Hype Egg"}
+getgenv().GGFX_MODE = 1
+getgenv().GZONE_TO = 999
+getgenv().GWEBHOOK_USERID = "474925167886336001"
+getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk"
+getgenv().GMAIL_RECEIVERS = {"laptopgod2020"}
+getgenv().GMAIL_ITEMS = {
+["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "1b"}, -- mail diamonds, to enable lower MinAmount..
+["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
 }
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
 
