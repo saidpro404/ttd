@@ -1,12 +1,38 @@
-script_key = "pGSqgMgyLWiqatipENLfngAoWenidqQx";
-_G.GEVENT_FPS  = 30
-_G.GMINING_EVENT_ZONE_TO = 7
-_G.GAUTO_ENCHANT_PICKAXE = true --to enable disable
-_G.GPICKAXE_ENCHANTS_COUNT = 2 -- how many matching enchants should there be before stopping? 1-3 , but 3 matching can take very long I think.
-_G.GPICKAXE_ENCHANTS = {
-    ["Fortune"] = 5,
-    ["Power Ball"] = 5,
+script_key="JdsPSSdUzrgxVzizMHqasQvKmxVQjLoF";
+setfpscap(10)  -- number = fps
+
+getgenv().bgsInfConfig = {
+    AUTO_UPDATE_RESTART = false,
+    PURCHASE_ALIENSHOP = true,
+    USE_ROYAL_KEY = true,
+    USE_GOLDEN_KEY = true,
+    USE_MYSTERY_BOX = true,
+    DO_BUBBLE_GUM = false,  -- Auto blow/sell/upgrade bubble gum & storage [Stops selling when max coins]
+    HATCH_INFERNO_CUBE_AMOUNT = 6,  -- Legendary Team (For Fresh Accounts)
+    ENCHANT_TEAMUP = true,
+    ENCHANT_TEAMUP_TIER = 5,
+    IGNORE_STARTER_HATCH = false,  -- Ignore Starter Hatch (For P2W/Progressed Accounts)
+    MASTERY_BUFFS_LEVEL = 15,  -- Buffs Level To Reach Before Hatching Secret Etc
+    PURCHASE_BLACKMARKET = true,  -- Purchase All Blackmarket Items
+    POTIONS_TO_CRAFT = {""},  -- "Coins", "Mythic", "Lucky", "Speed" (Craft ALL Tiers)
+    RESTOCK_SHOP = "Alien Shop", -- ("Blackmarket", "Alien Shop") -> Reroll specified shop after buying all 3 slots 
+    FARM_MIN_GEMS = 5000000,  -- Farms Minimum Gems Before Hatching 1x Egg
+    MIN_COINS_BEFORE_HATCHING = 30000000000,  -- Doesn't affect fresh account grind
+    IGNORE_MYSTERY_BOX_GEM_CAP = false,  -- true = Use Mystery Box Even When Gems Capped
+    WEBHOOK_INCLUDE_SHINY_MYTHIC = false,  -- true = Only includes shiny/mythic [Secrets excluded]
+    RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic"},  -- Delete if max inventory
+    LEGENDARY_TIER_TO_DELETE = 2,  -- Ignore Shiny/Mythic/Shiny Mythic
+
+    RIFT_EGGS = {"Aura Egg", "Bunny Egg", "Pastel Egg", "Nightmare Egg"},  -- Add Any Egg Name
+    HATCH_1X_EGG = "Bunny Egg",  -- Hatch 1x Egg If No Rift & FARM_MIN_GEMS Completed
+
+    WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
+    DISCORD_ID = "474925167886336001",
+    WEBHOOK_RARITY = { Common = false, Unique = false, Rare = false, Epic = false, Legendary = true, Secret = true },
+    LEGENDARY_TIER = 3,  -- Ignore if set not set "Legendary"
+    WEBHOOK_ODDS = 5000000,  -- minimum odds to send webhook
+    SHOW_PET_WEBHOOK_USERNAME = true,  -- shows username in private webhook only
 }
-_G.GGFX_MODE = 3 -- or 2 to still see something
-_G.GZONE_TO = 99 -- to enter event from W3 intead put 999
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3dc52e6a2fc4f671b66757e93f4fd38b.lua"))()
+
