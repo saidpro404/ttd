@@ -13,6 +13,7 @@ getgenv().GEVENT_FPS  = 10
 getgenv().GLOOTBOXES = {"Locked Hype Egg"}
 getgenv().GGFX_MODE = 1
 getgenv().GZONE_TO = 999
+getgenv().GAUTO_UPGRADE_PETS = true
 getgenv().GWEBHOOK_USERID = "474925167886336001"
 getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk"
 getgenv().GMAIL_RECEIVERS = {"laptopgod2020"}
