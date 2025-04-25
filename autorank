@@ -24,7 +24,7 @@ getgenv().bgsInfConfig = {
     LEGENDARY_TIER_TO_DELETE = 2,  -- Ignore Shiny/Mythic/Shiny Mythic
 
     RIFT_EGGS = {"Aura Egg", "Bunny Egg", "Pastel Egg", "Nightmare Egg", "Throwback Egg"},  -- Add Any Egg Name
-    HATCH_1X_EGG = "Pastel Egg",  -- Hatch 1x Egg If No Rift & FARM_MIN_GEMS Completed
+    HATCH_1X_EGG = "Infinity Egg",  -- Hatch 1x Egg If No Rift & FARM_MIN_GEMS Completed
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
     DISCORD_ID = "474925167886336001",
