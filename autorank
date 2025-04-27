@@ -25,7 +25,7 @@ getgenv().bgsInfConfig = {
     LEGENDARY_TIER_TO_DELETE = 2,  -- Ignore Shiny/Mythic/Shiny Mythic
 
     RIFT_EGGS = {"Silly Egg", "Throwback Egg", "Nightmare Egg"},
-    HATCH_1X_EGG = "Throwback Egg", 
+    HATCH_1X_EGG = "100M Egg", 
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
     DISCORD_ID = "474925167886336001",
