@@ -1,4 +1,4 @@
-script_key="JdsPSSdUzrgxVzizMHqasQvKmxVQjLoF";
+script_key="iidXIlivLwUsLdaTBjRQPdQFPKIvILGh";
 setfpscap(10)  -- number = fps
 
 getgenv().bgsInfConfig = {
