@@ -9,6 +9,7 @@ getgenv().bgsInfConfig = {
     USE_MYSTERY_BOX = true,
     DO_BUBBLE_GUM = false,  -- Auto blow/sell/upgrade bubble gum & storage [Stops selling when max coins]
     HATCH_INFERNO_CUBE_AMOUNT = 6,  -- Legendary Team (For Fresh Accounts)
+    PURCHASE_STARSHOP_SLOT = 14,
     ENCHANT_TEAMUP = true,
     ENCHANT_TEAMUP_TIER = 5,
     IGNORE_STARTER_HATCH = true,  -- Ignore Starter Hatch (For P2W/Progressed Accounts)
