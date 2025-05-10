@@ -30,7 +30,7 @@ getgenv().bgsInfConfig = {
     INFINITY_EGG_TYPE = "World2",
     MAX_LEGENDARY_TIER_TO_DELETE = 3,  -- Ignore Shiny/Mythic/Shiny Mythic
 
-    RIFT_EGGS = {"Silly Egg", "Nightmare Egg", "Cyber Egg"},
+    RIFT_EGGS = {"Silly Egg", "Nightmare Egg", "Cyber Egg", "Underworld Egg"},
     HATCH_1X_EGG = {"200M Egg"},
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
