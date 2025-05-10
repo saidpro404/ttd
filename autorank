@@ -27,10 +27,11 @@ getgenv().bgsInfConfig = {
     IGNORE_MYSTERY_BOX_GEM_CAP = false,  -- true = Use Mystery Box Even When Gems Capped
     WEBHOOK_INCLUDE_SHINY_MYTHIC = false,  -- true = Only includes shiny/mythic [Secrets excluded]
     RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic"},  -- Delete if max inventory
-    LEGENDARY_TIER_TO_DELETE = 3,  -- Ignore Shiny/Mythic/Shiny Mythic
+    INFINITY_EGG_TYPE = "World2",
+    MAX_LEGENDARY_TIER_TO_DELETE = 3,  -- Ignore Shiny/Mythic/Shiny Mythic
 
     RIFT_EGGS = {"Silly Egg", "Nightmare Egg", "Cyber Egg"},
-    HATCH_1X_EGG = "Cyber Egg", 
+    HATCH_1X_EGG = {"Cyber Egg"},
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
     DISCORD_ID = "474925167886336001",
@@ -40,4 +41,4 @@ getgenv().bgsInfConfig = {
     SHOW_PET_WEBHOOK_USERNAME = true,  -- shows username in private webhook only
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3dc52e6a2fc4f671b66757e93f4fd38b.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3dc52e6a2fc4f671b66757e93f4fd38b.lua"))() 
