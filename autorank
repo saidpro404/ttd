@@ -26,7 +26,7 @@ getgenv().bgsInfConfig = {
     MIN_TICKETS_BEFORE_HATCHING = 5000000000,
     IGNORE_MYSTERY_BOX_GEM_CAP = false,  -- true = Use Mystery Box Even When Gems Capped
     WEBHOOK_INCLUDE_SHINY_MYTHIC = false,  -- true = Only includes shiny/mythic [Secrets excluded]
-    RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic"},  -- Delete if max inventory
+    RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic", "Legendary"},  -- Delete if max inventory
     INFINITY_EGG_TYPE = "World2",
     MAX_LEGENDARY_TIER_TO_DELETE = 3,  -- Ignore Shiny/Mythic/Shiny Mythic
 
