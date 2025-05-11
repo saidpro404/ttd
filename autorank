@@ -14,8 +14,10 @@ getgenv().bgsInfConfig = {
     PURCHASE_STARSHOP_SLOT = 14,
     ENCHANT_HIGH_ROLLER = true,
     IGNORE_GIANT_VOID_CHEST = true,
-    IGNORE_STARTER_HATCH = true,  -- Ignore Starter Hatch (For P2W/Progressed Accounts)
+    IGNORE_STARTER_HATCH = false,  -- Ignore Starter Hatch (For P2W/Progressed Accounts)
     MASTERY_BUFFS_LEVEL = 15,  -- Buffs Level To Reach Before Hatching Secret Etc
+    MASTERY_PETS_LEVEL = 15,
+    MASTERY_SHOPS_LEVEL = 10,  
     PURCHASE_BLACKMARKET = true,  -- Purchase All Blackmarket Items
     POTIONS_TO_CRAFT = {""},  -- "Coins", "Mythic", "Lucky", "Speed" (Craft ALL Tiers)
     DELETE_LEGENDARY_SHINY = true,
@@ -30,7 +32,7 @@ getgenv().bgsInfConfig = {
     INFINITY_EGG_TYPE = "World2",
     MAX_LEGENDARY_TIER_TO_DELETE = 3,  -- Ignore Shiny/Mythic/Shiny Mythic
 
-    RIFT_EGGS = {"Silly Egg", "Nightmare Egg", "Cyber Egg", "Underworld Egg"},
+    RIFT_EGGS = {"Underworld Egg", "Nightmare Egg", "Cyber Egg"},
     HATCH_1X_EGG = {"200M Egg"},
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
