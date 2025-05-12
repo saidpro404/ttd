@@ -1,5 +1,5 @@
 script_key="iidXIlivLwUsLdaTBjRQPdQFPKIvILGh";
-setfpscap(10)  -- number = fps
+setfpscap(7)  -- number = fps
 
 getgenv().bgsInfConfig = {
     AUTO_UPDATE_RESTART = false,
