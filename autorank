@@ -29,7 +29,7 @@ getgenv().bgsInfConfig = {
     MIN_COINS_BEFORE_HATCHING = 10000000000,  -- Doesn't affect fresh account grind
     MIN_TICKETS_BEFORE_HATCHING = 5000000000,
     IGNORE_MYSTERY_BOX_GEM_CAP = false,  -- true = Use Mystery Box Even When Gems Capped
-    PETS_TO_DELETE = {"Space Invader", "Cyborg Phoenix"},
+    PETS_TO_DELETE = {"Space Invader", "Cyborg Phoenix", "Crimson Butterfly"},
     WEBHOOK_INCLUDE_SHINY_MYTHIC = false,  -- true = Only includes shiny/mythic [Secrets excluded]
     RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic", "Legendary"},  -- Delete if max inventory
     INFINITY_EGG_TYPE = "World2",
