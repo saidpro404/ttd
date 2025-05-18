@@ -6,6 +6,7 @@ getgenv().bgsInfConfig = {
     AUTO_UPDATE_RESTART = false,
     ALWAYS_INFINITY_ELIXIR = true,
     AUTO_BOUNTY_RIFT = true,
+    AUTO_COLLECT_WORLD_REWARDS = true,
 
     PURCHASE_ALIENSHOP = true,
     PURCHASE_BLACKMARKET = true,
