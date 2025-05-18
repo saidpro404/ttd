@@ -30,7 +30,7 @@ getgenv().bgsInfConfig = {
     ENCHANT_TEAMUP_TIER = 3,
 
     RIFT_EGGS = {"Underworld Egg"},
-    HATCH_1X_EGG = {"200M Egg"}, 
+    HATCH_1X_EGG = {"Chance Egg"}, 
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
     DISCORD_ID = "474925167886336001",
