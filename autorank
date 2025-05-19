@@ -8,6 +8,7 @@ getgenv().GGFX_MODE = 1  --1 = REMOVE_TEXTURES : more stable! but no visuals
 getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
 getgenv().GWEBHOOK_LINK = "https://discordapp.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk" -- a webhook URL from your private discord channel.
 getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
+getgenv().GFARMING_WORLD_MAX_AUTO_CRAFT_RECIPE = 2 --2: make untill RB Gems
 getgenv().GMAIL_RECEIVERS = {"laptopgod2020"} -- for Huges and mailrules.
 getgenv().GMAIL_ITEMS = {
 ["Pixel Rainbow Shard"] = {Class = "Misc", Id = "Pixel Rainbow Shard", MinAmount = 50}, --uncomment & change MinAmount to mail
