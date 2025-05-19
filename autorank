@@ -11,9 +11,7 @@ getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
 getgenv().GFARMING_WORLD_MAX_AUTO_CRAFT_RECIPE = 2 --2: make untill RB Gems
 getgenv().GMAIL_RECEIVERS = {"laptopgod2020"} -- for Huges and mailrules.
 getgenv().GMAIL_ITEMS = {
-["Pixel Rainbow Shard"] = {Class = "Misc", Id = "Pixel Rainbow Shard", MinAmount = 50}, --uncomment & change MinAmount to mail
-["Pixel Rainbow Gem"] = {Class = "Misc", Id = "Pixel Rainbow Gem", MinAmount = 5}, --uncomment & change MinAmount to mail
-["Pixel Rainbow Dust"] = {Class = "Misc", Id = "Pixel Rainbow Dust", MinAmount = 500}, --uncomment & change MinAmount to mail
+["Pixel Rainbow Gem"] = {Class = "Misc", Id = "Pixel Rainbow Gem", MinAmount = 100}, --uncomment & change MinAmount to mail
 ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "9999b"}, -- mail diamonds, to enable lower MinAmount..
 ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
 ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
