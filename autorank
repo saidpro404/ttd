@@ -1,42 +1,25 @@
-script_key="iidXIlivLwUsLdaTBjRQPdQFPKIvILGh";
-setfpscap(10)  -- number = fps
+setfpscap(5)
 
-getgenv().bgsInfConfig = {
-    ADD_FRIEND = true,
-    AUTO_UPDATE_RESTART = false,
-    ALWAYS_INFINITY_ELIXIR = true,
-    AUTO_BOUNTY_RIFT = true,
-    AUTO_COLLECT_WORLD_REWARDS = true,
-
-    PURCHASE_ALIENSHOP = true,
-    PURCHASE_BLACKMARKET = true,
-    PURCHASE_DICE_MERCHANT = true,
-    PURCHASE_STARSHOP_SLOT = 14,
-    RESTOCK_SHOP = "Blackmarket",
-    
-
-    USE_ROYAL_KEY = true,
-    USE_GOLDEN_KEY = true,
-    USE_DICE_KEY = true,
-    USE_MYSTERY_BOX = true,
-
-    RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic", "Legendary"},
-    RARITY_TO_SHINY = {"Common", "Unique", "Rare", "Epic", "Legendary"},
-    MAX_LEGENDARY_TIER_TO_DELETE = 2,
-    DELETE_LEGENDARY_SHINY = true,
-    DELETE_LEGENDARY_MYTHIC = true,
-    PETS_TO_DELETE = {"Space Invader", "Cyborg Phoenix", "Crimson Butterfly", "Dark Phoenix"},
-
-    ENCHANT_TEAMUP = true,
-    ENCHANT_TEAMUP_TIER = 3,
-
-    RIFT_EGGS = {"Underworld Egg"},
-    HATCH_1X_EGG = {"Chance Egg", "Neon Egg"}, 
-
-    WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
-    DISCORD_ID = "474925167886336001",
-    WEBHOOK_ODDS = 5000000,
-    SHOW_PET_WEBHOOK_USERNAME = true,
+script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
+task.wait(15)
+getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
+getgenv().GDO_FARMING_WORLD = true
+getgenv().GGFX_MODE = 1  --1 = REMOVE_TEXTURES : more stable! but no visuals
+getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
+getgenv().GWEBHOOK_LINK = "https://discordapp.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk" -- a webhook URL from your private discord channel.
+getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
+getgenv().GMAIL_RECEIVERS = {"laptopgod2020"} -- for Huges and mailrules.
+getgenv().GMAIL_ITEMS = {
+["Pixel Rainbow Shard"] = {Class = "Misc", Id = "Pixel Rainbow Shard", MinAmount = 50}, --uncomment & change MinAmount to mail
+["Pixel Rainbow Gem"] = {Class = "Misc", Id = "Pixel Rainbow Gem", MinAmount = 5}, --uncomment & change MinAmount to mail
+["Pixel Rainbow Dust"] = {Class = "Misc", Id = "Pixel Rainbow Dust", MinAmount = 500}, --uncomment & change MinAmount to mail
+["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "9999b"}, -- mail diamonds, to enable lower MinAmount..
+["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+["Secret pet4"] = {Class = "Pet", Id = "Yellow Lucky Block", MinAmount = 1, AllVariants = true},
 }
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3dc52e6a2fc4f671b66757e93f4fd38b.lua"))()
