@@ -5,7 +5,7 @@ task.wait(15)
 getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
 getgenv().GDO_FARMING_WORLD = true
 getgenv().GGFX_MODE = 1  --1 = REMOVE_TEXTURES : more stable! but no visuals
-getgenv().GDO_NOT_USE_PIXEL_ANGELUS = true
+getgenv().GDO_NOT_USE_PIXEL_ANGELUS = false
 getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
 getgenv().GWEBHOOK_LINK = "https://discordapp.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk" -- a webhook URL from your private discord channel.
 getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
