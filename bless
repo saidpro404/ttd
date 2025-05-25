@@ -1,16 +1,35 @@
-script_key="JdsPSSdUzrgxVzizMHqasQvKmxVQjLoF";
-getgenv().bgsInfConfig = {
-    JOB_ID = "",
-    USERNAME_TO_TRADE = "",
+setfpscap(5)
 
-    GIVE_SECRET = true,
-    GIVE_LEGENDARY = true,
-    IGNORE_NORMAL_LEGENDARY = true,
-    IGNORE_SHINY_LEGENDARY = true,
-    IGNORE_MYTHIC_LEGENDARY = false,
-    IGNORE_SHINY_MYTHIC_LEGENDARY = false,
-    IGNORE_EXCLUSIVE_LEGENDARY = false,
-    MIN_LEGENDARY_TIER_TO_GIVE = 3,
+script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
+task.wait(15)
+getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
+getgenv().GDO_FARMING_WORLD = true
+getgenv().GGFX_MODE = 1  --1 = REMOVE_TEXTURES : more stable! but no visuals
+getgenv().GEVENT_UPGRADES = 
+{
+"FarmingHugeChance",
+"FarmingTitanicChance",
+"FarmingPixelRainbowLuck",
+"FarmingGoldHatchChance",
+"FarmingRainbowHatchChance",
+"FarmingShinyHatchChance",
 }
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/aa119a1c38fa7f544a2ce750cd72ad87.lua"))()
+getgenv().GDO_NOT_USE_PIXEL_ANGELUS = false
+getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
+getgenv().GWEBHOOK_LINK = "https://discordapp.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk" -- a webhook URL from your private discord channel.
+getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
+getgenv().GFARMING_WORLD_MAX_AUTO_CRAFT_RECIPE = 5 --2: make untill RB Gems
+getgenv().GMAIL_RECEIVERS = {"brkchsee"} -- for Huges and mailrules.
+getgenv().GMAIL_ITEMS = {
+["Pixel Sprout"] = {Class = "Misc", Id = "Pixel Sprout", MinAmount = 500}, --uncomment & change MinAmount to mail
+["Pixel Bloom"] = {Class = "Misc", Id = "Pixel Bloom", MinAmount = 50}, --uncomment & change MinAmount to mail
+["Pixel Prism"] = {Class = "Misc", Id = "Pixel Prism", MinAmount = 5}, --uncomment & change MinAmount to mail
+["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "9999b"}, -- mail diamonds, to enable lower MinAmount..
+["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+["Secret pet4"] = {Class = "Pet", Id = "Yellow Lucky Block", MinAmount = 1, AllVariants = true},
+}
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
