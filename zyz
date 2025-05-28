@@ -1,39 +1,95 @@
-script_key="iidXIlivLwUsLdaTBjRQPdQFPKIvILGh";
-setfpscap(10)  -- number = fps
-
-getgenv().bgsInfConfig = {
-    AUTO_UPDATE_RESTART = false,
-    PURCHASE_ALIENSHOP = true,
-    USE_ROYAL_KEY = true,
-    USE_GOLDEN_KEY = true,
-    USE_MYSTERY_BOX = true,
-    DO_BUBBLE_GUM = false,  -- Auto blow/sell/upgrade bubble gum & storage [Stops selling when max coins]
-    HATCH_INFERNO_CUBE_AMOUNT = 6,  -- Legendary Team (For Fresh Accounts)
-    PURCHASE_STARSHOP_SLOT = 14,
-    ENCHANT_TEAMUP = true,
-    ENCHANT_TEAMUP_TIER = 5,
-    IGNORE_STARTER_HATCH = true,  -- Ignore Starter Hatch (For P2W/Progressed Accounts)
-    MASTERY_BUFFS_LEVEL = 15,  -- Buffs Level To Reach Before Hatching Secret Etc
-    PURCHASE_BLACKMARKET = true,  -- Purchase All Blackmarket Items
-    POTIONS_TO_CRAFT = {""},  -- "Coins", "Mythic", "Lucky", "Speed" (Craft ALL Tiers)
-    RESTOCK_SHOP = "Alien Shop", -- ("Blackmarket", "Alien Shop") -> Reroll specified shop after buying all 3 slots 
-    FARM_MIN_GEMS = 1000000,  -- Farms Minimum Gems Before Hatching 1x Egg
-    MIN_COINS_BEFORE_HATCHING = 10000000000,  -- Doesn't affect fresh account grind
-    IGNORE_MYSTERY_BOX_GEM_CAP = false,  -- true = Use Mystery Box Even When Gems Capped
-    WEBHOOK_INCLUDE_SHINY_MYTHIC = false,  -- true = Only includes shiny/mythic [Secrets excluded]
-    RARITY_TO_DELETE = {"Common", "Unique", "Rare", "Epic"},  -- Delete if max inventory
-    LEGENDARY_TIER_TO_DELETE = 2,  -- Ignore Shiny/Mythic/Shiny Mythic
-
-    RIFT_EGGS = {"Silly Egg", "Throwback Egg", "Nightmare Egg"},
-    HATCH_1X_EGG = "100M Egg", 
-
-    WEBHOOK_URL = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk",
-    DISCORD_ID = "474925167886336001",
-    WEBHOOK_RARITY = { Common = false, Unique = false, Rare = false, Epic = false, Legendary = true, Secret = true },
-    LEGENDARY_TIER = 3,  -- Ignore if set not set "Legendary"
-    WEBHOOK_ODDS = 5000000,  -- minimum odds to send webhook
-    SHOW_PET_WEBHOOK_USERNAME = true,  -- shows username in private webhook only
+script_key="ggpQuRKrApgGEsaomnuTSJIfXXKjtDOS";
+getgenv().Config = {
+    ["Time To Sell"] = 35, -- Seconds
+    ["Seed"] = {
+        ["Strawberry"] = 44,
+        ["Corn"] = 44,
+        ["Coconut"] = 44,
+        ["Apple"] = 44,
+        ["Watermelon"] = 44,
+        ["Mushroom"] = 44,
+        ["Pumpkin"] = 44,
+        ["Pepper"] = 44,
+        ["Cacao"] = 44,
+        ["Banana"] = 44,
+        ["Dragon Fruit"] = 44,
+        ["Mango"] = 44,
+        ["Cactus"] = 44,
+        ["Beanstalk"] = 44,
+        ["Grape"] = 44,
+        ["Bamboo"] = 44
+    },
+    ["FPS"] = 3,
+    ["Buy Egg"] = true,
+    ["Egg"] = {
+        ["Common Egg"] = false,
+        ["Uncommon Egg"] = false,
+        ["Rare Egg"] = false,
+        ["Mythical Egg"] = true,
+        ["Legendary Egg"] = false,
+        ["Bug Egg"] = true
+    },
+    ["ItemBlood"] = {
+        ["Blood Banana"] = false,
+        ["Blood Owl"] = false,
+        ["Night Seed Pack"] = true,
+        ["Moon Melon"] = false,
+        ["Mysterious Crate"] = false,
+        ["Blood Kiwi"] = false,
+        ["Night Egg"] = true,
+        ["Star Caller"] = false,
+        ["Blood Hedgehog"] = false
+    },
+    ["Item Twilight"] = {
+        ["Moon Mango"] = false,
+        ["Celestiberry"] = false,
+        ["Twilight Crate"] = false,
+        ["Night Seed Pack"] = true,
+        ["Night Egg"] = true,
+        ["Moon Cat"] = false,
+        ["Star Caller"] = false
+    },
+    ["Sprinkler"] = {
+        ["Basic Sprinkler"] = true,
+        ["Advanced Sprinkler"] = true,
+        ["Master Sprinkler"] = true,
+        ["Godly Sprinkler"] = true
+    },
+    ["Plant Candy"] = false,
+    ["PetNeedSend"] = {"Dragonfly", "Night Owl", "Raccoon", "Red Fox"},
+    ["Destroy Mode"] = {
+        ["Auto Destroy when have money"] = 1000000, -- its will destroy all trees select when money >= select
+        ["Trees"] = {"Strawberry", "Blueberry", "Corn", "Tomato", "Orange Tulip"}
+    },
+    ["Url"] = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2", -- Webhook 
+    ["Boost FPS"] = true,
+    ["Black Screen"] = true,
+    ["Note"] = "Effole",
+    ["Pet Mode"] = {
+        ["Sell Pet"] = true,
+        ["Equip Pet"] = true,
+        ["Name Pet Equip"] = {
+            ["Night Owl"] = true,
+            ["Kiwi"] = true,
+            ["Raccoon"] = true,
+            ["Red Fox"] = true,
+            ["Echo Frog"] = true,
+            ["Red Giant Ant"] = true,
+            ["Praying Mantis"] = true
+        },
+        ["Rarity"] = { -- Rarity Sell Pet
+            ["Common"] = true,
+            ["Uncommon"] = true,
+            ["Rare"] = true,
+            ["Legendary"] = true,
+            ["Divine"] = false,
+            ["Mythical"] = false
+        }
+    }
 }
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3dc52e6a2fc4f671b66757e93f4fd38b.lua"))()
-
+setfpscap(getgenv().Config["FPS"] or 3)
+repeat
+    wait()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/377ad2cacc3191143399a68eead6a3f0.lua"))()
+    task.wait(10)
+until getgenv().Loaded
