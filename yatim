@@ -16,7 +16,7 @@ getgenv().GEVENT_UPGRADES =
 }
 getgenv().GDO_NOT_USE_PIXEL_ANGELUS = false
 getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
-getgenv().GWEBHOOK_LINK = "https://discordapp.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk" -- a webhook URL from your private discord channel.
+getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
 getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
 getgenv().GFARMING_WORLD_MAX_AUTO_CRAFT_RECIPE = 5 --2: make untill RB Gems
 getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- for Huges and mailrules.
