@@ -1,34 +1,95 @@
-setfpscap(5)
-
-script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
-task.wait(15)
-getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
-getgenv().GDO_FARMING_WORLD = true
-getgenv().GGFX_MODE = 1  --1 = REMOVE_TEXTURES : more stable! but no visuals
-getgenv().GEVENT_UPGRADES = 
-{
-"FarmingHugeChance",
-"FarmingTitanicChance",
-"FarmingPixelRainbowLuck",
-"FarmingGoldHatchChance",
-"FarmingRainbowHatchChance",
-"FarmingShinyHatchChance",
+cript_key="ggpQuRKrApgGEsaomnuTSJIfXXKjtDOS";
+getgenv().Config = {
+    ["Time To Sell"] = 35, -- Seconds
+    ["Seed"] = {
+        ["Strawberry"] = 44,
+        ["Corn"] = 44,
+        ["Coconut"] = 44,
+        ["Apple"] = 44,
+        ["Watermelon"] = 44,
+        ["Mushroom"] = 44,
+        ["Pumpkin"] = 44,
+        ["Pepper"] = 44,
+        ["Cacao"] = 44,
+        ["Banana"] = 44,
+        ["Dragon Fruit"] = 44,
+        ["Mango"] = 44,
+        ["Cactus"] = 44,
+        ["Beanstalk"] = 44,
+        ["Grape"] = 44,
+        ["Bamboo"] = 44
+    },
+    ["FPS"] = 3,
+    ["Buy Egg"] = true,
+    ["Egg"] = {
+        ["Common Egg"] = false,
+        ["Uncommon Egg"] = false,
+        ["Rare Egg"] = false,
+        ["Mythical Egg"] = true,
+        ["Legendary Egg"] = false,
+        ["Bug Egg"] = true
+    },
+    ["ItemBlood"] = {
+        ["Blood Banana"] = false,
+        ["Blood Owl"] = false,
+        ["Night Seed Pack"] = true,
+        ["Moon Melon"] = false,
+        ["Mysterious Crate"] = false,
+        ["Blood Kiwi"] = false,
+        ["Night Egg"] = true,
+        ["Star Caller"] = false,
+        ["Blood Hedgehog"] = false
+    },
+    ["Item Twilight"] = {
+        ["Moon Mango"] = false,
+        ["Celestiberry"] = false,
+        ["Twilight Crate"] = false,
+        ["Night Seed Pack"] = true,
+        ["Night Egg"] = true,
+        ["Moon Cat"] = false,
+        ["Star Caller"] = false
+    },
+    ["Sprinkler"] = {
+        ["Basic Sprinkler"] = true,
+        ["Advanced Sprinkler"] = true,
+        ["Master Sprinkler"] = true,
+        ["Godly Sprinkler"] = true
+    },
+    ["Plant Candy"] = false,
+    ["PetNeedSend"] = {"Dragonfly", "Night Owl", "Raccoon", "Red Fox"},
+    ["Destroy Mode"] = {
+        ["Auto Destroy when have money"] = 1000000, -- its will destroy all trees select when money >= select
+        ["Trees"] = {"Strawberry", "Blueberry", "Corn", "Tomato", "Orange Tulip"}
+    },
+    ["Url"] = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2", -- Webhook 
+    ["Boost FPS"] = true,
+    ["Black Screen"] = true,
+    ["Note"] = "Depzai",
+    ["Pet Mode"] = {
+        ["Sell Pet"] = true,
+        ["Equip Pet"] = true,
+        ["Name Pet Equip"] = {
+            ["Night Owl"] = true,
+            ["Kiwi"] = true,
+            ["Raccoon"] = true,
+            ["Red Fox"] = true,
+            ["Echo Frog"] = true,
+            ["Red Giant Ant"] = true,
+            ["Praying Mantis"] = true
+        },
+        ["Rarity"] = { -- Rarity Sell Pet
+            ["Common"] = true,
+            ["Uncommon"] = true,
+            ["Rare"] = true,
+            ["Legendary"] = true,
+            ["Divine"] = false,
+            ["Mythical"] = false
+        }
+    }
 }
-getgenv().GDO_NOT_USE_PIXEL_ANGELUS = false
-getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
-getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
-getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
-getgenv().GFARMING_WORLD_MAX_AUTO_CRAFT_RECIPE = 5 --2: make untill RB Gems
-getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- for Huges and mailrules.
-getgenv().GMAIL_ITEMS = {
-["Pixel Prism"] = {Class = "Misc", Id = "Pixel Prism", MinAmount = 10}, --uncomment & change MinAmount to mail
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "9999b"}, -- mail diamonds, to enable lower MinAmount..
-["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-["Secret pet4"] = {Class = "Pet", Id = "Yellow Lucky Block", MinAmount = 1, AllVariants = true},
-}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
-
+setfpscap(getgenv().Config["FPS"] or 3)
+repeat
+    wait()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/377ad2cacc3191143399a68eead6a3f0.lua"))()
+    task.wait(10)
+until getgenv().Loaded
