@@ -1,4 +1,4 @@
-cript_key="ggpQuRKrApgGEsaomnuTSJIfXXKjtDOS";
+script_key="ggpQuRKrApgGEsaomnuTSJIfXXKjtDOS";
 getgenv().Config = {
     ["Time To Sell"] = 35, -- Seconds
     ["Seed"] = {
