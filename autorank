@@ -143,12 +143,11 @@ getgenv().Sea = {
         Webhook = {
             Url = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
             DiscordId = "474925167886336001",
-            Note = "Skibidi",
+            Note = "53e",
 
             PetCheck = {
                 Only = false, -- Only ping if the pet is in the target list
                 Target = {
-                    "Mythical",
                     "Divine"
                 },
             },
