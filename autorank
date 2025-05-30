@@ -162,8 +162,6 @@ getgenv().Sea = {
                     "Raccoon",
                     "Dragonfly",
                     "Red Fox",
-                    "Mythical",
-                    "Divine",
                 }
             }
         }
