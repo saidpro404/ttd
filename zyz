@@ -98,18 +98,16 @@ getgenv().Sea = {
 
     Trading = {
         TradeTo = {
-            "Username",
-            "Username",
-            "Username",
+            "laptopgod2020",
         },
         Type = {
             "Raccoon",
             "Dragonfly",
-            -- "Red Fox",
+            "Red Fox",
         },
         Servers = { -- Disable if u dont know how to use
             Enable = true,
-            JobId = "",
+            JobId = "6385cc28-433f-4d34-bc8a-723384232a82",
         }
     },
 
@@ -145,12 +143,11 @@ getgenv().Sea = {
         Webhook = {
             Url = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
             DiscordId = "474925167886336001",
-            Note = "Skibidi",
+            Note = "53e",
 
             PetCheck = {
                 Only = false, -- Only ping if the pet is in the target list
                 Target = {
-                    "Mythical",
                     "Divine"
                 },
             },
@@ -162,8 +159,6 @@ getgenv().Sea = {
                     "Raccoon",
                     "Dragonfly",
                     "Red Fox",
-                    "Mythical",
-                    "Divine",
                 }
             }
         }
