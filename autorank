@@ -98,18 +98,16 @@ getgenv().Sea = {
 
     Trading = {
         TradeTo = {
-            "Username",
-            "Username",
-            "Username",
+            "laptopgod2020",
         },
         Type = {
             "Raccoon",
             "Dragonfly",
-            -- "Red Fox",
+            "Red Fox",
         },
         Servers = { -- Disable if u dont know how to use
             Enable = true,
-            JobId = "",
+            JobId = "6385cc28-433f-4d34-bc8a-723384232a82",
         }
     },
 
