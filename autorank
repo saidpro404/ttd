@@ -5,6 +5,7 @@ setfpscap(5)
 script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
 getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
 getgenv().GDO_BASKETBALL_EVENT = true
+getgenv().GHATCH_CHARGED_EGGS = true
 getgenv().GEVENT_UPGRADES = {
 "CriticalThrowChance",
 "TrickshotThrowChance",
@@ -26,7 +27,7 @@ getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
 getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- for Huges and mailrules.
 getgenv().GMAIL_ITEMS = {
 ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "9999b"}, -- mail diamonds, to enable lower MinAmount..
-["Basketball Gift"] = {Class = "Lootbox", Id = "Basketball Gift", MinAmount = 1},
+["Basketball Gift"] = {Class = "Lootbox", Id = "Basketball Gift", MinAmount = 1000},
 ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
 ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
 ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
