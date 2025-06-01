@@ -1,24 +1,23 @@
-	getgenv().Sea = {
+getgenv().Sea = {
     Seeds = {
         Only = false, -- Only buy seed target, Disable if u want to buy all seeds
         Stock = {},
         Sells = {
             Enabled = true,
             StopPlant = true, -- Stop planting when you have this amount of money
-            SellWhen = "5B", -- Sell when you have this amount of money
-            Type = {
-                "Strawberry",
-                "Blueberry",
-                "Tomato",
-                "Corn",
-                "Apple",
-                "Banana"
-            },
+            SellWhen = "1B", -- Sell when you have this amount of money
+            Type = {},
              Rarity = {
-                -- "Common",
-                -- "Uncommon",
-                -- "Rare",
-                -- "Legendary",
+                 "Common",
+                 "Uncommon",
+                 "Rare",
+            }
+        },
+        Mutations = {
+            Min = "1B",
+            Enabled = true, -- Use for Mutations Farm Only
+            Mutation = {
+                "Pollinated",
             }
         }
     },
@@ -26,6 +25,7 @@
     Eggs = {
         Only = true, -- Only buy egg target, Disable if u want to buy all eggs
         Stock = {
+            "Legendary Egg",
             "Mythical Egg",
             "Bug Egg",
             "Exotic Bug Egg",
@@ -42,6 +42,11 @@
             "Godly Sprinkler",
             "Watering Can",
             "Lightning Rod",
+        },               
+        Active = {
+            "Basic Sprinkler",
+            "Advanced Sprinkler",
+            "Star Caller"
         }
     },
 
@@ -49,7 +54,7 @@
         PlantEggs = true, -- Enable auto-placing of pets
         HatchEggs = true, -- Enable auto-hatching of eggs
         Egg = {
-            -- "Mythical Egg",
+            "Bee Egg",
             "Bug Egg",
             "Exotic Bug Egg",
             "Night Egg"
@@ -63,7 +68,7 @@
             }, -- Rarity to sell
             Type = {
                 "Hedgehog","Blood Hedgehog",
-                "Kiwi",
+                "Kiwi","Moon Cat",
                 "Caterpillar",
                 "Frog","Echo Frog",
                 "Ant","Giant Ant",
@@ -84,12 +89,17 @@
     },
         
     Events = {
-        Only = false, -- Only buy event target, Disable if u want to buy all events
-        Stock = {}
+        Only = true, -- Only buy event target, Disable if u want to buy all events
+        Type = { -- Crate, Cosmetic
+            "Seed",
+            "Seed Pack",
+            "Gear",
+            "Egg"
+        }
     },
 
     Upgrades = {
-        Type = "Pet", -- Pet, Egg, All
+        Type = "All", -- Pet, Egg, All
 
         BlacklistRarity = {
             "Divine",
@@ -97,26 +107,35 @@
     },
 
     Trading = {
+        Enable = false,
         TradeTo = {
-            "Username",
-            "Username",
-            "Username",
+            "Ngu",
+            "dUM",
+            "Skibidi3",
         },
         Type = {
             "Raccoon",
             "Dragonfly",
             -- "Red Fox",
         },
-        Servers = { -- Disable if u dont know how to use
+        Servers = {
             Enable = true,
             JobId = "",
         }
     },
 
+    SellFruit ={
+        SellIfMax = true, -- Sell if max plants are reached
+        SellingDelay = 30, -- Delay between selling harvested crops
+
+        BlacklistMutations = { -- Will not Sell Mutations in list
+            "Pollinated",
+            "Gold"
+        }
+    },
+
     Misc = {
         AutoSeedPack = true,
-        AutoStaff = true,
-        AutoSprinkler = true,
         AutoWater = true,
         
         AutoHarvest = true, 
@@ -124,14 +143,11 @@
     },
 
     GameSettings = {
-        SellIfMax = true, -- Sell if max plants are reached
-        SellingDelay = 30, -- Delay between selling harvested crops
-        
         FarmingDelay = 5, -- Delay between farming cycles in seconds
         TeleportDelay = 1, -- Delay between teleports
         
         CheckIfAboveLimits = true, -- Will Destroy if Above Limit Plant
-        PlantLimits = 100, -- Global limit for each type of plant
+        PlantLimits = 50, -- Global limit for each type of plant
     },
 
     Settings = {
@@ -145,16 +161,16 @@
         Webhook = {
             Url = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
             DiscordId = "474925167886336001",
-            Note = "53e",
+            Note = "OMG SO COUL",
 
             PetCheck = {
-                Only = true, -- Only ping if the pet is in the target list
+                Only = false, -- Only ping if the pet is in the target list
                 Target = {
                     "Divine"
                 },
             },
             Recheck = { -- Check when rejoin
-                Enabled = true,
+                Enabled = false,
                 Ping = true, -- Ping if the pet is in the target list
                 Type = "Name", -- Name or Rarity
                 Target = { -- If Type is Rarity, put the rarity ( legendary, mythical, divine, etc.. ) of the pet you want to check
@@ -166,6 +182,3 @@
         }
     }
 }
-
-script_key="QGNacQpxbmuSvYhsTVPlvxiJbdYKZdAl";
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c6e33f5aa2ee74d5b85de9c1686bd2ba.lua"))()
