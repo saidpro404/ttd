@@ -2,7 +2,7 @@ task.wait(15)
 
 setfpscap(5)
 
-script_key = "VSjyeKptwdXPwzjApFOXdsiPEwxcbDaL";
+script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
 getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
 getgenv().GDO_BASKETBALL_EVENT = true
 getgenv().GEVENT_UPGRADES = {
@@ -34,4 +34,4 @@ getgenv().GMAIL_ITEMS = {
 ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
 ["Secret pet4"] = {Class = "Pet", Id = "Yellow Lucky Block", MinAmount = 1, AllVariants = true},
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
