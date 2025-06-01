@@ -34,5 +34,12 @@ getgenv().GMAIL_ITEMS = {
 ["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
 ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
 ["Secret pet4"] = {Class = "Pet", Id = "Yellow Lucky Block", MinAmount = 1, AllVariants = true},
+["Rainbow Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsRainbow = true, KeepAmount = 1 },
+["Shiny Rainbow Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsRainbow = true, IsShiny = true, KeepAmount = 1 },
+["All my Hippomelon Balls"] = {Class = "Pet", Id = "Hippomelon Ball", MinAmount = 1, AllVariants = true},
+["Normal Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1},
+["Shiny Normal Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsShiny = true},
+["Golden Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsGold = true},
+["Shiny Golden Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsGold = true, IsShiny = true},
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
