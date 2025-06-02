@@ -1,189 +1,38 @@
-getgenv().Sea = {
-    Seeds = {
-        Only = false, -- Only buy seed target, Disable if u want to buy all seeds
-        Stock = {},
-        Sells = {
-            Enabled = true,
-            StopPlant = true, -- Stop planting when you have this amount of money
-            SellWhen = "1B", -- Sell when you have this amount of money
-            Type = {},
-             Rarity = {
-                 "Common",
-                 "Uncommon",
-                 "Rare",
-            }
-        },
-        Mutations = {
-            Min = "1B",
-            Enabled = true, -- Use for Mutations Farm Only
-            Mutation = {
-                "Pollinated",
-            }
-        }
-    },
+setfpscap(5)
 
-    Eggs = {
-        Only = true, -- Only buy egg target, Disable if u want to buy all eggs
-        Stock = {
-            "Legendary Egg",
-            "Mythical Egg",
-            "Bug Egg",
-            "Exotic Bug Egg",
-        }
-    },
+task.wait(15)
 
-    Gears = {
-        Min = "5M", -- Minimum amount of money to buy gears
-        Only = true, -- Only buy gear target, Disable if u want to buy all gears
-        Stock = {
-            "Basic Sprinkler",
-            "Advanced Sprinkler",
-            "Master Sprinkler",
-            "Godly Sprinkler",
-            "Watering Can",
-            "Lightning Rod",
-        },               
-        Active = {
-            "Basic Sprinkler",
-            "Advanced Sprinkler",
-            "Star Caller"
-        }
-    },
-
-    Pets = {
-        PlantEggs = true, -- Enable auto-placing of pets
-        HatchEggs = true, -- Enable auto-hatching of eggs
-        Egg = {
-            "Bee Egg",
-            "Bug Egg",
-            "Exotic Bug Egg",
-            "Night Egg"
-        },
-        Sells = {
-            Enabled = true,
-            Rarity = {
-                "Common",
-                "Uncommon",
-                "Rare",
-            }, -- Rarity to sell
-            Type = {
-                "Hedgehog","Blood Hedgehog",
-                "Kiwi","Moon Cat",
-                "Caterpillar",
-                "Frog","Echo Frog",
-                "Ant","Giant Ant",
-                "Owl","Night Owl",
-                "Mole",
-                "Snail",
-            },
-            KeepWeight = 3, -- Keep weight above this value | nil = off
-        },
-    },
-
-    Teams = {
-        EquipBest = true, -- Equip best team ( Just Equip Full Kiwi, Blood Kiwi for fasted egg xd )
-        Team = { -- Disable EquipBest if u want to use this
-            "Pet 1",
-            "Pet 2",
-        },
-    },
-        
-    Events = {
-        Only = true, -- Only buy event target, Disable if u want to buy all events
-        Type = { -- Crate, Cosmetic
-            "Seed",
-            "Seed Pack",
-            "Gear",
-            "Egg"
-        }
-    },
-
-    Upgrades = {
-        Type = "All", -- Pet, Egg, All
-
-        BlacklistRarity = {
-            "Divine",
-        }
-    },
-
-    Trading = {
-        Enable = false,
-        TradeTo = {
-            "Ngu",
-            "dUM",
-            "Skibidi3",
-        },
-        Type = {
-            "Raccoon",
-            "Dragonfly",
-            -- "Red Fox",
-        },
-        Servers = {
-            Enable = true,
-            JobId = "",
-        }
-    },
-
-    SellFruit ={
-        SellIfMax = true, -- Sell if max plants are reached
-        SellingDelay = 30, -- Delay between selling harvested crops
-
-        BlacklistMutations = { -- Will not Sell Mutations in list
-            "Pollinated",
-            "Gold"
-        }
-    },
-
-    Misc = {
-        AutoSeedPack = true,
-        AutoWater = true,
-        
-        AutoHarvest = true, 
-        AutoPlants = true,
-    },
-
-    GameSettings = {
-        FarmingDelay = 5, -- Delay between farming cycles in seconds
-        TeleportDelay = 1, -- Delay between teleports
-        
-        CheckIfAboveLimits = true, -- Will Destroy if Above Limit Plant
-        PlantLimits = 50, -- Global limit for each type of plant
-    },
-
-    Settings = {
-        FPS = 5, -- FPS for the game
-        TrackStats = true,
-        ReduceLag = true, -- enable for reduce lag
-        Server = {
-            HopServer = false, -- When 15 - 30 min will Hop Server
-            Rejoin = false, -- When 15 - 30 min will Rejoin Server | Just Enabled Only One
-    },
-        Webhook = {
-            Url = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
-            DiscordId = "474925167886336001",
-            Note = "OMG SO COUL",
-
-            PetCheck = {
-                Only = true, -- Only ping if the pet is in the target list
-                Target = {
-                    "Divine"
-                },
-            },
-            Recheck = { -- Check when rejoin
-                Enabled = false,
-                Ping = true, -- Ping if the pet is in the target list
-                Type = "Name", -- Name or Rarity
-                Target = { -- If Type is Rarity, put the rarity ( legendary, mythical, divine, etc.. ) of the pet you want to check
-                    "Raccoon",
-                    "Dragonfly",
-                    "Red Fox",
-                    "Mythical",
-                    "Divine",
-                }
-            }
-        }
-    }
+script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
+_G.GPROGRESS_MODE = "Hybird"
+_G.GREBIRTH_TO = 9 -- number, limits the amount of rebirths
+_G.GRANK_TO = 33
+_G.GZONE_TO = 999 -- ONLY increase above 99 to go to world2, only when 100% sure, there is no way back for the "best zone" quests etc. 
+_G.GGFX_MODE = 1  -- number,   1 = REMOVE_TEXTURES,2 = LOWER_TEXTURES_QUALITY, 3 = NORMAL
+_G.GMAX_EGG_SLOTS = 83
+_G.GMAX_EQUIP_SLOTS = 80
+_G.GHOLD_GIFTS = false
+_G.GHOLD_BUNDLES = false
+_G.GUSE_ULTIMATES = {"Tsunami"}
+_G.GMAX_ZONE_UPGRADE_COST = 200000
+_G.GMASTERY_TO_MAX = "Enchants"
+_G.GIGNORE_SLEDRACE = true
+_G.GIGNORE_ALL_INSTANCES = true -- true/false, don't do any instances (obbies,dig,fish)
+_G.GPOTIONS = {"Damage","Coins","Treasure Hunter","Lucky","Diamonds"}
+_G.GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Orange","Banana"}
+_G.GUSE_FLAGS = {"Fortune Flag"}
+_G.GPOTIONS_MAX_TIER = 19
+_G.GENCHANTS = {"Super Lightning","Tap Power","Large Taps","Explosive","Strong Pets","Coins"}
+_G.GWEBHOOK_USERID = "957324855353704589"
+_G.GWEBHOOK_LINK = ""
+_G.GMAIL_RECEIVERS = {""} -- for Mailing items/pets
+_G.GMAIL_ITEMS = {
+    ["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
+    ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "100m"}, -- mail diamonds, to enable lower MinAmount..
+    ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+    ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+    ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+    ["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+    ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+    ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
 }
-
-script_key="QGNacQpxbmuSvYhsTVPlvxiJbdYKZdAl";
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c6e33f5aa2ee74d5b85de9c1686bd2ba.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
