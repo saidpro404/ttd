@@ -1,45 +1,186 @@
-task.wait(15)
+getgenv().Sea = {
+    Seeds = {
+        Only = false, -- Only buy seed target, Disable if u want to buy all seeds
+        Stock = {},
+        Sells = {
+            Enabled = true,
+            StopPlant = true, -- Stop planting when you have this amount of money
+            SellWhen = "1B", -- Sell when you have this amount of money
+            Type = {},
+             Rarity = {
+                 "Common",
+                 "Uncommon",
+                 "Rare",
+            }
+        },
+        Mutations = {
+            Min = "1B",
+            Enabled = true, -- Use for Mutations Farm Only
+            Mutation = {
+                "Pollinated",
+            }
+        }
+    },
 
-setfpscap(5)
+    Eggs = {
+        Only = true, -- Only buy egg target, Disable if u want to buy all eggs
+        Stock = {
+            "Legendary Egg",
+            "Mythical Egg",
+            "Bug Egg",
+            "Exotic Bug Egg",
+        }
+    },
 
-script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
-getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
-getgenv().GDO_BASKETBALL_EVENT = true
-getgenv().GHATCH_CHARGED_EGGS = true
-getgenv().GEVENT_UPGRADES = {
-"CriticalThrowChance",
-"TrickshotThrowChance",
---"YeetOrbsReach",--not needed
-"YeetOrbStrength",
-"BetterYeetEgg"
+    Gears = {
+        Min = "5M", -- Minimum amount of money to buy gears
+        Only = true, -- Only buy gear target, Disable if u want to buy all gears
+        Stock = {
+            "Basic Sprinkler",
+            "Advanced Sprinkler",
+            "Master Sprinkler",
+            "Godly Sprinkler",
+            "Watering Can",
+            "Lightning Rod",
+        },               
+        Active = {
+            "Basic Sprinkler",
+            "Advanced Sprinkler",
+            "Star Caller"
+        }
+    },
+
+    Pets = {
+        PlantEggs = true, -- Enable auto-placing of pets
+        HatchEggs = true, -- Enable auto-hatching of eggs
+        Egg = {
+            "Bee Egg",
+            "Bug Egg",
+            "Exotic Bug Egg",
+            "Night Egg"
+        },
+        Sells = {
+            Enabled = true,
+            Rarity = {
+                "Common",
+                "Uncommon",
+                "Rare",
+            }, -- Rarity to sell
+            Type = {
+                "Hedgehog","Blood Hedgehog",
+                "Kiwi","Moon Cat",
+                "Caterpillar",
+                "Frog","Echo Frog",
+                "Ant","Giant Ant",
+                "Owl","Night Owl",
+                "Mole",
+                "Snail",
+            },
+            KeepWeight = 3, -- Keep weight above this value | nil = off
+        },
+    },
+
+    Teams = {
+        EquipBest = true, -- Equip best team ( Just Equip Full Kiwi, Blood Kiwi for fasted egg xd )
+        Team = { -- Disable EquipBest if u want to use this
+            "Pet 1",
+            "Pet 2",
+        },
+    },
+        
+    Events = {
+        Only = true, -- Only buy event target, Disable if u want to buy all events
+        Type = { -- Crate, Cosmetic
+            "Seed",
+            "Seed Pack",
+            "Gear",
+            "Egg"
+        }
+    },
+
+    Upgrades = {
+        Type = "All", -- Pet, Egg, All
+
+        BlacklistRarity = {
+            "Divine",
+        }
+    },
+
+    Trading = {
+        Enable = false,
+        TradeTo = {
+            "Ngu",
+            "dUM",
+            "Skibidi3",
+        },
+        Type = {
+            "Raccoon",
+            "Dragonfly",
+            -- "Red Fox",
+        },
+        Servers = {
+            Enable = true,
+            JobId = "",
+        }
+    },
+
+    SellFruit ={
+        SellIfMax = true, -- Sell if max plants are reached
+        SellingDelay = 30, -- Delay between selling harvested crops
+
+        BlacklistMutations = { -- Will not Sell Mutations in list
+            "Pollinated",
+            "Gold"
+        }
+    },
+
+    Misc = {
+        AutoSeedPack = true,
+        AutoWater = true,
+        
+        AutoHarvest = true, 
+        AutoPlants = true,
+    },
+
+    GameSettings = {
+        FarmingDelay = 5, -- Delay between farming cycles in seconds
+        TeleportDelay = 1, -- Delay between teleports
+        
+        CheckIfAboveLimits = true, -- Will Destroy if Above Limit Plant
+        PlantLimits = 50, -- Global limit for each type of plant
+    },
+
+    Settings = {
+        FPS = 5, -- FPS for the game
+        TrackStats = true,
+        ReduceLag = true, -- enable for reduce lag
+        Server = {
+            HopServer = false, -- When 15 - 30 min will Hop Server
+            Rejoin = false, -- When 15 - 30 min will Rejoin Server | Just Enabled Only One
+    },
+        Webhook = {
+            Url = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
+            DiscordId = "474925167886336001",
+            Note = "OMG SO COUL",
+
+            PetCheck = {
+                Only = true, -- Only ping if the pet is in the target list
+                Target = {
+                    "Divine"
+                },
+            },
+            Recheck = { -- Check when rejoin
+                Enabled = false,
+                Ping = true, -- Ping if the pet is in the target list
+                Type = "Name", -- Name or Rarity
+                Target = { -- If Type is Rarity, put the rarity ( legendary, mythical, divine, etc.. ) of the pet you want to check
+                    "Raccoon",
+                    "Dragonfly",
+                    "Red Fox",
+                    "Mythical",
+                    "Divine",
+                }
+            }
+        }
+    }
 }
-getgenv().GENCHANTS = {
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs"
-    } -- apparently others dont work
-getgenv().GPOTIONS = {"Lucky"}
-getgenv().GHOLD_GIFTS = true
-getgenv().GGFX_MODE = 1  --1 = REMOVE_TEXTURES : more stable! but no visuals
-getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
-getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
-getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
-getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- for Huges and mailrules.
-getgenv().GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "9999b"}, -- mail diamonds, to enable lower MinAmount..
-["Basketball Gift"] = {Class = "Lootbox", Id = "Basketball Gift", MinAmount = 1000},
-["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-["Secret pet4"] = {Class = "Pet", Id = "Yellow Lucky Block", MinAmount = 1, AllVariants = true},
-["Rainbow Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsRainbow = true, KeepAmount = 1 },
-["Shiny Rainbow Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsRainbow = true, IsShiny = true, KeepAmount = 1 },
-["All my Hippomelon Balls"] = {Class = "Pet", Id = "Hippomelon Ball", MinAmount = 1, AllVariants = true},
-["Normal Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1},
-["Shiny Normal Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsShiny = true},
-["Golden Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsGold = true},
-["Shiny Golden Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsGold = true, IsShiny = true},
-}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
