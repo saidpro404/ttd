@@ -3,43 +3,36 @@ setfpscap(5)
 task.wait(15)
 
 script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
-getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
-getgenv().GDO_BASKETBALL_EVENT = true
-getgenv().GHATCH_CHARGED_EGGS = true
-getgenv().GEVENT_UPGRADES = {
-"CriticalThrowChance",
-"TrickshotThrowChance",
-"YeetOrbsReach",--not needed
-"YeetOrbStrength",
-"BetterYeetEgg"
-}
-getgenv().GENCHANTS = {
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs"
-    } -- apparently others dont work
-getgenv().GPOTIONS = {"Lucky"}
-getgenv().GHOLD_GIFTS = true
-getgenv().GGFX_MODE = 1  --1 = REMOVE_TEXTURES : more stable! but no visuals
-getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
-getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
-getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
-getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- for Huges and mailrules.
-getgenv().GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "9999b"}, -- mail diamonds, to enable lower MinAmount..
-["Basketball Gift"] = {Class = "Lootbox", Id = "Basketball Gift", MinAmount = 100},
-["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-["Secret pet4"] = {Class = "Pet", Id = "Yellow Lucky Block", MinAmount = 1, AllVariants = true},
-["Rainbow Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsRainbow = true, KeepAmount = 1 },
-["Shiny Rainbow Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsRainbow = true, IsShiny = true, KeepAmount = 1 },
-["All my Hippomelon Balls"] = {Class = "Pet", Id = "Hippomelon Ball", MinAmount = 1, AllVariants = true},
-["Normal Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1},
-["Shiny Normal Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsShiny = true},
-["Golden Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsGold = true},
-["Shiny Golden Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsGold = true, IsShiny = true},
+_G.GPROGRESS_MODE = "Hybird"
+_G.GREBIRTH_TO = 9 -- number, limits the amount of rebirths
+_G.GRANK_TO = 33
+_G.GZONE_TO = 999 -- ONLY increase above 99 to go to world2, only when 100% sure, there is no way back for the "best zone" quests etc. 
+_G.GGFX_MODE = 1  -- number,   1 = REMOVE_TEXTURES,2 = LOWER_TEXTURES_QUALITY, 3 = NORMAL
+_G.GMAX_EGG_SLOTS = 83
+_G.GMAX_EQUIP_SLOTS = 80
+_G.GHOLD_GIFTS = false
+_G.GHOLD_BUNDLES = false
+_G.GUSE_ULTIMATES = {"Tsunami"}
+_G.GMAX_ZONE_UPGRADE_COST = 200000
+_G.GMASTERY_TO_MAX = "Enchants"
+_G.GIGNORE_SLEDRACE = true
+_G.GIGNORE_ALL_INSTANCES = true -- true/false, don't do any instances (obbies,dig,fish)
+_G.GPOTIONS = {"Damage","Coins","Treasure Hunter","Lucky","Diamonds"}
+_G.GFRUITS = {"Watermelon","Candycane","Apple","Rainbow","Pineapple","Orange","Banana"}
+_G.GUSE_FLAGS = {"Fortune Flag"}
+_G.GPOTIONS_MAX_TIER = 19
+_G.GENCHANTS = {"Super Lightning","Tap Power","Large Taps","Explosive","Strong Pets","Coins"}
+_G.GWEBHOOK_USERID = "957324855353704589"
+_G.GWEBHOOK_LINK = ""
+_G.GMAIL_RECEIVERS = {""} -- for Mailing items/pets
+_G.GMAIL_ITEMS = {
+    ["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
+    ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "100m"}, -- mail diamonds, to enable lower MinAmount..
+    ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+    ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+    ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+    ["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+    ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+    ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
