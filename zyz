@@ -1,46 +1,72 @@
-setfpscap(5)
-
-task.wait(15)
-
-script_key = "FJYgrUiNnVbxcFtiscsczRdkESsoVTDP";
-getgenv().GZONE_TO = 999 -- to enter event from W1 put 99, from W2 put 199, from W3 999
-getgenv().GDO_BASKETBALL_EVENT = true
-getgenv().GHATCH_CHARGED_EGGS = true
-getgenv().GEVENT_UPGRADES = {
-"CriticalThrowChance",
-"TrickshotThrowChance",
-"YeetOrbsReach",--not needed
-"YeetOrbStrength",
-"BetterYeetEgg"
+if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
+setfpscap(3)
+wait(20)
+script_key = "iGStvqKydXuKQnrWcyTyjQdNYhHThrrE";
+getgenv().UserConfig = {
+    AddFriends          = true,
+    RedeemCode = {"RELEASE","Lucky", "update2","Easter","Sylentlyssorry", "update4"},
+    EquipBestFlavorGum  = true,
+    BuyFlavorGum        = true,
+    AutoMinigames       = true,
+    AutoRollDice        = true,
+    ["Super Ticket"]    = "Robot Claw",
+    ["Use Super Ticket"] = false,
+    ["Season Challenges"] = false, -- true if u want secret monolith 
+    ["Giant Chest"] = false,
+    ["Void Chest"] = false,
+    ["Golden Chest"] = false,
+    ["Royal Chest"] = false,
+    ["Dice Chest"] = true, -- default is false if not set
+    ["Summer Shop"] = true, -- default is true if not set
+    ["Mastery"] = {Pets = 15,Buffs = 10,Shops = 10},
+    ["Craft Potions"] = {
+        Enable = false,
+        MinGems = "100k",
+        ["Potion Needed"] = {
+            {"Coins", Level = 5},
+            {"Speed", Level = 5},
+            {"Lucky", Level = 5},
+            {"Mythic", Level = 5}
+        }
+    },
+    ["Star Shop"] = {
+        Enable = true,
+        MinStars = 100,
+        ["Items Needed"] = {
+            "Speed Evolved",
+            "Lucky Evolved"
+        }
+    },
+    ["Rifts"] = {
+        AlwaysFindRifts = true,
+        Targets = {"Fruit Egg"},
+        Luck = 5
+    },
+    ["Secret Bounty"] = {"Overlord Plushie", "Everblaze", "Beelzebub"},
+    ["Secret Bounty x1 Egg"] = false, -- true = 100% Secret Bounty
+    FindDuck = "Fruit Egg", -- Fruit Egg, Nightmare Egg, Common Egg, Cyber Egg, Neon Egg
+    ["Replace FindDuck"] = "Fruit Egg",
+    ["Best Potions Find Duck"] = true, --false if there are only few potions 
+    ["Enchant Team 1"] = {enable = true, ["team-up"] = 1}, -- can set 2 or 3
+    ["Min gems"] = "1m",
+    ["Min coins"] = "100m",
+    ["Min tickets"] = "10m",
+    ["Min seashells"] = "10b",
+    ["Gems coefficient"] = 0,
+    ["Tickets coefficient"] = 100,
+    ["Seashells coefficient"] = 24,
+    ["Auto Restart"] = true,
+    ["Webhook"] = {
+        Enable = true,
+        Note = "ngu53e",
+        ID = "474925167886336001",
+        URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
+        Rarity = {
+            "Legendary",
+            "Secret"
+        }, -- General rarity filter
+        Legendary = "1m",
+        ["Special Pets"] = {"Monolith"}
+    }
 }
-getgenv().GENCHANTS = {
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",
-    "Lucky Eggs", "Lucky Eggs", "Lucky Eggs"
-    } -- apparently others dont work
-getgenv().GPOTIONS = {"Lucky"}
-getgenv().GHOLD_GIFTS = true
-getgenv().GGFX_MODE = 1  --1 = REMOVE_TEXTURES : more stable! but no visuals
-getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
-getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
-getgenv().GHUGE_COUNT = 0 -- amount of huges to keep/not mail
-getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- for Huges and mailrules.
-getgenv().GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "9999b"}, -- mail diamonds, to enable lower MinAmount..
-["Basketball Gift"] = {Class = "Lootbox", Id = "Basketball Gift", MinAmount = 100},
-["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-["All my Hippomelon Balls"] = {Class = "Pet", Id = "Hippomelon Ball", MinAmount = 1, AllVariants = true},
-["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-["Secret pet4"] = {Class = "Pet", Id = "Yellow Lucky Block", MinAmount = 1, AllVariants = true},
-["Rainbow Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsRainbow = true, KeepAmount = 1 },
-["Shiny Rainbow Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsRainbow = true, IsShiny = true, KeepAmount = 1 },
-["All my Hippomelon Balls"] = {Class = "Pet", Id = "Hippomelon Ball", MinAmount = 1, AllVariants = true},
-["Normal Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1},
-["Shiny Normal Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsShiny = true},
-["Golden Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsGold = true},
-["Shiny Golden Glitched Cat Ball"] = {Class = "Pet", Id = "Glitched Cat Ball", MinAmount = 1, IsGold = true, IsShiny = true},
-}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ccbddd87670e37be6aa0dbf793748a94.lua"))()
