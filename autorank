@@ -1,72 +1,42 @@
-if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
-setfpscap(3)
-wait(20)
-script_key = "iGStvqKydXuKQnrWcyTyjQdNYhHThrrE";
-getgenv().UserConfig = {
-    AddFriends          = false,
-    RedeemCode = {"RELEASE","Lucky", "update2","Easter","Sylentlyssorry", "update4"},
-    EquipBestFlavorGum  = true,
-    BuyFlavorGum        = true,
-    AutoMinigames       = true,
-    AutoRollDice        = true,
-    ["Super Ticket"]    = "Robot Claw",
-    ["Use Super Ticket"] = false,
-    ["Season Challenges"] = false, -- true if u want secret monolith 
-    ["Giant Chest"] = false,
-    ["Void Chest"] = false,
-    ["Golden Chest"] = false,
-    ["Royal Chest"] = false,
-    ["Dice Chest"] = true, -- default is false if not set
-    ["Summer Shop"] = true, -- default is true if not set
-    ["Mastery"] = {Pets = 15,Buffs = 10,Shops = 10},
-    ["Craft Potions"] = {
-        Enable = false,
-        MinGems = "100k",
-        ["Potion Needed"] = {
-            {"Coins", Level = 5},
-            {"Speed", Level = 5},
-            {"Lucky", Level = 5},
-            {"Mythic", Level = 5}
-        }
-    },
-    ["Star Shop"] = {
-        Enable = true,
-        MinStars = 100,
-        ["Items Needed"] = {
-            "Speed Evolved",
-            "Lucky Evolved"
-        }
-    },
-    ["Rifts"] = {
-        AlwaysFindRifts = true,
-        Targets = {"Fruit Egg"},
-        Luck = 5
-    },
-    ["Secret Bounty"] = {"Overlord Plushie", "Everblaze", "Beelzebub"},
-    ["Secret Bounty x1 Egg"] = false, -- true = 100% Secret Bounty
-    FindDuck = "Fruit Egg", -- Fruit Egg, Nightmare Egg, Common Egg, Cyber Egg, Neon Egg
-    ["Replace FindDuck"] = "Fruit Egg",
-    ["Best Potions Find Duck"] = true, --false if there are only few potions 
-    ["Enchant Team 1"] = {enable = true, ["team-up"] = 1}, -- can set 2 or 3
-    ["Min gems"] = "1m",
-    ["Min coins"] = "100m",
-    ["Min tickets"] = "10m",
-    ["Min seashells"] = "10b",
-    ["Gems coefficient"] = 0,
-    ["Tickets coefficient"] = 100,
-    ["Seashells coefficient"] = 24,
-    ["Auto Restart"] = true,
-    ["Webhook"] = {
-        Enable = true,
-        Note = "ngu53e",
-        ID = "474925167886336001",
-        URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
-        Rarity = {
-            "Legendary",
-            "Secret"
-        }, -- General rarity filter
-        Legendary = "1m",
-        ["Special Pets"] = {"Monolith"}
-    }
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer 
+
+getgenv().Key = "7838d0b03169dd159f7d5335"
+
+getgenv().Config = {
+	["Input Discord Ping"] = "474925167886336001",
+	["Start ESP EGG"] = true,
+	["Auto Buy Seed"] = false,
+	["Select Pet Random"] = {
+		["Disco Bee"] = true
+	},
+	["Auto Collect Egg"] = false,
+	["Auto Use Gear"] = false,
+	["Auto Delete Plant"] = false,
+	["Auto Collect"] = false,
+	["Webhook Collect Egg"] = true,
+	["Spam Join"] = false,
+	["Start ESP"] = false,
+	["Auto Sell"] = false,
+	["Auto Buy Egg"] = false,
+	["Auto Load Script"] = false,
+	["Input Url Webhook"] = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
+	["Auto Delete Fruit"] = false,
+	["Auto Collect And Give Item And Craft"] = false,
+	["Auto Give Pollinated For Onett"] = false,
+	["Auto Delete Pet"] = false,
+	["Use Save Position"] = false,
+	["Auto Rejoin Random Pet"] = true,
+	["Auto Plant Seed"] = false,
+	["Boost Fps"] = true,
+	["Auto Feed Pet"] = false,
+	["Ping Discord"] = true,
+	["ESP Farm Player Other"] = false,
+	["Auto Buy Gear"] = false,
+	["Auto Collect Pollinated if Have"] = false,
+	["Auto Buy Seed And Plant Requirement"] = false,
+	["Auto Plant Egg"] = false,
+	["Webhook Profile"] = true,
+	["Auto Buy Shop Honey"] = false
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ccbddd87670e37be6aa0dbf793748a94.lua"))()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua"))() 
