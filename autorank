@@ -49,15 +49,15 @@ getgenv().Config = {
         ["Godly Sprinkler"] = true
     },
     ["Plant Candy"] = false,
-    ["PetNeedSend"] = {"Dragonfly", "Night Owl", "Raccoon"},
+    ["PetNeedSend"] = {"Dragonfly", "Night Owl", "Raccoon", "Queen Bee"},
     ["Destroy Mode"] = {
         ["Auto Destroy when have money"] = 1000000, -- its will destroy all trees select when money >= select
         ["Trees"] = {"Strawberry", "Blueberry", "Corn", "Tomato", "Orange Tulip", "Carrot"}
     },
     ["Url"] = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2", -- Webhook 
 
-    ["Boost FPS"] = false,
-    ["Black Screen"] = false,
+    ["Boost FPS"] = true,
+    ["Black Screen"] = true,
     ["Note"] = "53e0xxxxx",
     ["Pet Mode"] = {
         ["Sell Pet"] = true,
