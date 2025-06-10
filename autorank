@@ -76,7 +76,7 @@ getgenv().Config = {
         },
         ["Pet Dont Delete"] = {"Queen Bee"}
     },
-    ["Rejoin After X Time"] = 60, -- Minutes
+    ["Rejoin After X Time"] = 120, -- Minutes
     ["Mutation Skips"] = { -- Skip Havest
         ["Pollinated"] = false,
         ["Disco"] = false,
