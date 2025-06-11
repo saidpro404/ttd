@@ -31,17 +31,15 @@ getgenv().Config = {
     },
     ["Honey Item"] = {
         ["Nectarine"] = false,
-        ["Flower Seed Pack"] = false,
+        ["Flower Seed Pack"] = true,
         ["Honey Sprinkler"] = false,
-        ["Honey Torch"] = false,
-        ["Bee Chair"] = false,
-        ["Honey Walkway"] = false,
         ["Bee Egg"] = true,
-        ["Bee Crate"] = false,
-        ["Hive Fruit"] = false,
-        ["Honey Comb"] = false
+        ["Pollen Radar"] = false,
+        ["Nectar Staff"] = false,
+        ["Nectarshade"] = false,
+        ["Lavender"] = false,
+        ["Hive Fruit"] = false
     },
-
     ["Sprinkler"] = {
         ["Basic Sprinkler"] = true,
         ["Advanced Sprinkler"] = true,
@@ -49,16 +47,16 @@ getgenv().Config = {
         ["Godly Sprinkler"] = true
     },
     ["Plant Candy"] = false,
-    ["PetNeedSend"] = {"Dragonfly", "Night Owl", "Raccoon", "Queen Bee"},
+    ["PetNeedSend"] = {"Dragonfly", "Night Owl", "Raccoon"},
     ["Destroy Mode"] = {
         ["Auto Destroy when have money"] = 1000000, -- its will destroy all trees select when money >= select
         ["Trees"] = {"Strawberry", "Blueberry", "Corn", "Tomato", "Orange Tulip", "Carrot"}
     },
-    ["Url"] = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2", -- Webhook 
+    ["Url"] = "", -- Webhook 
 
     ["Boost FPS"] = true,
     ["Black Screen"] = true,
-    ["Note"] = "53e0xxxxx",
+    ["Note"] = "Cyndral Hub",
     ["Pet Mode"] = {
         ["Sell Pet"] = true,
         ["Equip Pet"] = true,
@@ -76,7 +74,11 @@ getgenv().Config = {
         },
         ["Pet Dont Delete"] = {"Queen Bee"}
     },
-    ["Rejoin After X Time"] = 120, -- Minutes
+    ["Webhook Mode"] = {
+        ["Enable Send Pet Weight"] = false,
+        ["Weight"] = 10 -- if Weight >= 10 they will send wh
+    },
+    ["Rejoin After X Time"] = 60, -- Minutes
     ["Mutation Skips"] = { -- Skip Havest
         ["Pollinated"] = false,
         ["Disco"] = false,
@@ -97,12 +99,3 @@ getgenv().Config = {
     }
 }
 setfpscap(getgenv().Config["FPS"])
-
-script_key="WoFdSFmwbaUzPJQJVJUzybRijXPtIpiR";
-
-
-repeat
-    wait()
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/377ad2cacc3191143399a68eead6a3f0.lua"))()
-    task.wait(10)
-until getgenv().Loaded 
