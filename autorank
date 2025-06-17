@@ -1,4 +1,4 @@
-setfpscap(5)
+setfpscap(15)
 
 script_key = "YBYpXvKdQIFwRaInlhOkfNlhjZIfPCvk";
 getgenv().GDO_TOWER_DEFENSE = true
