@@ -9,6 +9,6 @@ getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not you
 getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
 getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- an account to receive hatched Huges etc
 getgenv().GMAIL_ITEMS = {
-["Tower Defense Gift"] = {Class = "Lootbox", Id = "Tower Defense Gift", MinAmount = 20},
+["Tower Defense Gift"] = {Class = "Lootbox", Id = "Tower Defense Gift", MinAmount = 50},
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34915da4ad87a5028e1fd64efbe3543f.lua"))()
