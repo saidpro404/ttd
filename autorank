@@ -1,14 +1,18 @@
 setfpscap(15)
 
-script_key = "YBYpXvKdQIFwRaInlhOkfNlhjZIfPCvk";
+script_key = "wlEnTmfwWpTmOMRsztDibcbqoXujZsnn";
+task.wait(5) -- DO NOT remove this wait, it's against double counts.
+
 getgenv().GDO_TOWER_DEFENSE = true
 getgenv().GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
 getgenv().GZONE_TO = 99 -- or change to 999 to join from last world
-getgenv().GTOWER_DEFENSE_INFINITY_PET = {"Crystal Giraffe","Nightmare Cyclops","Blurred Owl","Nuclear Dominus","Arcade Angelus","Jetpack Cat","Abyssal Turtle","Electric Eel","Forged Armadillo","Comet Dragon","Rich Corgi","Disco Ball Agony","Torpedo Cat","Shadow Pegasus","Ooze Dragon","Tech Samurai Axolotl","Potion Penguin","Umbrella Elephant","Old Wizard Cat","Frostbyte Griffin","Detective Bunny","Knight Chicken","Flamethrower Spider","Demolition Panda"}
+getgenv().GTOWER_DEFENSE_INFINITY_PET = {"Blurred Owl","Nuclear Dominus","Electric Eel","Forged Armadillo"}
 getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
 getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
 getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- an account to receive hatched Huges etc
 getgenv().GMAIL_ITEMS = {
-["Magma Tower Defense Gift"] = {Class = "Lootbox", Id = "Magma Tower Defense Gift", MinAmount = 50},
+["Tower Defense Gift"] = {Class = "Lootbox", Id = "Tower Defense Gift", MinAmount = 50},
+["Tower Defense Gift 2"] = {Class = "Lootbox", Id = "Tower Defense Gift 2", MinAmount = 50},
+["Tower Defense Gift 3"] = {Class = "Lootbox", Id = "Tower Defense Gift 3", MinAmount = 50},
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34915da4ad87a5028e1fd64efbe3543f.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
