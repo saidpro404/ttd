@@ -3,7 +3,8 @@ setfpscap(15)
 script_key = "wlEnTmfwWpTmOMRsztDibcbqoXujZsnn";
 task.wait(5) -- DO NOT remove this wait, it's against double counts.
 
-getgenv().GDO_TOWER_DEFENSE = true
+getgenv().GTOWER_DEFENSE_HARDCORE_MODE = true
+getgenv().GTOWER_DEFENSE_AMOUNT_OF_CHEAP_TOWERS_TO_PLACE_FIRST = 7
 getgenv().GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
 getgenv().GZONE_TO = 99 -- or change to 999 to join from last world
 getgenv().GTOWER_DEFENSE_INFINITY_PET = {"Blurred Owl","Nuclear Dominus","Electric Eel","Forged Armadillo"}
