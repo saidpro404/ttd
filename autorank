@@ -1,6 +1,6 @@
 task.wait(5)
 
-setfpscap(15)
+setfpscap(5)
 
 -- Wait until game loaded then start the whole script.
 repeat task.wait() until game:IsLoaded()
