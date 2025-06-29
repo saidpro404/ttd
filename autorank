@@ -8,6 +8,7 @@ getgenv().GGYM_CLICK_DELAY = 0.1
 getgenv().GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
 getgenv().GZONE_TO = 99 -- or change to 999 to join from last world
 getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
+getgenv().GENCHANTS = {"Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",}
 getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
 getgenv().GMAIL_RECEIVERS = {"laptopgod2020"} -- an account to receive hatched Huges etc
 getgenv().GMAIL_ITEMS = {
