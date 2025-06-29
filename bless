@@ -3,11 +3,10 @@ setfpscap(15)
 script_key = "wlEnTmfwWpTmOMRsztDibcbqoXujZsnn";
 task.wait(5) -- DO NOT remove this wait, it's against double counts.
 
-getgenv().GTOWER_DEFENSE_HARDCORE_MODE = true
-getgenv().GTOWER_DEFENSE_AMOUNT_OF_CHEAP_TOWERS_TO_PLACE_FIRST = 7
+getgenv().GDO_GYM_EVENT = true
+getgenv().GGYM_CLICK_DELAY = 0.1
 getgenv().GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
 getgenv().GZONE_TO = 99 -- or change to 999 to join from last world
-getgenv().GTOWER_DEFENSE_INFINITY_PET = {"Blurred Owl","Nightmare Cyclops","Crystal Giraffe","Nuclear Dominus","Electric Eel","Forged Armadillo"}
 getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
 getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2" -- a webhook URL from your private discord channel.
 getgenv().GMAIL_RECEIVERS = {"jessbenkoontop"} -- an account to receive hatched Huges etc
