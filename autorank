@@ -9,9 +9,9 @@ getgenv().GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
 getgenv().GZONE_TO = 99 -- or change to 999 to join from last world
 getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
 getgenv().GGYM_EVENT_STAT_CONFIG = {
-    ["Stamina"] = 0,
-    ["CritChance"] = 0,
-    ["Strength"] = 100,
+    ["Stamina"] = 28,
+    ["CritChance"] = 6,
+    ["Strength"] = 66,
     ["Size"] = 1
 }
 getgenv().GENCHANTS = {"Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",}
