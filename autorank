@@ -5,13 +5,15 @@ task.wait(5) -- DO NOT remove this wait, it's against double counts.
 
 getgenv().GDO_GYM_EVENT = true
 getgenv().GGYM_CLICK_DELAY = 0.1
+getgenv().GHUGE_COUNT = 15
+getgenv().GUSE_BOOSTS = true 
 getgenv().GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
 getgenv().GZONE_TO = 99 -- or change to 999 to join from last world
 getgenv().GWEBHOOK_USERID = "474925167886336001" -- your discord userID, not your name. numerical id.
 getgenv().GGYM_EVENT_STAT_CONFIG = {
-    ["Stamina"] = 28,
-    ["CritChance"] = 6,
-    ["Strength"] = 66,
+    ["Stamina"] = 0,
+    ["CritChance"] = 0,
+    ["Strength"] = 100,
     ["Size"] = 1
 }
 getgenv().GENCHANTS = {"Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs", "Lucky Eggs",}
@@ -21,8 +23,10 @@ getgenv().GMAIL_ITEMS = {
 ["Tower Defense Gift"] = {Class = "Lootbox", Id = "Tower Defense Gift", MinAmount = 50},
 ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
 ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
 ["Tower Defense Gift 2"] = {Class = "Lootbox", Id = "Tower Defense Gift 2", MinAmount = 50},
 ["Tower Defense Gift 3"] = {Class = "Lootbox", Id = "Tower Defense Gift 3", MinAmount = 50},
 ["Gym Gift"] = {Class = "Lootbox", Id = "Gym Gift", MinAmount = 50},
+["Buff Gym Gift"] = {Class = "Lootbox", Id = "Gym Gift", MinAmount = 50},
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
