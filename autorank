@@ -4,7 +4,7 @@ script_key = "wlEnTmfwWpTmOMRsztDibcbqoXujZsnn";
 task.wait(5) -- DO NOT remove this wait, it's against double counts.
 
 getgenv().GDO_GYM_EVENT = true
-getgenv().GGYM_CLICK_DELAY = 0.1
+getgenv().GGYM_CLICK_DELAY = 0.01
 getgenv().GHUGE_COUNT = 15
 getgenv().GUSE_BOOSTS = true 
 getgenv().GGFX_MODE = 2  --1 = REMOVE_TEXTURES : more stable! but no visuals
