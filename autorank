@@ -9,7 +9,7 @@ getgenv().gagConfig = {
     MAX_EVENT_RESTOCK_SHECKLES = 0,
     
     -- General:
-    AUTO_UPDATE_RESTART = true,
+    AUTO_UPDATE_RESTART = false,
     REDEEM_CODES = {},
     EXTRA_PET_SLOTS = 2,
     EXTRA_EGG_SLOTS = 2,
