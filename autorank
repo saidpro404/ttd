@@ -10,11 +10,11 @@ getgenv().gagConfig = {
     PLACE_ALL_EVENT_STAFF = true,
     
     -- General:
-    AUTO_UPDATE_RESTART = true,
+    AUTO_UPDATE_RESTART = false,
     REDEEM_CODES = {},
     EXTRA_PET_SLOTS = 5,
     EXTRA_EGG_SLOTS = 5,
-    ADD_FRIEND = true,
+    ADD_FRIEND = false,
     OPEN_ALL_SEED_PACK = true,
 
     MAX_PLANTS = 250,
