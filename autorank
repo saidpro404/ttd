@@ -7,14 +7,15 @@ getgenv().gagConfig = {
     BUY_TRAVELING_MERCHANT = { "Bee Egg", "Loquat", "Feijoa", "Pitcher Plant" },
     BUY_EVENT_SHOP = { "Zen Egg", "Koi", "Raiju" },
     MAX_EVENT_RESTOCK_SHECKLES = 0,
+    GET_HONEY = true,
     PLACE_ALL_EVENT_STAFF = true,
     
     -- General:
-    AUTO_UPDATE_RESTART = false,
+    AUTO_UPDATE_RESTART = true,
     REDEEM_CODES = {},
     EXTRA_PET_SLOTS = 5,
     EXTRA_EGG_SLOTS = 5,
-    ADD_FRIEND = false,
+    ADD_FRIEND = true,
     OPEN_ALL_SEED_PACK = true,
 
     MAX_PLANTS = 250,
