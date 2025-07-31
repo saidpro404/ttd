@@ -218,12 +218,9 @@ getgenv().ConfigsKaitun = {
 				"Idk"
 			},
 			Pets = {
-				"Kodama",
 				"Corrupted Kitsune",
 				"Raiju",
-				"Tanchozuru",
 				"Kitsune",
-				"Kappa",
 				"Disco Bee",
 				"Butterfly",
 				"Mimic Octopus",
