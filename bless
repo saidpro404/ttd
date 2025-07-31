@@ -219,7 +219,6 @@ getgenv().ConfigsKaitun = {
 			},
 			Pets = {
 				"Corrupted Kitsune",
-				"Raiju",
 				"Kitsune",
 				"Disco Bee",
 				"Butterfly",
