@@ -33,7 +33,7 @@ getgenv().gagConfig = {
     KEEP_PETS = { "Bald Eagle", "Spinosaurus", "Brontosaurus", "T-Rex", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus", "Red Fox", "Blood Owl", "Chicken Zombie", ["Caterpillar"] = 1, ["Seagull"] = 1, ["Flamingo"] = 1, ["Black Bunny"] = 1, ["chicken"] = 1, ["Cat"] = 1, ["Deer"] = 1, ["Grey Mouse"] = 1, ["Brown Mouse"] = 1, ["Squirrel"] = 1, ["Red Giant Ant"] = 1, ["Snail"] = 1, ["Giant Ant"] = 1, ["Praying Mantis"] = 1, ["Bee"] = 1, ["Honey Bee"] = 1, ["Bear Bee"] = 1, ["Petal Bee"] = 1, ["Wasp"] = 1, ["Tarantula Hawk"] = 1, ["Moth"] = 1, ["Seagull"] = 1, ["Crab"] = 1, ["Ostrich"] = 1, ["Peacock"] = 1, ["Capybara"] = 10, ["Scarlet Macaw"] = 1, ["Meerkat"] = 1, ["Sand Snake"] = 1, ["Axolotl"] = 1, ["Hyacinth Macaw"] = 1, "Kitsune", "Seal", ["Starfish"] = 10, "Corrupted Kitsune", "Raiju"},
     KEEP_PETS_WEIGHT = {["Nihonzaru"] = 7, ["Tanuki"] = 7, ["Shiba Inu"] = 7, ["Tanchozuru"] = 7, ["Kappa"] = 7, ["Capybara"] = 7, ["Orangutan"] = 5},
 	
-    EQUIP_PETS = {["Kodama"] = 6, ["Tanchozuru"] = 2},
+    EQUIP_PETS = {["Kodama"] = 8},
     USE_PETS_FOR_UPGRADE_SLOT = {"Starfish"},
     REMOVE_PET_MAX_UPGRADE = {},
 
