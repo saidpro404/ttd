@@ -1,49 +1,221 @@
-setfpscap(10)
+-- ## CONFIG
+local SubmitPets = {"Starfish"}
 
-script_key = "cEENcDXnlUWsoaiQNsFwoYHaDYyVouMW";
-task.wait(1) -- DO NOT remove this wait, it's against double counts.
--- INSERT YOUR CONFIG HERE --
-getgenv().GDO_CONVEYOR_INSTANCE = true
-getgenv().GCONVEYOR_MAX_PETS_LEVEL = 70
-getgenv().GMASTERY_TO_MAX = "Enchants"
-getgenv().GUSE_BOOSTS = true
-getgenv().GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "150t"
-getgenv().GCONVEYOR_MAX_PETS_TO_BUY = 10
-getgenv().GMAX_EGG_TIER = 15 --or lower
-getgenv().GCONVEYOR_RESET_PETS = true
-getgenv().GCONVEYOR_RESET_UPGRADES = true
-getgenv().GENCHANTS = {"Chest Breaker","Super Lightning","Tap Power","Large Taps","Explosive","Chest Breaker"}
-getgenv().GEVENT_UPGRADES = {
-    "ConveyorBetterChestLoot",
-    "ConveyorHugeChest",
-    "ConveyorTitanicChest",
-    "ConveyorBetterDrops",
-    "ConveyorMoreDamage",
-    "ConveyorMoreCoins",
-    "ConveyorBetterEggChance",
-    "ConveyorFasterConveyor",
-    "ConveyorMoreBreakables",
-    "ConveyorBreakableHugeChance",
-    "ConveyorFasterBreakableSpawning",
-    "ConveyorEasierSlimeMachine",
-    "ConveyorMoreGiftBags",
-    "ConveyorMoreSlimeTokens",
+-- ## MAIN VARS
+local RS = game:GetService("ReplicatedStorage")
+local DataService = require(RS.Modules.DataService)
+
+
+-- ## FUNCTIONS
+local function GetBackpack()
+    local inventory = {}
+
+    local backpack = game:GetService("Players").LocalPlayer:FindFirstChild("Backpack")
+    local character = game:GetService("Players").LocalPlayer.Character
+
+    if backpack then
+        for _, item in ipairs(backpack:GetChildren()) do
+            table.insert(inventory, item)
+        end
+    end
+
+    if character then
+        for _, item in ipairs(character:GetChildren()) do
+            table.insert(inventory, item)
+        end
+    end
+
+    return inventory
+end
+
+local function GetLowestAgePet(tbl)
+    local lowestKey = nil
+    local lowestValue = nil
+    for k, v in pairs(tbl) do
+        if lowestValue == nil or v < lowestValue then
+            lowestValue = v
+            lowestKey = k
+        end
+    end
+    return lowestKey, lowestValue
+end
+
+local function CountTable(t)
+    local count = 0
+    for _ in pairs(t) do
+        count += 1
+    end
+    return count
+end
+
+local function ConvertUUID_Item(UUID)
+    for i, v in pairs(GetBackpack()) do
+        if v:IsA("Tool") and (v:GetAttribute("c") == UUID or v:GetAttribute("PET_UUID") == UUID) then
+            return v
+        end
+    end
+end
+
+print("[ROLOX] Starting Auto Submit Pets..")
+
+-- ## UNEQUIP ALL PETS
+while task.wait() do
+    local EquippedPets = DataService:GetData()["PetsData"]["EquippedPets"]
+    if #EquippedPets == 0 then
+        break
+    end
+    
+    for i, v in pairs(EquippedPets) do
+        _G.Status = "Unequipping: " .. v 
+        print("[ROLOX] Unequipping:", v)
+        RS.GameEvents:WaitForChild("PetsService"):FireServer("UnequipPet", v)
+        task.wait(0.50)
+    end
+end
+
+-- ## Unfavourite All Pets
+for i, v in DataService:GetData()["PetsData"]["PetInventory"]["Data"] do
+    local IsFavorite = v["PetData"]["IsFavorite"] or false
+
+    if IsFavorite then
+        print("[ROLOX] Unfavourite Pet:", v["PetType"])
+        local pet_tool = ConvertUUID_Item(i)
+        RS.GameEvents:WaitForChild("Favorite_Item"):FireServer(pet_tool)
+        task.wait(0.20)
+    end
+end
+
+
+-- ## AUTO UPGRADE EQUIP SLOTS
+while task.wait(1) do
+    local PurchasedEquipSlots = DataService:GetData()["PetsData"]["PurchasedEquipSlots"]
+    if PurchasedEquipSlots == 5 then
+        print("[ROLOX] FULL EQUIP SLOTS!")
+        break
+    end
+
+    local levelRequirements = {
+        [0] = 20,
+        [1] = 30,
+        [2] = 45,
+        [3] = 60,
+        [4] = 75
+    }
+
+    local requiredLevel = levelRequirements[PurchasedEquipSlots]
+    if requiredLevel then
+        local temp = {}
+        for i, v in pairs(DataService:GetData()["PetsData"]["PetInventory"]["Data"]) do
+            local Age = v["PetData"]["Level"]
+            if Age >= requiredLevel and table.find(SubmitPets, v["PetType"]) then
+                temp[i] = Age
+            end
+        end
+
+        if CountTable(temp) > 0 then
+            local pet_uuid, lowest_age = GetLowestAgePet(temp)
+            print("[ROLOX] Unlocking another Equip Slot from Pet with Age", lowest_age)
+            RS.GameEvents:WaitForChild("UnlockSlotFromPet"):FireServer(pet_uuid, "Pet")
+            continue
+        else
+            print("[ROLOX] No Aged Pet Found, breaking..")
+            break
+        end
+    end
+end
+
+-- ## AUTO UPGRADE EGG SLOTS
+while task.wait(1) do
+    local PurchasedEggSlots = DataService:GetData()["PetsData"]["PurchasedEggSlots"]
+    if PurchasedEggSlots == 5 then
+        print("[ROLOX] FULL EGG SLOTS!")
+        break
+    end
+
+    local levelRequirements = {
+        [0] = 20,
+        [1] = 30,
+        [2] = 45,
+        [3] = 60,
+        [4] = 75
+    }
+
+    local requiredLevel = levelRequirements[PurchasedEggSlots]
+    if requiredLevel then
+        local temp = {}
+        for i, v in pairs(DataService:GetData()["PetsData"]["PetInventory"]["Data"]) do
+            local Age = v["PetData"]["Level"]
+            if Age >= requiredLevel and table.find(SubmitPets, v["PetType"]) then
+                temp[i] = Age
+            end
+        end
+
+        if CountTable(temp) > 0 then
+            local pet_uuid, lowest_age = GetLowestAgePet(temp)
+            print("[ROLOX] Unlocking another Equip Slot from Pet with Age", lowest_age)
+            RS.GameEvents:WaitForChild("UnlockSlotFromPet"):FireServer(pet_uuid, "Pet")
+            continue
+        else
+            print("[ROLOX] No Aged Pet Found, breaking..")
+            break
+        end
+    end
+end
+
+print("[ROLOX] Completed Auto Submit Pets!")
+
+script_key="sSSrUCGRskfXgBvyWtRkuRwktlqUgSgu";
+setfpscap(3)
+
+getgenv().gagConfig = {
+    -- Event:
+    CRAFT_EVENT = { "Anti Bee Egg" },
+    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Loquat", "Feijoa", "Pitcher Plant" },
+    PLACE_ALL_EVENT_STAFF = true,
+    -- General:
+    AUTO_UPDATE_RESTART = true,
+    REDEEM_CODES = {},
+    EXTRA_PET_SLOTS = 8,
+    EXTRA_EGG_SLOTS = 8,
+    ADD_FRIEND = true,
+    OPEN_ALL_SEED_PACK = true,
+    MAX_PLANTS = 150,
+    PLACE_COSMETIC = {"Cooking Pot","Cooking Cauldron","Pancake Stack"},
+    --event
+    CLAIM_FOOD_CONNOISSEUR_REWARD = { "Culinarian Chest", "Gourmet Egg", "Sunny-Side Chicken","Gorilla Chef","Cooking Cauldron"},
+    FORCE_COOK_MUTATION_ONLY = true,
+    --event
+    DESTROY_UNTIL_MIN_PLANTS = 130,
+    DELETE_PLANTS_AFTER_MAX = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Apple", "Dragon Fruit","Mango","Dezen","Lucky Bamboo","Monoblooma", "Serenity", "Taro Flower", "Zen Rocks", "Hinomai", "Zenflare", "Soft Sunshine"},
+    LIMIT_PLANT_SEED = { ["Strawberry"] = 5, ["Blueberry"] = 5, ["Apple"] = 5, ["Tomato"] = 5, ["Corn"] = 5, ["Bamboo"] = 5, ["Coconut"] = 5, ["Pumpkin"] = 5, ["Watermelon"] = 5, ["Pepper"] = 5 },
+    BUY_EGGS = { "Bug Egg", "Bee Egg", "Paradise Egg", "Mythical Egg", "Rare Summer Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
+    PLANT_EGGS = { "Gourmet Egg","Dinosaur Egg", "Zen Egg","Rare Summer Egg", "Primal Egg", "Anti Bee Egg", "Night Egg", "Bug Egg", "Paradise Egg", "Mythical Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
+
+    BUY_SEED_SHOP = {"Spiked Mango", "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk", "Cacao","Maple Apple","Hinomai","Serenity", "Pepper", "Mushroom", "Grape", "Mango", "Dragon Fruit", "Pumpkin", "Watermelon", ["Dragon Fruit"] = 10,["Coconut"] = 10,["Apple"] = 10,["Cactus"] = 10,["Bamboo"] = 10,["Daffodil"] = 10, ["Tomato"] = 10, ["Orange Tulip"] = 10, ["Blueberry"] = 10, ["Strawberry"] = 10, ["Carrot"] = 10 },
+    KEEP_SEEDS = {},
+    BUY_EVENT_SHOP = { "Zen Egg" ,"Zen Seed Pack","Zenflare ","Soft Sunshine","Spiked Mango" },
+    KEEP_SEEDS_AFTER_MAX_PLANTS = {"Dezen","Lucky Bamboo","Tranquil Bloom","Monoblooma", "Serenity", "Taro Flower", "Zen Rocks", "Hinomai", "Maple Apple", "Zenflare", "Soft Sunshine", "Spiked Mango","Carrot", "Strawberry", "Blueberry", "Tomato", "Apple"},
+    FAVOURITE_FRUIT_MUTATIONS = {},  -- Stop Autosell
+    SKIP_HARVEST_MUTATIONS = {},  -- Stop Harvest
+    KEEP_PETS = { ["Starfish"]= 4,["Chicken"] = 5,["Tanchozuru"]= 2,["Kappa"]= 2,"Koi","Seal", "Capybara", "Mimic Octopus", "Meerkat",  "Triceratops", "Stegosaurus", "Pterodactyl",
+          "Brontosaurus", "Pachycephalosaurus", "Iguanodon", "Red Fox","Sunny-Side Chicken","Lobster Thermidor","Junkbot","Spaghetti Sloth",["Gorilla Chef"]=4,
+           "Hyacinth Macaw", "Axolotl", "Ankylosaurus", "Dilophosaurus","Red Fox", "Dragonfly","Raccoon",
+            "Queen Bee", "Disco Bee", "Butterfly", "Dragonfly", "Fennec Fox", "T-Rex","Kitsune", "Corrupted Kitsune","French Fry Ferret"},
+    EQUIP_PETS = {["Starfish"] = 4,["Gorilla Chef"]=4,["Spaghetti Sloth"]=3,["Kappa"]= 1,["Sunny-Side Chicken"]= 4,"Koi","Seal","Chicken","Capybara"},
+    KEEP_PETS_WEIGHT = { ["Sea Turtle"] = 5,["Ostrich"] = 5,["Stegosaurus"] = 5},
+    KEEP_PETS_AGE = {},
+    REMOVE_PET_MAX_UPGRADE = {"Starfish"},
+    BUY_GEAR_SHOP = { "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Basic Sprinkler" ,"Grandmaster Sprinkler"},
+    USE_SPRINKLER = { "Basic Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler" },
+
+    PET_WEBHOOK_URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
+    SEED_WEBHOOK_URL = "",
+    NOTIFY_PETS = { "Lobster Thermidor", "French Fry Ferret", "Corrupted Kitsune", "Raiju", "Mizuchi", "Bald Eagle", "Koi", "Kitsune", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus", "Brontosaurus", "T-Rex", "Ankylosaurus", "Spinosaurus" },
+    NOTIFY_PETS_WEIGHT = 10,
+    DISCORD_ID = "474925167886336001",
+    WEBHOOK_NOTE = "zxc",
+    SHOW_WEBHOOK_USERNAME = true,
+    SHOW_WEBHOOK_JOBID = true,
 }
-getgenv().GEVENT_FPS  = 10
-getgenv().GLOOTBOXES = {"Locked Hype Egg"}
-getgenv().GGFX_MODE = 3
-getgenv().GZONE_TO = 999
-getgenv().GWEBHOOK_USERID = "474925167886336001"
-getgenv().GWEBHOOK_LINK = "https://discord.com/api/webhooks/1305948511975641150/6FvFC3yqzhbcFu6tXSgzXxonyIS9hB0vXT8hSva3uM1TlfIkqffqSEiDEFUlSaiIneBk"
-getgenv().GMAIL_RECEIVERS = {"laptopgod2020"}
-getgenv().GMAIL_ITEMS = {
-    ["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "1b"}, -- mail diamonds, to enable lower MinAmount..
-    ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-    ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-    ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-    ["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-    ["Slime Gift"] = {Class = "Lootbox", Id = "Slime Gift", MinAmount = 100},
-    ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-    ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
-}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ba2dcad2127dcfc04301dfe52ce6c61c.lua"))()
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c916e5b90dc37c71ecf1ec00dfce3d5d.lua"))()
