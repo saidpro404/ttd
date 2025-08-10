@@ -1,221 +1,233 @@
--- ## CONFIG
-local SubmitPets = {"Starfish"}
+License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
 
--- ## MAIN VARS
-local RS = game:GetService("ReplicatedStorage")
-local DataService = require(RS.Modules.DataService)
+getgenv().ConfigsKaitun = {
+	Beta_Fix_Data_Sync = true,
 
+	["Block Pet Gift"] = true,
 
--- ## FUNCTIONS
-local function GetBackpack()
-    local inventory = {}
+	Collect_Cooldown = 60, -- cooldown to collect fruit
+	JustFuckingCollectAll = false, -- Collect all (fruit not wait mutation)
 
-    local backpack = game:GetService("Players").LocalPlayer:FindFirstChild("Backpack")
-    local character = game:GetService("Players").LocalPlayer.Character
+	["Low Cpu"] = true,
+	["Auto Rejoin"] = true,
 
-    if backpack then
-        for _, item in ipairs(backpack:GetChildren()) do
-            table.insert(inventory, item)
-        end
-    end
+	["Rejoin When Update"] = false,
+	["Limit Tree"] = {
+		["Limit"] = 250
+		["Destroy Untill"] = 200
 
-    if character then
-        for _, item in ipairs(character:GetChildren()) do
-            table.insert(inventory, item)
-        end
-    end
+		["Safe Tree"] = {
+			["Tomato"] = 1,
+			["Blood Banana"] = 1,
+			["Bamboo"] = 1,
+			["Mango"] = 1,
+			["Pineapple"] = 1,
+			["Beanstalk"] = 1,
+			["Giant Pinecone"] = 1,
+			["Sugar Apple"] = 1,
+			["Pepper"] = 1,
+			["Cacao"] = 1,
+			["Elder Strawberry"] = 1,
+			["Apple"] = 1,
+			"Bone Blossom",
+			"Grand Tomato",
+			["Ember Lily"] = 1,
+			["Violet Corn"] = 1,
+			["Pumpkin"] = 1,
+			["Moon Melon"] = 1,
+			["Apple"] = 1,
+			["Coconut"] = 1,
+			["Feijoa"] = 1,
+			["Crown Melon"] = 1,
+			["Grape"] = 1,
+			["Dragon Fruit"] = 1,
+			["Cactus"] = 1,
+			["Peach"] = 1,
+			["Corn"] = 1,
+			["Banana"] = 2
+			["Serenity"] = 1,
+			["Moon Mango"] = 1,
+			["Maple Apple"] = 1,
+			["Hive Fruit"] = 1,
+			["Lilac"] = 1,
+			["Soft Sunshine"] = 1,
+		}
+	},
 
-    return inventory
-end
+	Seed = {
+		Buy = {
+			Mode = "Auto", -- Custom , Auto
+			Custom = { -- any fruit u need to place
+				"Carrot",
+			}
+		},
+		Place = {
+			Mode = "Lock", -- Select , Lock
+			Select = {
+				"Carrot"
+			},
+			Lock = {
+			}
+		}
+	},
 
-local function GetLowestAgePet(tbl)
-    local lowestKey = nil
-    local lowestValue = nil
-    for k, v in pairs(tbl) do
-        if lowestValue == nil or v < lowestValue then
-            lowestValue = v
-            lowestKey = k
-        end
-    end
-    return lowestKey, lowestValue
-end
+	["Seed Pack"] = {
+		Locked = {
 
-local function CountTable(t)
-    local count = 0
-    for _ in pairs(t) do
-        count += 1
-    end
-    return count
-end
+		}
+	},
 
-local function ConvertUUID_Item(UUID)
-    for i, v in pairs(GetBackpack()) do
-        if v:IsA("Tool") and (v:GetAttribute("c") == UUID or v:GetAttribute("PET_UUID") == UUID) then
-            return v
-        end
-    end
-end
+	Events = {
+		["Cook Event"] = {
+			Minimum_Money = 10_000_000, -- minimum money to start play this event
+			Rewards_Item = { -- The top is the most top mean prefered.
+				"Gorilla Chef",
+				"Gourmet Egg",
+				"Culinarian Chest",
+				"Gourmet Seed Pack",
+				"Sunny-Side Chicken",
+				-- u can add it more as u want, if it not in list.
+			}
+		},
+		["Traveling Shop"] = {
+			"Bee Egg",
+		},
+		Craft = {
+			"Anti Bee Egg",
+		},
+		Shop = {
+			"Spiked Mango",
+			"Bell Pepper",
+			"Feijoa",
+		},
+		Start_Do_Honey = 2_000_000 -- start trade fruit for honey at money
+	},
 
-print("[ROLOX] Starting Auto Submit Pets..")
+	Gear = {
+		Buy = { 
+			"Master Sprinkler",
+			"Godly Sprinkler",
+			"Advanced Sprinkler",
+			"Basic Sprinkler",
+			"Lightning Rod",
+			"Level Up Lollipop",
+			"Medium Treat",
+			"Medium Toy",
+		},
+		Lock = {
+			"Master Sprinkler",
+			"Godly Sprinkler",
+			"Advanced Sprinkler",
+			"Basic Sprinkler",
+			"Lightning Rod",
+		},
+	},
 
--- ## UNEQUIP ALL PETS
-while task.wait() do
-    local EquippedPets = DataService:GetData()["PetsData"]["EquippedPets"]
-    if #EquippedPets == 0 then
-        break
-    end
-    
-    for i, v in pairs(EquippedPets) do
-        _G.Status = "Unequipping: " .. v 
-        print("[ROLOX] Unequipping:", v)
-        RS.GameEvents:WaitForChild("PetsService"):FireServer("UnequipPet", v)
-        task.wait(0.50)
-    end
-end
+	Eggs = {
+		Place = {
+			"Gourmet Egg",
+			"Zen Egg",
+			"Primal Egg",
+			"Dinosaur Egg",
+			"Oasis Egg",
+			"Anti Bee Egg",
+			"Night Egg",
+			"Bug Egg",
+			"Paradise Egg",
+			"Bee Egg",
+		},
+		Buy = {
+			"Bee Egg",
+			"Oasis Egg",
+			"Paradise Egg",
+			"Anti Bee Egg",
+			"Night Egg",
+			"Rare Summer Egg",
+			"Bug Egg",
+			"Mythical Egg",
+		}
+	},
 
--- ## Unfavourite All Pets
-for i, v in DataService:GetData()["PetsData"]["PetInventory"]["Data"] do
-    local IsFavorite = v["PetData"]["IsFavorite"] or false
+	Pets = {
+		["Start Delete Pet At"] = 40,
+		["Upgrade Slot"] = {
+			["Pet"] = {
+				["Starfish"] = { 8, 100, 1, true }, -- the "true" on the last is auto equip (use for like only need to use for upgrade pet)
+			},
+			["Limit Upgrade"] = 2,
+			["Equip When Done"] = {
+				["Gorilla Chef"] = { 8, 100, 1 },
+				["Sunny-Side Chicken"] = { 8, 100, 3 },
+				["Blood Kiwi"] = { 8, 100, 2 },
+				["Rooster"] = { 8, 100, 4 },
+				["Chicken"] = { 8, 100, 5 },
+			},
+		},
+		Favorite_LockedPet = false,
+		Locked_Pet_Age = 80, -- pet that age > 80 will lock
+		Locked = {
+			"French Fry Ferret",
+			"Lobster Thermidor",
+			"Corrupted Kitsune",
+			"Raiju",
+			"Koi",
+			"Tanuki",
+			"Tanchozuru",
+			"Kappa",
+			"Kitsune",
+			"Dilophosaurus",
+			"Moon Cat",
+			"Capybara",
+			"Spinosaurus",
+			"Bear Bee",
+			"T-Rex",
+			"Brontosaurus",
+			"Disco Bee",
+			"Butterfly",
+			"Queen Bee",
+			"Dragonfly",
+			"Raccoon",
+			"Fennec Fox",
+			"Mimic Octopus",
+			"Red Fox",
+			"Blood Owl",
+			["Starfish"] = 10,
+		},
+		LockPet_Weight = 7, -- if Weight >= 10 they will locked
+	},
 
-    if IsFavorite then
-        print("[ROLOX] Unfavourite Pet:", v["PetType"])
-        local pet_tool = ConvertUUID_Item(i)
-        RS.GameEvents:WaitForChild("Favorite_Item"):FireServer(pet_tool)
-        task.wait(0.20)
-    end
-end
+	Webhook = {
+		UrlPet = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
+		UrlSeed = "xxx",
+		PcName = "6ftgod",
 
-
--- ## AUTO UPGRADE EQUIP SLOTS
-while task.wait(1) do
-    local PurchasedEquipSlots = DataService:GetData()["PetsData"]["PurchasedEquipSlots"]
-    if PurchasedEquipSlots == 5 then
-        print("[ROLOX] FULL EQUIP SLOTS!")
-        break
-    end
-
-    local levelRequirements = {
-        [0] = 20,
-        [1] = 30,
-        [2] = 45,
-        [3] = 60,
-        [4] = 75
-    }
-
-    local requiredLevel = levelRequirements[PurchasedEquipSlots]
-    if requiredLevel then
-        local temp = {}
-        for i, v in pairs(DataService:GetData()["PetsData"]["PetInventory"]["Data"]) do
-            local Age = v["PetData"]["Level"]
-            if Age >= requiredLevel and table.find(SubmitPets, v["PetType"]) then
-                temp[i] = Age
-            end
-        end
-
-        if CountTable(temp) > 0 then
-            local pet_uuid, lowest_age = GetLowestAgePet(temp)
-            print("[ROLOX] Unlocking another Equip Slot from Pet with Age", lowest_age)
-            RS.GameEvents:WaitForChild("UnlockSlotFromPet"):FireServer(pet_uuid, "Pet")
-            continue
-        else
-            print("[ROLOX] No Aged Pet Found, breaking..")
-            break
-        end
-    end
-end
-
--- ## AUTO UPGRADE EGG SLOTS
-while task.wait(1) do
-    local PurchasedEggSlots = DataService:GetData()["PetsData"]["PurchasedEggSlots"]
-    if PurchasedEggSlots == 5 then
-        print("[ROLOX] FULL EGG SLOTS!")
-        break
-    end
-
-    local levelRequirements = {
-        [0] = 20,
-        [1] = 30,
-        [2] = 45,
-        [3] = 60,
-        [4] = 75
-    }
-
-    local requiredLevel = levelRequirements[PurchasedEggSlots]
-    if requiredLevel then
-        local temp = {}
-        for i, v in pairs(DataService:GetData()["PetsData"]["PetInventory"]["Data"]) do
-            local Age = v["PetData"]["Level"]
-            if Age >= requiredLevel and table.find(SubmitPets, v["PetType"]) then
-                temp[i] = Age
-            end
-        end
-
-        if CountTable(temp) > 0 then
-            local pet_uuid, lowest_age = GetLowestAgePet(temp)
-            print("[ROLOX] Unlocking another Equip Slot from Pet with Age", lowest_age)
-            RS.GameEvents:WaitForChild("UnlockSlotFromPet"):FireServer(pet_uuid, "Pet")
-            continue
-        else
-            print("[ROLOX] No Aged Pet Found, breaking..")
-            break
-        end
-    end
-end
-
-print("[ROLOX] Completed Auto Submit Pets!")
-
-script_key="sSSrUCGRskfXgBvyWtRkuRwktlqUgSgu";
-setfpscap(3)
-
-getgenv().gagConfig = {
-    -- Event:
-    CRAFT_EVENT = { "Anti Bee Egg" },
-    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Loquat", "Feijoa", "Pitcher Plant" },
-    PLACE_ALL_EVENT_STAFF = true,
-    -- General:
-    AUTO_UPDATE_RESTART = true,
-    REDEEM_CODES = {},
-    EXTRA_PET_SLOTS = 8,
-    EXTRA_EGG_SLOTS = 8,
-    ADD_FRIEND = true,
-    OPEN_ALL_SEED_PACK = true,
-    MAX_PLANTS = 150,
-    PLACE_COSMETIC = {"Cooking Pot","Cooking Cauldron","Pancake Stack"},
-    --event
-    CLAIM_FOOD_CONNOISSEUR_REWARD = { "Culinarian Chest", "Gourmet Egg", "Sunny-Side Chicken","Gorilla Chef","Cooking Cauldron"},
-    FORCE_COOK_MUTATION_ONLY = true,
-    --event
-    DESTROY_UNTIL_MIN_PLANTS = 130,
-    DELETE_PLANTS_AFTER_MAX = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Apple", "Dragon Fruit","Mango","Dezen","Lucky Bamboo","Monoblooma", "Serenity", "Taro Flower", "Zen Rocks", "Hinomai", "Zenflare", "Soft Sunshine"},
-    LIMIT_PLANT_SEED = { ["Strawberry"] = 5, ["Blueberry"] = 5, ["Apple"] = 5, ["Tomato"] = 5, ["Corn"] = 5, ["Bamboo"] = 5, ["Coconut"] = 5, ["Pumpkin"] = 5, ["Watermelon"] = 5, ["Pepper"] = 5 },
-    BUY_EGGS = { "Bug Egg", "Bee Egg", "Paradise Egg", "Mythical Egg", "Rare Summer Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
-    PLANT_EGGS = { "Gourmet Egg","Dinosaur Egg", "Zen Egg","Rare Summer Egg", "Primal Egg", "Anti Bee Egg", "Night Egg", "Bug Egg", "Paradise Egg", "Mythical Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
-
-    BUY_SEED_SHOP = {"Spiked Mango", "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk", "Cacao","Maple Apple","Hinomai","Serenity", "Pepper", "Mushroom", "Grape", "Mango", "Dragon Fruit", "Pumpkin", "Watermelon", ["Dragon Fruit"] = 10,["Coconut"] = 10,["Apple"] = 10,["Cactus"] = 10,["Bamboo"] = 10,["Daffodil"] = 10, ["Tomato"] = 10, ["Orange Tulip"] = 10, ["Blueberry"] = 10, ["Strawberry"] = 10, ["Carrot"] = 10 },
-    KEEP_SEEDS = {},
-    BUY_EVENT_SHOP = { "Zen Egg" ,"Zen Seed Pack","Zenflare ","Soft Sunshine","Spiked Mango" },
-    KEEP_SEEDS_AFTER_MAX_PLANTS = {"Dezen","Lucky Bamboo","Tranquil Bloom","Monoblooma", "Serenity", "Taro Flower", "Zen Rocks", "Hinomai", "Maple Apple", "Zenflare", "Soft Sunshine", "Spiked Mango","Carrot", "Strawberry", "Blueberry", "Tomato", "Apple"},
-    FAVOURITE_FRUIT_MUTATIONS = {},  -- Stop Autosell
-    SKIP_HARVEST_MUTATIONS = {},  -- Stop Harvest
-    KEEP_PETS = { ["Starfish"]= 4,["Chicken"] = 5,["Tanchozuru"]= 2,["Kappa"]= 2,"Koi","Seal", "Capybara", "Mimic Octopus", "Meerkat",  "Triceratops", "Stegosaurus", "Pterodactyl",
-          "Brontosaurus", "Pachycephalosaurus", "Iguanodon", "Red Fox","Sunny-Side Chicken","Lobster Thermidor","Junkbot","Spaghetti Sloth",["Gorilla Chef"]=4,
-           "Hyacinth Macaw", "Axolotl", "Ankylosaurus", "Dilophosaurus","Red Fox", "Dragonfly","Raccoon",
-            "Queen Bee", "Disco Bee", "Butterfly", "Dragonfly", "Fennec Fox", "T-Rex","Kitsune", "Corrupted Kitsune","French Fry Ferret"},
-    EQUIP_PETS = {["Starfish"] = 4,["Gorilla Chef"]=4,["Spaghetti Sloth"]=3,["Kappa"]= 1,["Sunny-Side Chicken"]= 4,"Koi","Seal","Chicken","Capybara"},
-    KEEP_PETS_WEIGHT = { ["Sea Turtle"] = 5,["Ostrich"] = 5,["Stegosaurus"] = 5},
-    KEEP_PETS_AGE = {},
-    REMOVE_PET_MAX_UPGRADE = {"Starfish"},
-    BUY_GEAR_SHOP = { "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Basic Sprinkler" ,"Grandmaster Sprinkler"},
-    USE_SPRINKLER = { "Basic Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler" },
-
-    PET_WEBHOOK_URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
-    SEED_WEBHOOK_URL = "",
-    NOTIFY_PETS = { "Lobster Thermidor", "French Fry Ferret", "Corrupted Kitsune", "Raiju", "Mizuchi", "Bald Eagle", "Koi", "Kitsune", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus", "Brontosaurus", "T-Rex", "Ankylosaurus", "Spinosaurus" },
-    NOTIFY_PETS_WEIGHT = 10,
-    DISCORD_ID = "474925167886336001",
-    WEBHOOK_NOTE = "zxc",
-    SHOW_WEBHOOK_USERNAME = true,
-    SHOW_WEBHOOK_JOBID = true,
+		Noti = {
+			Seeds = {
+				"Sunflower",
+				"Dragon Pepper",
+				"Elephant Ears",
+			},
+			SeedPack = {
+				"Idk"
+			},
+			Pets = {
+				"French Fry Ferret",
+				"Corrupted Kitsune",
+				"Kitsune",
+				"Spinosaurus",
+				"T-Rex",
+				"Lobster Thermidor",
+				"Disco Bee",
+				"Butterfly",
+				"Mimic Octopus",
+				"Queen Bee",
+				"Fennec Fox",
+				"Dragonfly",
+				"Raccoon",
+			},
+			Pet_Weight_Noti = true,
+		}
+	},
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c916e5b90dc37c71ecf1ec00dfce3d5d.lua"))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Real-Aya/Loader/main/Init.lua'))()
