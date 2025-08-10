@@ -1,3 +1,7 @@
+setfpscap(3)
+
+task.wait(5)
+
 License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
 
 getgenv().ConfigsKaitun = {
