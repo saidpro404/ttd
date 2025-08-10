@@ -1,26 +1,21 @@
-setfpscap(3)
-
-License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
-
 getgenv().ConfigsKaitun = {
 	Beta_Fix_Data_Sync = true,
+
+	NoDeletePlayer = false,
 
 	["Block Pet Gift"] = true,
 
 	Collect_Cooldown = 60, -- cooldown to collect fruit
-	JustFuckingCollectAll = false, -- Collect all (fruit not wait mutation)
 
 	["Low Cpu"] = true,
 	["Auto Rejoin"] = true,
 
 	["Rejoin When Update"] = false,
 	["Limit Tree"] = {
-		["Limit"] = 250
-		["Destroy Untill"] = 200
+		["Limit"] = 200,
+		["Destroy Untill"] = 150,
 
-		["Safe Tree"] = {
-			["Tomato"] = 1,
-			["Blood Banana"] = 1,
+		"Blood Banana"] = 1,
 			["Bamboo"] = 1,
 			["Mango"] = 1,
 			["Pineapple"] = 1,
@@ -58,9 +53,24 @@ getgenv().ConfigsKaitun = {
 
 	Seed = {
 		Buy = {
-			Mode = "Auto", -- Custom , Auto
-			Custom = { -- any fruit u need to place
-				"Carrot",
+			Mode = "Custom", -- Custom , Auto
+			Custom = {
+				"Tomato",
+				"Strawberry",
+				"Bell Pepper",
+				"Blood Banana",
+				"Onion",
+				"Pear",
+				"Grape",
+				"Mushroom",
+				"Pepper",
+				"Cacao",
+				"Beanstalk",
+				"Ember Lily",
+				"Sugar Apple",
+				"Burning Bud",
+				"Giant Pinecone",
+				"Elder Strawberry",
 			}
 		},
 		Place = {
@@ -69,6 +79,12 @@ getgenv().ConfigsKaitun = {
 				"Carrot"
 			},
 			Lock = {
+				"Sunflower",
+				"Dragon Pepper",
+				"Elephant Ears",
+				"Moon Melon",
+				"Moon Mango",
+				"Fossilight",
 			}
 		}
 	},
@@ -81,7 +97,7 @@ getgenv().ConfigsKaitun = {
 
 	Events = {
 		["Cook Event"] = {
-			Minimum_Money = 10_000_000, -- minimum money to start play this event
+			Minimum_Money = 30_000_000, -- minimum money to start play this event
 			Rewards_Item = { -- The top is the most top mean prefered.
 				"Gorilla Chef",
 				"Gourmet Egg",
@@ -98,9 +114,15 @@ getgenv().ConfigsKaitun = {
 			"Anti Bee Egg",
 		},
 		Shop = {
+			"Zen Egg",
+			"Zen Seed Pack",
 			"Spiked Mango",
-			"Bell Pepper",
-			"Feijoa",
+			"Pet Shard Tranquil",
+			"Pet Shard Corrupted",
+			"Koi",
+			"Soft Sunshine",
+			"Sakura Bush",
+			"Raiju",
 		},
 		Start_Do_Honey = 2_000_000 -- start trade fruit for honey at money
 	},
@@ -147,6 +169,8 @@ getgenv().ConfigsKaitun = {
 			"Rare Summer Egg",
 			"Bug Egg",
 			"Mythical Egg",
+			"Common Summer Egg",
+			"Common Egg",
 		}
 	},
 
@@ -156,7 +180,7 @@ getgenv().ConfigsKaitun = {
 			["Pet"] = {
 				["Starfish"] = { 8, 100, 1, true }, -- the "true" on the last is auto equip (use for like only need to use for upgrade pet)
 			},
-			["Limit Upgrade"] = 2,
+			["Limit Upgrade"] = 2, -- max is 5 (more than or lower than 1 will do nothing)
 			["Equip When Done"] = {
 				["Gorilla Chef"] = { 8, 100, 1 },
 				["Sunny-Side Chicken"] = { 8, 100, 3 },
@@ -166,9 +190,10 @@ getgenv().ConfigsKaitun = {
 			},
 		},
 		Favorite_LockedPet = false,
-		Locked_Pet_Age = 80, -- pet that age > 80 will lock
+		Locked_Pet_Age = 80, -- pet that age > 60 will lock
 		Locked = {
 			"French Fry Ferret",
+			"Spaghetti Sloth",
 			"Lobster Thermidor",
 			"Corrupted Kitsune",
 			"Raiju",
@@ -195,13 +220,13 @@ getgenv().ConfigsKaitun = {
 			"Blood Owl",
 			["Starfish"] = 10,
 		},
-		LockPet_Weight = 7, -- if Weight >= 10 they will locked
+		LockPet_Weight = 5, -- if Weight >= 10 they will locked
 	},
 
 	Webhook = {
-		UrlPet = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
-		UrlSeed = "xxx",
-		PcName = "6ftgod",
+        UrlPet = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
+        UrlSeed = "",
+        PcName = "53edog",
 
 		Noti = {
 			Seeds = {
@@ -218,7 +243,6 @@ getgenv().ConfigsKaitun = {
 				"Kitsune",
 				"Spinosaurus",
 				"T-Rex",
-				"Lobster Thermidor",
 				"Disco Bee",
 				"Butterfly",
 				"Mimic Octopus",
@@ -226,10 +250,14 @@ getgenv().ConfigsKaitun = {
 				"Fennec Fox",
 				"Dragonfly",
 				"Raccoon",
+				"Lobster Thermidor",
 			},
 			Pet_Weight_Noti = true,
 		}
 	},
 }
 
+License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
+
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Real-Aya/Loader/main/Init.lua'))()
+
