@@ -1,7 +1,5 @@
 setfpscap(3)
 
-task.wait(10)
-
 License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
 
 getgenv().ConfigsKaitun = {
