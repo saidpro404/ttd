@@ -17,7 +17,9 @@ getgenv().ConfigsKaitun = {
 		["Limit"] = 200,
 		["Destroy Untill"] = 150,
 
-		"Blood Banana"] = 1,
+	["Safe Tree"] = {
+			["Tomato"] = 1,
+		    ["Blood Banana"] = 1,
 			["Bamboo"] = 1,
 			["Mango"] = 1,
 			["Pineapple"] = 1,
