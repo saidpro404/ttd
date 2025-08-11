@@ -146,11 +146,8 @@ getgenv().ConfigsKaitun = {
 			"Paradise Egg",
 			"Anti Bee Egg",
 			"Night Egg",
-			"Rare Summer Egg",
 			"Bug Egg",
 			"Mythical Egg",
-			"Common Summer Egg",
-			"Common Egg",
 		}
 	},
 
@@ -207,9 +204,9 @@ getgenv().ConfigsKaitun = {
 	},
 
 	Webhook = {
-        UrlPet = "",
+        UrlPet = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
         UrlSeed = "",
-        PcName = "SUPERCOMPUTER-NASA-888",
+        PcName = "53e-god",
 
 		Noti = {
 			Seeds = {
