@@ -1,3 +1,5 @@
+task.wait(5)
+
 setfpscap(3)
 
 License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
