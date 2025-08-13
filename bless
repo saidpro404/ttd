@@ -187,7 +187,6 @@ getgenv().ConfigsKaitun = {
 				["Raiju"] = { 8, 100, 7 },
 				["Kappa"] = { 8, 100, 8 },
 			        ["Kodama"] = { 8, 100, 9 },
-				["Starfish"] = { 8, 75, 10 },
 			},
 		},
 		Favorite_LockedPet = false,
