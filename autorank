@@ -155,7 +155,6 @@ getgenv().ConfigsKaitun = {
 			"Bee Egg",
 			"Rare Summer Egg",
 			"Mythical Egg",
-			"Common Egg",
 		},
 		Buy = {
 			"Bee Egg",
@@ -225,13 +224,15 @@ getgenv().ConfigsKaitun = {
 			["Capybara"] = 5,
 			["Ostrich"] = 5,
 		},
-		LockPet_Weight = 4, -- if Weight >= 10 they will locked
+		LockPet_Weight = 7, -- if Weight >= 10 they will locked
 	},
 
 	Webhook = {
 		UrlPet = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
 		UrlSeed = "xxx",
 		PcName = "53egod",
+
+		Mention = "474925167886336001", -- discord id
 
 		Noti = {
 			Seeds = {
