@@ -31,7 +31,7 @@ getgenv().ConfigsKaitun = {
 
 	Seed = {
 		Buy = {
-			Mode = "Custom", -- Custom , Auto
+			Mode = "Auto", -- Custom , Auto
 			Custom = { -- any fruit u need to place
                                 "Dezen",
 				"Maple Apple",
