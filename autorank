@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 script_key="sSSrUCGRskfXgBvyWtRkuRwktlqUgSgu";
-setfpscap(3)
+setfpscap(1)
 
 getgenv().gagConfig = {
     -- Event:
