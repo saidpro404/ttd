@@ -9,6 +9,7 @@ getgenv().gagConfig = {
     MAX_EVENT_RESTOCK_SHECKLES = 10_000_000_000_000,  -- Restock stop at 48m
     BUY_EVENT_SHOP = { "Sprout Egg", "Spriggan", "Skyroot Chest", "Gnome", "Sprout Seed Pack" },
     PLANT_EVENT_TREES = true,  -- This config will replace most plant related config
+    PLACE_COSMETIC = { "Cooking Kit" },
     
     -- General:
     AUTO_UPDATE_RESTART = true,
@@ -47,6 +48,7 @@ getgenv().gagConfig = {
     WEBHOOK_NOTE = "53egod",
     SHOW_WEBHOOK_USERNAME = true,
     SHOW_WEBHOOK_JOBID = true,
+
 }
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a2234a9cfbe480dfed9eaf6c00a012ca.lua"))()
