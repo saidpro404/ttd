@@ -45,6 +45,10 @@ getgenv().gagConfig = {
     DISCORD_ID = "",
     WEBHOOK_NOTE = "god53e",
     SHOW_WEBHOOK_USERNAME = true,
+
+KICK_AFTER_GIFT_PET = false,
+    GIFT_USERNAME = {},
+    GIFT_PET = {},
 }
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a2234a9cfbe480dfed9eaf6c00a012ca.lua"))()
