@@ -3,12 +3,12 @@ setfpscap(2)
 
 getgenv().gagConfig = {
     -- Event:
-    CRAFT_EVENT = { "Anti Bee Egg" },
-    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Paradise Egg", "Loquat", "Feijoa", "Pitcher Plant" },
+    CRAFT_EVENT = { "Anti Bee Egg", "Skyroot Chest" , "Sprout Egg" },
+    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Primal Egg", "Paradise Egg", "Loquat", "Feijoa", "Pitcher Plant" },
     CLAIM_FAIRY_REWARD = { "Enchanted Egg", "FairyPoints", "Pet Shard Glimmering" },
-    PLANT_EVENT_TREES = true,  -- This config will replace most plant related config
-    PLACE_COSMETIC = { "Cooking Kit", "Fairy Targeter" },
-    
+    PLANT_EVENT_TREES = true,
+    PLACE_COSMETIC = { "Cooking Kit" },    
+
     -- General:
     AUTO_UPDATE_RESTART = true,
     REDEEM_CODES = {},
@@ -16,25 +16,33 @@ getgenv().gagConfig = {
     EXTRA_EGG_SLOTS = 5,
     ADD_FRIEND = true,
     OPEN_ALL_SEED_PACK = true,
+    FAST_LEVEL_PET = true,
+
+    MAX_PLANTS = 200,
+    DESTROY_UNTIL_MIN_PLANTS = 150,
+    DELETE_PLANTS_AFTER_MAX = { "Carrot" },
     
-    BUY_EGGS = { "Bug Egg", "Bee Egg", "Paradise Egg", "Mythical Egg", "Rare Summer Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
-    PLANT_EGGS = { "Enchanted Egg", "Sprout Egg", "Gourmet Egg", "Corrupted Zen Egg", "Zen Egg", "Dinosaur Egg", "Primal Egg", "Anti Bee Egg", "Bee Egg", "Night Egg", "Bug Egg", "Paradise Egg", "Mythical Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
-    
+    BUY_EGGS = {"Mythical Egg", "Bug Egg", "Bee Egg", "Paradise Egg", "Uncommon Egg", ["Common Summer Egg"] = 20 , "Rare Egg" },
+    PLANT_EGGS = { "Enchanted Egg", "Sprout Egg", "Gourmet Egg", "Corrupted Zen Egg", "Zen Egg", "Dinosaur Egg", "Primal Egg", "Anti Bee Egg", "Bee Egg", "Night Egg", "Bug Egg", "Paradise Egg", "Mythical Egg" },
+ 
+    -- BUY_SEED_SHOP Priority (Left -> Right)
     BUY_SEED_SHOP = { "Romanesco", "Elder Strawberry", "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk", "Cacao", "Pepper", "Mushroom", "Grape", "Mango", "Dragon Fruit", "Cactus", ["Coconut"] = 50, ["Bamboo"] = 50, ["Apple"] = 50, ["Pumpkin"] = 50, ["Watermelon"] = 50, ["Daffodil"] = 50, ["Tomato"] = 50, ["Orange Tulip"] = 50, ["Blueberry"] = 50, ["Strawberry"] = 50, ["Carrot"] = 50 },
-    KEEP_SEEDS = {},
-    KEEP_SEEDS_AFTER_MAX_PLANTS = {},
-    
-    FAVOURITE_FRUIT_MUTATIONS = {},
-    SKIP_HARVEST_MUTATIONS = {},
+    KEEP_SEEDS = { "Grand Tomato", "King Cabbage", "Bone Blossom" },
+    KEEP_SEEDS_AFTER_MAX_PLANTS = { "Carrot" },
 
-    KEEP_PETS = { "Cockatrice", ["Glimmering Sprite"] = 8, "Gnome", "Griffin", "Golden Goose", "Spriggan", "Junkbot", "Gorilla Chef", "Lobster Thermidor", "French Fry Ferret", "Mochi Mouse", "Corrupted Kitsune", "Raiju", "Mizuchi", "Kitsune", "Koi", "Bald Eagle", "Ankylosaurus", "Spinosaurus", "Brontosaurus", "T-Rex", "Seal", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus", "Red Fox", "Hyacinth Macaw", "Pack Bee", "Petal Bee", "Bear Bee", "Hamster", "Blood Owl", "Cooked Owl", "Golden Bee", "Owl", "Firefly", "Chicken Zombie", ["Kodama"] = 6, ["Corrupted Kodama"] = 6, ["Blood Kiwi"] = 2, ["Capybara"] = 1, ["Starfish"] = 2, ["Rooster"] = 2, ["Chicken"] = 8, ["Tanchozuru"] = 5, ["Kappa"] = 5 },
-    KEEP_PETS_WEIGHT = 7,
-    KEEP_PETS_AGE = 90,
+    FAVOURITE_FRUIT_MUTATIONS = {},  -- Stop Autosell
+    SKIP_HARVEST_MUTATIONS = {},  -- Stop Harvest
 
-    EQUIP_PETS = { ["Glimmering Sprite"] = 8 },
+    KEEP_PETS = { "Glimmering Sprite", "Cockatrice", "Gnome", "Green Bean", "Apple Gazelle", "Lemon Lion", "Peach Wasp", "Griffin", ["Spriggan"] = 5, ["Golem"] = 3, "Golden Goose", ["Gorilla Chef"] = 5, "Junkbot", "Hotdog Daschund" , "Sunny-Side Chicken", "Lobster Thermidor", ["Mochi Mouse"] = 2 , ["Spaghetti Sloth"] = 3 , "French Fry Ferret", "Spaghetti Sloth", ["Starfish"] = 3, "Raiju", "Corrupted Kodama", "Kodama", "Rooster", "Capybara", ["Koi"] = 2, ["Tanchozuru"] = 3, "Seal", "Kitsune", "Corrupted Kitsune", "Kappa", "Dilophosaurus", "Spinosaurus", "Brontosaurus", "T-Rex", "Fennec Fox", "Blood Kiwi", ["Peacock"] = 2, ["Hamster"] = 2, "Disco Bee", "Raccoon", "Queen Bee", "Dragonfly", "Butterfly", "Mimic Octopus", "Red Fox", "Chicken Zombie" },
+    KEEP_PETS_WEIGHT = 5,
+
+    -- EQUIP_PETS Priority (Left -> Right)
+    EQUIP_PETS = { ["Glimmering Sprite"] = 4, ["Sunny-Side Chicken"] = 4, ["Hotdog Daschund"] = 4, "Blood Kiwi", "Rooster" },
+    USE_PETS_FOR_UPGRADE_SLOT = { "Starfish" },
 
     BUY_GEAR_SHOP = { "Grandmaster Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Basic Sprinkler", "Trading Ticket" },
     USE_SPRINKLER = { "Basic Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Grandmaster Sprinkler" },
+
 
     PET_WEBHOOK_URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
     SEED_WEBHOOK_URL = "", 
