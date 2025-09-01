@@ -127,7 +127,7 @@ getgenv().ConfigsKaitun = {
 				}
 			}
 		},
-		MaxMoney_Restocks = 50_000_000_000_000_000,
+		MaxMoney_Restocks = 100_000_000_000,
 		Shop = { -- un comment to buy
 			"Sprout Seed Pack",
 			"Sprout Egg",
@@ -284,7 +284,7 @@ getgenv().ConfigsKaitun = {
 	Webhook = {
 		UrlPet = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
 		UrlSeed = "xxx",
-		PcName = "goat",
+		PcName = "god",
 
 		Mention = "474925167886336001", -- discord id
 
@@ -319,3 +319,18 @@ getgenv().ConfigsKaitun = {
 }
 License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Real-Aya/Loader/main/Init.lua'))()
+wait(10)
+-- Auto interact Fairy trong workspace["1"] -> workspace["10"]
+while true do
+    for i = 1, 10 do
+        local fairy = workspace:FindFirstChild(tostring(i))
+        if fairy then
+            local prompt = fairy:FindFirstChildWhichIsA('ProximityPrompt', true)
+            if prompt then
+                fireproximityprompt(prompt)
+                print('Đã tương tác với Fairy:', fairy.Name)
+            end
+        end
+    end
+    wait(30) -- lặp lại sau 60 giây
+end
