@@ -318,7 +318,6 @@ getgenv().ConfigsKaitun = {
 }
 License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Real-Aya/Loader/main/Init.lua'))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/status.lua", true))()
 wait(10)
 -- Auto interact Fairy trong workspace["1"] -> workspace["10"]
 while true do
