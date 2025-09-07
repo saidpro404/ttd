@@ -1,3 +1,7 @@
+task.spawn(function() 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/status.lua", true))()
+end)
+
 script_key="snusZasTsIZVcLWTMQVJIAinJzqRssgp";
 setfpscap(3)
 
@@ -53,5 +57,3 @@ getgenv().gagConfig = {
 }
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c916e5b90dc37c71ecf1ec00dfce3d5d.lua"))()
-task.wait(30)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/status.lua", true))()
