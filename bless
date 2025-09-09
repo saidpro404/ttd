@@ -3,60 +3,64 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/
 end)
 
 script_key="snusZasTsIZVcLWTMQVJIAinJzqRssgp";
-setfpscap(3)
+setfpscap(2)
 
 getgenv().gagConfig = {
     -- Event:
-    CRAFT_EVENT = { "Enchanted Chest", "Fairy Net", "Anti Bee Egg", "Mutation Spray Glimmering" },
-    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Paradise Egg", "Loquat", "Feijoa", "Pitcher Plant" },
-    BUY_EVENT_SHOP = {"Enchanted Chest", "Luminous Sprite", "Drake" },
-    MAX_EVENT_RESTOCK_SHECKLES = 480000000000000,
+    CRAFT_EVENT = { "Enchanted Chest", "Enchanted Egg", "Fairy Net", "Enchanted Seed Pack", "Anti Bee Egg", "Mutation Spray Glimmering" },
+    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Primal Egg", "Paradise Egg", "Rare Summer Egg", "Common Summer Egg" },
+    MAX_EVENT_RESTOCK_SHECKLES = 5_000_000_000_000,
+    BUY_EVENT_SHOP = { "Enchanted Chest", "Enchanted Egg", "Enchanted Seed Pack", "Luminous Sprite", "Mutation Spray Luminous", "Drake", "Wisp", "Wisp Well" },
     
-    CLAIM_FAIRY_REWARD = { "Mutation Spray Glimmering", "Enchanted Egg", "Enchanted Seed Pack", "FairyPoints" },
-    PLANT_EVENT_TREES = true,  -- This config will replace most plant related config
-    PLACE_COSMETIC = { "Cooking Kit" },
-    
+    CLAIM_FAIRY_REWARD = { "Enchanted Egg", "Enchanted Seed Pack", "FairyPoints", "Mutation Spray Glimmering", "Fairy Targeter" },
+    CLAIM_FOOD_CONNOISSEUR_REWARD = {"Culinarian Chest", "Gourmet Egg", "Gorilla Chef"},
+    PLANT_EVENT_TREES = false,
+
     -- General:
-    AUTO_UPDATE_RESTART = true,
+    AUTO_UPDATE_RESTART = false,
     REDEEM_CODES = {},
     EXTRA_PET_SLOTS = 5,
     EXTRA_EGG_SLOTS = 5,
     ADD_FRIEND = true,
-    OPEN_ALL_SEED_PACK = true,
-    
-    BUY_EGGS = { "Bug Egg", "Bee Egg", "Paradise Egg", "Mythical Egg", "Rare Summer Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
-    PLANT_EGGS = { "Enchanted Egg", "Sprout Egg", "Gourmet Egg", "Corrupted Zen Egg", "Zen Egg", "Dinosaur Egg", "Primal Egg", "Anti Bee Egg", "Bee Egg", "Night Egg", "Bug Egg", "Paradise Egg", "Mythical Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
-    
-    BUY_SEED_SHOP = { "Romanesco", "Elder Strawberry", "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk", "Cacao", "Pepper", "Mushroom", "Grape", "Mango", "Dragon Fruit", "Cactus", ["Coconut"] = 50, ["Bamboo"] = 50, ["Apple"] = 50, ["Pumpkin"] = 50, ["Watermelon"] = 50, ["Daffodil"] = 50, ["Corn"] = 50, ["Tomato"] = 50, ["Orange Tulip"] = 50, ["Blueberry"] = 50, ["Strawberry"] = 50, ["Carrot"] = 50 },
-    KEEP_SEEDS = { "Grand Tomato", "King Cabbage", "Bone Blossom" },
-    KEEP_SEEDS_AFTER_MAX_PLANTS = {},
-    
-    FAVOURITE_FRUIT_MUTATIONS = { "Glimmering" },
-    SKIP_HARVEST_MUTATIONS = { "Glimmering" },
+    OPEN_ALL_SEED_PACK = false,
+    PLACE_COSMETIC = { "Cooking Kit", "Cooking Cauldron" },
 
-    KEEP_PETS = { "Phoenix", "Drake", "Luminous Sprite", ["Glimmering Sprite"] = 8, "Cockatrice", "Gnome", "Green Bean", "Apple Gazelle", "Lemon Lion", "Peach Wasp", "Griffin", ["Spriggan"] = 5, "Golden Goose", ["Gorilla Chef"] = 5, "Junkbot", "Hotdog Daschund" , "Sunny-Side Chicken", "Lobster Thermidor",  "French Fry Ferret", ["Starfish"] = 3, "Raiju", "Corrupted Kodama", "Rooster", "Capybara", ["Koi"] = 2, ["Tanchozuru"] = 3, "Kitsune", "Corrupted Kitsune", "Kappa", "Dilophosaurus", "Spinosaurus", "Brontosaurus", "T-Rex", "Fennec Fox", "Blood Kiwi", ["Peacock"] = 2, ["Hamster"] = 2, "Disco Bee", "Raccoon", "Queen Bee", "Dragonfly", "Butterfly", "Mimic Octopus", "Red Fox", "Chicken Zombie" },
+    MAX_PLANTS = 300,
+    DESTROY_UNTIL_MIN_PLANTS = 300,
+    DELETE_PLANTS_AFTER_MAX = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Cauliflower", "Apple" },
+
+    BUY_EGGS = { ["Legendary Egg"] = 99, "Mythical Egg", "Bug Egg", "Bee Egg", "Paradise Egg", ["Common Summer Egg"] = 99, ["Rare Summer Egg"] = 99, ["Rare Egg"] = 99},
+    PLANT_EGGS = { "Enchanted Egg", "Sprout Egg", "Gourmet Egg", "Zen Egg", "Anti Bee Egg", "Primal Egg", "Bug Egg", "Paradise Egg", "Mythical Egg", "Common Summer Egg", "Rare Summer Egg", "Rare Egg" },
+    
+    -- BUY_SEED_SHOP Priority (Left -> Right)
+    BUY_SEED_SHOP = { ["Sunbulb"] = 10, ["Glimmering Sprite"] = 10, ["Romanesco"] = 10, ["Giant Pinecone"] = 10, ["Burning Bud"] = 10, ["Sugar Apple"] = 10, ["Ember Lily"] = 10, ["Beanstalk"] = 10, ["Cacao"] = 10, ["Pepper"] = 10, ["Mushroom"] = 10, ["Grape"] = 10, ["Mango"] = 10, ["Dragon Fruit"] = 10, ["Cactus"] = 10, ["Coconut"] = 10, ["Bamboo"] = 10, ["Apple"] = 10, ["Pumpkin"] = 10, ["Watermelon"] = 10, ["Daffodil"] = 10, ["Tomato"] = 10, ["Orange Tulip"] = 10, ["Blueberry"] = 10, ["Strawberry"] = 10, ["Carrot"] = 10 },
+    KEEP_SEEDS = { "Grand Tomato", "King Cabbage", "Bone Blossom", "Mushroom" },
+    
+    FAVOURITE_FRUIT_MUTATIONS = {},
+    SKIP_HARVEST_MUTATIONS = {},
+
+    KEEP_PETS = { ["Shroomie"] = 1, ["Drake"] = 2, ["Wisp"] = 2, ["Luminous Sprite"] = 3, ["Wisp Well"] = 2, "Cockatrice", "Phoenix", ["Glimmering Sprite"] = 8, ["Imp"] = 2, "Griffin", ["Brown Mouse"] = 2, ["Squirrel"] = 1, ["Grey Mouse"] = 2, ["Rooster"] = 4, "Lemon Lion", "Peach Wasp", "Chicken Zombie", ["Gorilla Chef"] = 8, "Green Bean", "Golden Goose", ["Spriggan"] = 1, "Lobster Thermidor", ["Sunny-Side Chicken"] = 8, "French Fry Ferret", ["Kodama"] = 1, "Corrupted Kitsune", ["Starfish"] = 10, ["Capybara"] = 1, ["Seal"] = 1, "Kitsune", "Blood Kiwi", "Disco Bee", "Raccoon","Queen Bee", "Dragonfly", "Butterfly", "Mimic Octopus", "Red Fox", "Bee", "Honey Bee", "Bear Bee", "Petal Bee", "Wasp", "Tarantula Hawk" },
     KEEP_PETS_WEIGHT = 5,
 
-    EQUIP_PETS = { ["Glimmering Sprite"] = 4, ["Sunny-Side Chicken"] = 4, ["Hotdog Daschund"] = 4, "Blood Kiwi", "Rooster" },
+    -- EQUIP_PETS Priority (Left -> Right)
+    EQUIP_PETS = { "Bee", "Honey Bee", "Bear Bee", "Petal Bee", "Wasp", "Tarantula Hawk", ["Glimmering Sprite"] = 5, ["Sunny-Side Chicken"] = 3, ["Brown Mouse"] = 2, ["Squirrel"] = 1, ["Grey Mouse"] = 2,  ["Rooster"] = 4 },
+    USE_PETS_FOR_UPGRADE_SLOT = { "Starfish", "Capybara", "Brown Mouse", "Grey Mouse", "Rooster", "Squirrel" },
 
-    BUY_GEAR_SHOP = { "Grandmaster Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Basic Sprinkler", "Trading Ticket", ["Harvest Tool"] = 10 },
-    USE_SPRINKLER = { "Basic Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Grandmaster Sprinkler" },
+    BUY_GEAR_SHOP = { "Fairy Targeter", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Basic Sprinkler" },
+    USE_SPRINKLER = { "Fairy Targeter", "Basic Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler" },
 
     PET_WEBHOOK_URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
     SEED_WEBHOOK_URL = "", 
-    NOTIFY_PETS = { "Phoenix", "Cockatrice", "Gnome", "Griffin", "Golden Goose", "Corrupted Kitsune", "Raiju", "Mizuchi", "Kitsune", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus" },
+    NOTIFY_PETS = { "Phoenix", "Cockatrice", "Griffin", "Golden Goose", "Lobster Thermidor", "French Fry Ferret", "Corrupted Kitsune", "Kitsune", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Dragonfly", "Butterfly", "Mimic Octopus", "T-Rex", "Spinosaurus"},
     NOTIFY_PETS_WEIGHT = 7,
-    DISCORD_ID = "474925167886336001",
-    WEBHOOK_NOTE = "goddddd",
+    DISCORD_ID = "",
+    WEBHOOK_NOTE = "hi baby",
     SHOW_WEBHOOK_USERNAME = true,
-    SHOW_WEBHOOK_JOBID = true,
-
-    KICK_AFTER_GIFT_PET = false,
-    GIFT_USERNAME = {},
-    GIFT_PET = {},
 }
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c916e5b90dc37c71ecf1ec00dfce3d5d.lua"))()
+
+wait(4)
 -- 🌟 Auto Fairy Event Script (Modified)
 local Players = game:GetService('Players')
 local Rep = game:GetService('ReplicatedStorage')
