@@ -26,7 +26,13 @@ getgenv().ConfigsKaitun = {
 			
 		}
 	},
-
+    	Ascend = {
+		Enabled = true,
+		Max_Rebirth_Money = 1_000_000_000_000_000,
+		Shop = {
+			"Egg Capacity"
+		}
+	},
 	["Limit Tree"] = {
 		["Limit"] = 400,
 		["Destroy Until"] = 400,
@@ -152,12 +158,6 @@ getgenv().ConfigsKaitun = {
 		},
 		Start_Do_Honey = 2_000_000 -- start trade fruit for honey at money
 	},
-	Ascend = {
-		Enabled = true,
-		Max_Rebirth_Money = 1_000_000_000_000,
-		Shop = {
-			"Egg Capacity"
-		},
 	Gear = {
 		Buy = { 
 			"Master Sprinkler",
