@@ -26,7 +26,13 @@ getgenv().ConfigsKaitun = {
 			
 		}
 	},
-
+    	Ascend = {
+		Enabled = true,
+		Max_Rebirth_Money = 1_000_000_000_000_000,
+		Shop = {
+			"Egg Capacity"
+		}
+	},
 	["Limit Tree"] = {
 		["Limit"] = 400,
 		["Destroy Until"] = 400,
@@ -104,7 +110,6 @@ getgenv().ConfigsKaitun = {
 			"Enchanted Seed Pack",
 		}
 	},
-
 	Events = {
 		["Fall Event"] = {
 			Minimum_Money = 10_000_000, -- minimum money to start play this event
@@ -153,7 +158,6 @@ getgenv().ConfigsKaitun = {
 		},
 		Start_Do_Honey = 2_000_000 -- start trade fruit for honey at money
 	},
-
 	Gear = {
 		Buy = { 
 			"Master Sprinkler",
