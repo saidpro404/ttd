@@ -154,10 +154,10 @@ getgenv().ConfigsKaitun = {
 	},
 	Ascend = {
 		Enabled = true,
-		Max_Rebirth_Money = 1_000_000_000_000_000,
+		Max_Rebirth_Money = 1_000_000_000_000,
 		Shop = {
 			"Egg Capacity"
-		}
+		},
 	Gear = {
 		Buy = { 
 			"Master Sprinkler",
