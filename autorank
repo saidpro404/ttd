@@ -26,13 +26,7 @@ getgenv().ConfigsKaitun = {
 			
 		}
 	},
-	Ascend = {
-		Enabled = true,
-		Max_Rebirth_Money = 1_000_000_000_000_000,
-		Shop = {
-			"Egg Capacity"
-		}
-	},
+
 	["Limit Tree"] = {
 		["Limit"] = 400,
 		["Destroy Until"] = 400,
@@ -115,10 +109,12 @@ getgenv().ConfigsKaitun = {
 		["Fall Event"] = {
 			Minimum_Money = 10_000_000, -- minimum money to start play this event
 		},
-		MaxMoney_Restocks = 10_000_000,
+		MaxMoney_Restocks = 1_000_000_000_000_000,
 		
 		Shop = { -- un comment to buy
             "Golden Acorn",
+			"Fall Egg",
+			"Red Panda",
             "Firefly Jar",
             "Sky Lantern",
             "Maple Leaf Kite",
@@ -196,6 +192,8 @@ getgenv().ConfigsKaitun = {
 
 	Eggs = {
 		Place = {
+			"Anti Bee Egg",
+			"Bug Egg",
 			"Fall Egg",
 			"Sprout Egg",
 			"Gourmet Egg",
@@ -203,9 +201,7 @@ getgenv().ConfigsKaitun = {
 			"Primal Egg",
 			"Dinosaur Egg",
 			"Oasis Egg",
-			"Anti Bee Egg",
 			"Night Egg",
-			"Bug Egg",
 			"Paradise Egg",
 			"Mythical Egg",
 			"Rare Egg",
@@ -252,6 +248,7 @@ getgenv().ConfigsKaitun = {
 		Locked_Pet_Age = 60, -- pet that age > 60 will lock
 		Locked = {
 			"Swan",
+			"Red Panda",
 			"Space Squirrel",
 			"Barn Owl",
 			"Phoenix",
@@ -323,7 +320,7 @@ getgenv().ConfigsKaitun = {
 	Webhook = {
 		UrlPet = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
 		UrlSeed = "xxx",
-		PcName = "godd",
+		PcName = "dew",
 
 		Mention = "474925167886336001", -- discord id
 
@@ -353,6 +350,7 @@ getgenv().ConfigsKaitun = {
 				"Fennec Fox",
 				"Dragonfly",
 				"Raccoon",
+				"Red Fox",
 			},
 			Pet_Weight_Noti = true,
 		}
