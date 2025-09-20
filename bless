@@ -26,7 +26,7 @@ getgenv().ConfigsKaitun = {
 			
 		}
 	},
-    	Ascend = {
+	Ascend = {
 		Enabled = true,
 		Max_Rebirth_Money = 1_000_000_000_000_000,
 		Shop = {
@@ -110,36 +110,32 @@ getgenv().ConfigsKaitun = {
 			"Enchanted Seed Pack",
 		}
 	},
+
 	Events = {
 		["Fall Event"] = {
 			Minimum_Money = 10_000_000, -- minimum money to start play this event
 		},
-		MaxMoney_Restocks = 1_000_000_000_000_000,
+		MaxMoney_Restocks = 10_000_000,
 		
 		Shop = { -- un comment to buy
-			"Fall Egg",
-
-			"Enchanted Chest",
-			"Pet Shard Glimmering",
-			"Enchanted Egg",
-			"Enchanted Seed Pack",
-			-- "Drake",
-			"Pixie Faern",
-			"Untold Bell",
-			"Luminous Sprite",
-			"Mutation Spray Luminous",
-			"Luminous Wand",
-
-			"Sprout Seed Pack",
-			"Sprout Egg",
-			-- "Mandrake",
-			"Silver Fertilizer",
-			-- "Canary Melon",
-			-- "Amberheart",
-			["Spriggan"] = 8,
-			-- Friend Shop
-			"Skyroot Chest",
-			"Pet Shard GiantBean",
+            "Golden Acorn",
+            "Firefly Jar",
+            "Sky Lantern",
+            "Maple Leaf Kite",
+            "Leaf Blower",
+            "Maple Leaf Charm",
+            "Maple Sprinkler",
+            "Bonfire",
+            "Harvest Basket",
+            "Fall Leaf Chair",
+            "Maple Flag",
+            "Flying Kite",
+            "Maple Resin",
+            "Fall Fountain",
+            "Enchanted Chest",
+            "Enchanted Egg",
+            "Luminous Sprite",
+            "Wisp",
 		},
 		["Traveling Shop"] = {
 			"Bee Egg",
@@ -158,6 +154,7 @@ getgenv().ConfigsKaitun = {
 		},
 		Start_Do_Honey = 2_000_000 -- start trade fruit for honey at money
 	},
+
 	Gear = {
 		Buy = { 
 			"Master Sprinkler",
@@ -171,11 +168,29 @@ getgenv().ConfigsKaitun = {
 			"Harvest Tool",
 		},
 		Lock = {
-			"Master Sprinkler",
-			"Godly Sprinkler",
-			"Advanced Sprinkler",
-			"Basic Sprinkler",
-			"Lightning Rod",
+            "Golden Acorn",
+            "Firefly Jar",
+            "Sky Lantern",
+            "Maple Leaf Kite",
+            "Leaf Blower",
+            "Maple Leaf Charm",
+            "Maple Sprinkler",
+            "Bonfire",
+            "Harvest Basket",
+            "Fall Leaf Chair",
+            "Maple Flag",
+            "Flying Kite",
+            "Maple Resin",
+            "Fall Fountain",
+            "Cleansing Pet Shard",
+            "Grandmaster Sprinkler",
+            "Master Sprinkler",
+            "Godly Sprinkler",
+            "Lightning Rod",
+            "Harvest Tool",
+            "Level Up Lollipop",
+            "Medium Treat",
+            "Medium Toy",
 		},
 	},
 
@@ -192,7 +207,6 @@ getgenv().ConfigsKaitun = {
 			"Night Egg",
 			"Bug Egg",
 			"Paradise Egg",
-			"Bee Egg",
 			"Mythical Egg",
 			"Rare Egg",
 		},
@@ -283,10 +297,10 @@ getgenv().ConfigsKaitun = {
 			"Queen Bee",
 			"Dragonfly",
 			"Butterfly",
-			"Tarantula Hawk",
-			"Wasp",
-			["Honey Bee"] = 5,
-			["Bee"] = 5,
+			["Tarantula Hawk"] = 2,
+			["Wasp"] = 2,
+			["Honey Bee"] = 2,
+			["Bee"] = 2,
 			"Mimic Octopus",
 			"Red Fox",
 			"Chicken Zombie"
@@ -309,7 +323,7 @@ getgenv().ConfigsKaitun = {
 	Webhook = {
 		UrlPet = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
 		UrlSeed = "xxx",
-		PcName = "53e",
+		PcName = "godd",
 
 		Mention = "474925167886336001", -- discord id
 
