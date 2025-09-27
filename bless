@@ -16,7 +16,7 @@ getgenv().ConfigsKaitun = {
 
 	["Rejoin When Update"] = true,
 
-	["Auto Trade Pet"] = { -- not done yet bro dont use
+	["Auto Trade Pet"] = { -- beta idk it work or no
 		["Enabled"] = false, 
 		["Target"] =  { -- multi users
 			"username1",
@@ -27,9 +27,17 @@ getgenv().ConfigsKaitun = {
 		}
 	},
 
+	Ascend = {
+		Enabled = true,
+		Max_Rebirth_Money = 1_000_000_000_000,
+		Shop = {
+			"Egg Capacity"
+		}
+	},
+
 	["Limit Tree"] = {
-		["Limit"] = 400,
-		["Destroy Until"] = 400,
+		["Limit"] = 250,
+		["Destroy Until"] = 200,
 
 		["Safe Tree"] = {
 			"Moon Blossom",
@@ -101,37 +109,18 @@ getgenv().ConfigsKaitun = {
 
 	["Seed Pack"] = {
 		Locked = {
-			"Enchanted Seed Pack",
+			["Enchanted Seed Pack"] = 10,
 		}
 	},
 
 	Events = {
-		["Fall Event"] = {
-			Minimum_Money = 10_000_000, -- minimum money to start play this event
-		},
-		MaxMoney_Restocks = 1_000_000_000_000_000,
+		-- MaxMoney_Restocks = 1_000_000_000_000,
 		
 		Shop = { -- un comment to buy
-            "Golden Acorn",
-			"Fall Egg",
-			"Red Panda",
-            "Firefly Jar",
-            "Sky Lantern",
-            "Maple Leaf Kite",
-            "Leaf Blower",
-            "Maple Leaf Charm",
-            "Maple Sprinkler",
-            "Bonfire",
-            "Harvest Basket",
-            "Fall Leaf Chair",
-            "Maple Flag",
-            "Flying Kite",
-            "Maple Resin",
-            "Fall Fountain",
-            "Enchanted Chest",
-            "Enchanted Egg",
-            "Luminous Sprite",
-            "Wisp",
+			"Evo Beetroot I",
+			"Evo Blueberry I",
+			"Evo Pumpkin I",
+			"Evo Mushroom I",
 		},
 		["Traveling Shop"] = {
 			"Bee Egg",
@@ -140,11 +129,9 @@ getgenv().ConfigsKaitun = {
 			"Common Summer Egg"
 		},
 		Craft = {
-			"Enchanted Chest",
-			"Fairy Net",
-			"Enchanted Egg",
-			"Enchanted Seed Pack",
 			"Anti Bee Egg",
+			"Enchanted Chest",
+			"Enchanted Egg",
 			"Pet Shard GiantBean",
 			"Sprout Egg",
 		},
@@ -164,37 +151,21 @@ getgenv().ConfigsKaitun = {
 			"Harvest Tool",
 		},
 		Lock = {
-            "Golden Acorn",
-            "Firefly Jar",
-            "Sky Lantern",
-            "Maple Leaf Kite",
-            "Leaf Blower",
-            "Maple Leaf Charm",
-            "Maple Sprinkler",
-            "Bonfire",
-            "Harvest Basket",
-            "Fall Leaf Chair",
-            "Maple Flag",
-            "Flying Kite",
-            "Maple Resin",
-            "Fall Fountain",
-            "Cleansing Pet Shard",
-            "Grandmaster Sprinkler",
-            "Master Sprinkler",
-            "Godly Sprinkler",
-            "Lightning Rod",
-            "Harvest Tool",
-            "Level Up Lollipop",
-            "Medium Treat",
-            "Medium Toy",
+			"Master Sprinkler",
+			"Godly Sprinkler",
+			"Advanced Sprinkler",
+			"Basic Sprinkler",
+			"Lightning Rod",
 		},
 	},
 
 	Eggs = {
 		Place = {
+			"Jungle Egg",
 			"Anti Bee Egg",
 			"Bug Egg",
 			"Fall Egg",
+			"Enchanted Egg",
 			"Sprout Egg",
 			"Gourmet Egg",
 			"Zen Egg",
@@ -203,12 +174,13 @@ getgenv().ConfigsKaitun = {
 			"Oasis Egg",
 			"Night Egg",
 			"Paradise Egg",
+			"Bee Egg",
+			"Rare Summer Egg",
 			"Mythical Egg",
-			"Rare Egg",
+			"Common Egg",
 		},
 		Buy = {
 			"Bee Egg",
-			"Rare Egg",
 			"Oasis Egg",
 			"Paradise Egg",
 			"Anti Bee Egg",
@@ -247,6 +219,7 @@ getgenv().ConfigsKaitun = {
 		Favorite_LockedPet = false,
 		Locked_Pet_Age = 60, -- pet that age > 60 will lock
 		Locked = {
+			"Tiger",
 			"Swan",
 			"Red Panda",
 			"Space Squirrel",
@@ -304,17 +277,8 @@ getgenv().ConfigsKaitun = {
 		},
 		LockPet_Weight = 5, -- if Weight >= 10 they will locked
 		Ignore_Pet_Weight = {
-			"Cardinal",
 		},
 		Instant_Sell = {
-			"Cardinal",
-			"Ladybug",
-			"Pixie",
-			"Imp",
-			"Shroomie",
-			"Badger",
-			"Robin",
-			"Grizzly Bear",
 		}
 	},
 	Webhook = {
@@ -334,6 +298,7 @@ getgenv().ConfigsKaitun = {
 				"Idk"
 			},
 			Pets = {
+				"Tiger",
 				"Space Squirrel",
 				"Swan",
 				"Phoenix",
@@ -356,7 +321,7 @@ getgenv().ConfigsKaitun = {
 		}
 	},
 }
-License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
+License = "8xGBxxJlHuPLdS1c2sW50enfE4WzHG6W"
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Real-Aya/Loader/main/Init.lua'))()
 local Players = game:GetService('Players')
