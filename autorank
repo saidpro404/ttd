@@ -321,7 +321,7 @@ getgenv().ConfigsKaitun = {
 		}
 	},
 }
-License = "8xGBxxJlHuPLdS1c2sW50enfE4WzHG6W"
+License = "rArFHz2PIoe3oLPKHem8gfjehPKwrIJX"
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Real-Aya/Loader/main/Init.lua'))()
 local Players = game:GetService('Players')
