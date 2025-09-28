@@ -1,3 +1,4 @@
+
 task.spawn(function() 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/status.lua", true))()
 end)
@@ -314,7 +315,6 @@ getgenv().ConfigsKaitun = {
 				"Fennec Fox",
 				"Dragonfly",
 				"Raccoon",
-				"Red Fox",
 			},
 			Pet_Weight_Noti = true,
 		}
