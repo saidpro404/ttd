@@ -114,7 +114,7 @@ getgenv().ConfigsKaitun = {
 	},
 
 	Events = {
-		-- MaxMoney_Restocks = 1_000_000_000_000,
+		-- MaxMoney_Restocks = 10_000_000,
 		
 		Shop = { -- un comment to buy
 			"Evo Beetroot I",
@@ -175,11 +175,12 @@ getgenv().ConfigsKaitun = {
 			"Night Egg",
 			"Paradise Egg",
 			"Bee Egg",
-			"Rare Egg"
+			"Rare Egg",
 		},
 		Buy = {
-			"Jungle Egg"
+			"Jungle Egg",
 			"Bee Egg",
+			"Rare Egg",
 			"Oasis Egg",
 			"Paradise Egg",
 			"Anti Bee Egg",
