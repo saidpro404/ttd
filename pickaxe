@@ -3,9 +3,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/
 end)
 
 local keys = {  -- Add as many key
-    "RTzzzBFOoOCwFRrfLhdmcxoUUhBmFFVL", 
-    "CkPVlTtsjQUniqMXEnnQwawPTqvtMQNt", 
-    "dOMVwsRwehPTbBzpUJIBAsdafiBdThZA", 
+    "lzEiwCceLAAdHgqOuYVrerRZWXdVdrbr", 
+    "hVGNOcNCpEAYLwymDOcJIgWTJfjLsQoq", 
+    "KuWKVaCvLEYrWIzWCVWeFaqVeLcZikmz", 
 }
 
 math.randomseed(os.time())
