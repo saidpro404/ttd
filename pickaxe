@@ -4,6 +4,9 @@ local keys = {  -- Add as many key
     "lzEiwCceLAAdHgqOuYVrerRZWXdVdrbr", 
     "hVGNOcNCpEAYLwymDOcJIgWTJfjLsQoq", 
     "KuWKVaCvLEYrWIzWCVWeFaqVeLcZikmz", 
+    "YUzyWLHeDNPXFFxYAJiRwTmsBtQstuLd", 
+    "ZDHvCAoQBiltBXwMIJgZAerrPMkkuwKQ", 
+    "QmrlUNhgxXjQpFDiMIQLgfCqsPfEeZhm", 
 }
 
 math.randomseed(os.time())
