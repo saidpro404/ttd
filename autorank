@@ -9,8 +9,8 @@ getgenv().gagConfig = {
     BUY_TRAVELING_MERCHANT = { "Bee Egg", "Paradise Egg", "Loquat", "Feijoa", "Pitcher Plant" },
     BUY_EVENT_SHOP = { "Evo Beetroot I", "Evo Blueberry I", "Evo Pumpkin I", "Evo Mushroom I" },
     MAX_EVENT_RESTOCK_SHECKLES = 10000000001,
-    MAX_REBIRTH_SHECKLES = 400_000_000_000_000
-    BUY_ASCEND_SHOP = { "Egg Capacity" }
+    MAX_REBIRTH_SHECKLES = 400_000_000_000_000,
+    BUY_ASCEND_SHOP = { "Egg Capacity" },
     
     MAX_PLANTS = 50,
     DESTROY_UNTIL_MIN_PLANTS = 40,
