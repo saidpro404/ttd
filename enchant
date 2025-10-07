@@ -8,31 +8,29 @@ getgenv().pvbConfig = {
     MAX_FPS = 3,  -- This will override setfpscap()
     LOW_CPU = true,
     MAX_REBIRTH = 99,  -- Stop rebirth at set amount
-    FORCE_REBIRTH_IGNORE_KEEP_BRAINROT = true,  -- Ignore KEEP_BRAINROT related config until max rebirth
+    FORCE_REBIRTH_IGNORE_KEEP_BRAINROT = false,  -- Ignore KEEP_BRAINROT related config until max rebirth
     FROST_GRENADE_TARGET_MAX_HP = 100000,  -- Use frost grenade 100k+ hp brainrot
     
     OPEN_LUCKY_EGG = {"Godly Lucky Egg", "Secret Lucky Egg", "Meme Lucky Egg"},
-    FUSE_PLANT = {"Mr Carrot", "Watermelon", "Eggplant", "Dragon Fruit", "Sunflower", "Pumpkin"},  -- Auto keep (favorite) & fuse required plant + brainrot
+    FUSE_PLANT = {"Mr Carrot"},  -- Auto keep & fuse required plant + brainrot
 
-    BUY_SEED_SHOP = {["Cactus"] = 5, ["Strawberry"] = 5, ["Pumpkin"] = 5, ["Sunflower"] = 5, ["Dragon Fruit"] = 5, ["Eggplant"] = 5, ["Watermelon"] = 5, "Cocotank", "Carnivorous Plant", "Mr Carrot", "Tomatrio", "Shroombino", "Mango"},
+    BUY_SEED_SHOP = {["Cactus"] = 5, ["Strawberry"] = 5, ["Pumpkin"] = 5, ["Sunflower"] = 5, ["Dragon Fruit"] = 5, ["Eggplant"] = 5, ["Watermelon"] = 5, "Cocotank", "Grape", "Carnivorous Plant", "Mr Carrot", "Tomatrio", "Shroombino", "Mango"},
     BUY_GEAR_SHOP = {"Frost Grenade", "Frost Blower"},
-
-    -- Keep = Favorite (Prevent sell)
-    KEEP_SEED = {},  -- Plant Names
+    KEEP_SEED = {},
     KEEP_PLANT_RARITY = {"Secret", "Limited"},
-    KEEP_BRAINROT_MONEY_PER_SECOND = 20000,  -- 20000 means keep $20+k/s brainrot
-    KEEP_BRAINROT_RARITY = {}, 
+    KEEP_BRAINROT_MONEY_PER_SECOND = 40000,  -- Number
+    KEEP_BRAINROT_RARITY = {"Secret"},
 
-    SELL_BRAINROT_DELAY = 30,  -- Delay for "sell all" brainrot
-    SELL_PLANT_DELAY = 30,  -- "Delay for "sell all" plant
+    SELL_BRAINROT_DELAY = 30,
+    SELL_PLANT_DELAY = 30,
 
     -- Webhook
     BRAINROT_WEBHOOK_URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
     DISCORD_ID = "474925167886336001",
-    NOTIFY_RARITY = {},
+    NOTIFY_RARITY = {"Secret","Limited"},
     NOTIFY_MONEY_PER_SECOND = 10000,
-    WEBHOOK_NOTE = "53e",
-    SHOW_PUBLIC_DISCORD_ID = true,
+    WEBHOOK_NOTE = "53ed",
+    SHOW_PUBLIC_DISCORD_ID = false,
     SHOW_WEBHOOK_USERNAME = true,
     SHOW_WEBHOOK_JOBID = true,
 }
