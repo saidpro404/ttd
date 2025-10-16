@@ -1,5 +1,4 @@
 _G.Config = { UserID = "07a296c1-6518-4959-a7e6-124be88ac2a2", discord_id = "474925167886336001" , Note = "Pc", } loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/pvb"))()
-task.wait(3)
 
 script_key="GmjAZNKxRxDbnKbOHuWpDnblIaPerwok";
 
