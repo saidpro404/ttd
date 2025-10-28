@@ -4,7 +4,7 @@ end)
 
 setfpscap(3)
 
-script_key = "jfFkSeRmhKLWZyYgYqEkoyVNVIuKOHQg";
+script_key = "mxbMUzfXHKmXdjsPHuorgeoOSOrvloyj";
 _G.Enter_Halloween_locally = true --almost no errors "Unspecified error has occured!"
 _G.Mail_Config = {
     ["Diamonds"] = {Class = "Currency", MinAmount = 10000000}
@@ -13,4 +13,5 @@ _G.User = "jessbenkoontop"
 _G.Max_Mail_Cost = 1000000
 _G.DiscordID = "474925167886336001"
 _G.Url = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2"
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/d99af641f1200385d5a7c608fef7fe91.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7617273647367eceb9b363392228f02c.lua"))()
+
