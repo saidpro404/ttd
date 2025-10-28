@@ -4,7 +4,7 @@ end)
 
 setfpscap(5)
 
-script_key = "mxbMUzfXHKmXdjsPHuorgeoOSOrvloyj";
+
 _G.TP_to_W2 = true --teleport to world 2
 _G.Enter_Halloween_locally = true --almost no errors "Unspecified error has occured!"
 _G.Mail_Config = {
