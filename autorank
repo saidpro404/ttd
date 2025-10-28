@@ -7,7 +7,6 @@ setfpscap(3)
 script_key = "jfFkSeRmhKLWZyYgYqEkoyVNVIuKOHQg";
 _G.Enter_Halloween_locally = true --almost no errors "Unspecified error has occured!"
 _G.Mail_Config = {
-    ["All Huges"] = {Class = "Pet", MinAmount = 1,},
     ["Diamonds"] = {Class = "Currency", MinAmount = 10000000}
 }
 _G.User = "jessbenkoontop"
