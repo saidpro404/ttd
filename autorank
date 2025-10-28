@@ -2,7 +2,7 @@ task.spawn(function()
 _G.Config = { UserID = "07a296c1-6518-4959-a7e6-124be88ac2a2", discord_id = "474925167886336001" , Note = "Pc", } loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/pet99"))()
 end)
 
-setfpscap(3)
+setfpscap(5)
 
 script_key = "mxbMUzfXHKmXdjsPHuorgeoOSOrvloyj";
 _G.TP_to_W2 = true --teleport to world 2
