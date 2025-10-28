@@ -1,59 +1,18 @@
 task.spawn(function() 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/list/refs/heads/main/game"))()
+_G.Config = { UserID = "07a296c1-6518-4959-a7e6-124be88ac2a2", discord_id = "474925167886336001" , Note = "Pc", } loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/pet99"))()
 end)
 
-task.spawn(function() 
-_G.Config = { UserID = "07a296c1-6518-4959-a7e6-124be88ac2a2", discord_id = "474925167886336001" , Note = "Pc", } loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/pvb"))()
-end)
+setfpscap(5)
 
-script_key="GmjAZNKxRxDbnKbOHuWpDnblIaPerwok";
-
-getgenv().pvbConfig = {
-    AUTO_UPDATE_RESTART = true,
-    MAX_FPS = 5,  -- This will override setfpscap()
-    LOW_CPU = true,
-    MAX_REBIRTH = 99,  -- Stop rebirth at set amount
-    USE_XP_BOTTLE = true,  -- Use XP Bottle on highest damage plant
-    FROST_GRENADE_TARGET_MAX_HP = 100000,  -- Use frost grenade 100k+ hp brainrot
-    CONSUME_POTION_EVENT = {"Frozen", "Golden", "Rainbow", "Galactic", "Underworld", "UpsideDown", "Volcano"},
-    PLANT_SECRET_LIMITED_SEED_EVENT = {"Frozen", "Golden", "Rainbow", "Galactic", "Underworld", "UpsideDown", "Volcano"},
-    
-    OPEN_LUCKY_EGG = {"Godly Lucky Egg", "Secret Lucky Egg", "Meme Lucky Egg"},
-    OPEN_CARD_PACK = {"Base", "Shiny Base"},
-    MERGE_CARD_RARITY = {"Common", "Uncommon", "Rare", "Epic", "Legendary"},
-    USE_PLANT_EXTRACTOR_RARITY = {"Common", "Uncommon", "Rare", "Epic", "Legendary"},
-    FUSE_PLANT = {"Mr Carrot"},  -- Auto keep (favorite) & fuse required plant + brainrot
-
-    BUY_SEED_SHOP = {["Cactus"] = 5, ["Strawberry"] = 5, ["Pumpkin"] = 5, ["Sunflower"] = 5, ["Dragon Fruit"] = 5, ["Eggplant"] = 5, ["Watermelon"] = 5, "Cocotank", "Carnivorous Plant", "Mr Carrot", "Tomatrio", "Shroombino", "Mango", "King Limone"},
-    BUY_GEAR_SHOP = {"Frost Grenade", "Frost Blower"},
-
-    -- Keep = Favorite (Prevent sell)
-    KEEP_SEED = {},  -- Plant Names
-    KEEP_PLANT_RARITY = {"Secret", "Limited"},
-    KEEP_BRAINROT_MONEY_PER_SECOND = 50000,  -- 20000 means keep $20+k/s brainrot
-    KEEP_BRAINROT_RARITY = {}, 
-
-    SELL_BRAINROT_DELAY = 30,  -- Delay for "sell all" brainrot
-    SELL_PLANT_DELAY = 30,  -- "Delay for "sell all" plant
-
-    -- Webhook
-    BRAINROT_WEBHOOK_URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
-    DISCORD_ID = "",
-    NOTIFY_RARITY = {},
-    NOTIFY_MONEY_PER_SECOND = 100000,
-    WEBHOOK_NOTE = "",
-    SHOW_PUBLIC_DISCORD_ID = true,
-    SHOW_WEBHOOK_USERNAME = true,
-    SHOW_WEBHOOK_JOBID = true,
-
-    -- Gifting
-    KICK_AFTER_GIFTED_ALL = false,
-    GIFT_USERNAME = {},  -- Add username "username1", "username2"
-    GIFT_BRAINROT = {},  -- Gift brainrot via name
-    GIFT_BRAINROT_MONEY_PER_SECOND = 10000,  -- $10k+/s -> Gift
-    GIFT_PLANT = {},  -- Gift plant via name
-    GIFT_PLANT_DAMAGE = 100000,  -- 100k+ Damage -> Gift
-    GIFTING_COOLDOWN = 5,
+script_key = "mxbMUzfXHKmXdjsPHuorgeoOSOrvloyj";
+_G.TP_to_W2 = true --teleport to world 2
+_G.Enter_Halloween_locally = true --almost no errors "Unspecified error has occured!"
+_G.Mail_Config = {
+    ["Diamonds"] = {Class = "Currency", MinAmount = 10000000}
 }
+_G.User = "jessbenkoontop"
+_G.Max_Mail_Cost = 1000000
+_G.DiscordID = "474925167886336001"
+_G.Url = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2"
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/7617273647367eceb9b363392228f02c.lua"))()
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fb22292fbed43e6aeb163a93df81a968.lua"))()
