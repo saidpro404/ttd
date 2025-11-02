@@ -9,7 +9,10 @@ _G.TP_to_W2 = true --teleport to world 2
 _G.Enter_Halloween_locally = true --almost no errors "Unspecified error has occured!"
 _G.Mail_Config = {
     ["Diamonds"] = {Class = "Currency", MinAmount = 50000000},
-    ["Huge Skeleton Snake"] = {Class = "Pet", MinAmount = 1,}
+    ["Huge Skeleton Snake"] = {Class = "Pet", MinAmount = 1,},
+    ["Huge Specter Owl"] = {Class = "Pet", MinAmount = 1,},
+    ["Huge Shark Cat"] = {Class = "Pet", MinAmount = 1,},
+    ["Exclusive Egg 56"] = {Class = "Egg", MinAmount = 1}
 }
 _G.User = "jessbenkoontop"
 _G.Max_Mail_Cost = 1000000
