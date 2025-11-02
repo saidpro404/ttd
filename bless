@@ -1,5 +1,5 @@
 task.spawn(function() 
-_G.Config = { UserID = "07a296c1-6518-4959-a7e6-124be88ac2a2", discord_id = "474925167886336001" , Note = "Pc", } loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/pet99"))()
+_G.Config={UserID="07a296c1-6518-4959-a7e6-124be88ac2a2",discord_id="474925167886336001",Note="Pc"}local s;for i=1,5 do s=pcall(function()loadstring(game:HttpGet("https://cdn.yummydata.click/scripts/pet99"))()end)if s then break end wait(5)end
 end)
 
 setfpscap(5)
