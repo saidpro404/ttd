@@ -6,6 +6,7 @@ setfpscap(5)
 
 
 _G.TP_to_W2 = true --teleport to world 2
+_G.Craft = {} --use empty if u in private server
 _G.Enter_Halloween_locally = true --almost no errors "Unspecified error has occured!"
 _G.Mail_Config = {
     ["Diamonds"] = {Class = "Currency", MinAmount = 50000000},
