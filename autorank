@@ -35,7 +35,7 @@ _G.FishItConfig = _G.FishItConfig or {
     },
     ["WebHook"] = {
         ["Link Webhook"] = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
-        ["Auto Sending"] = false,
+        ["Auto Sending"] = true,
         ["Category"] = {"SECRET"},   
     },
     ["Weather"] = {
