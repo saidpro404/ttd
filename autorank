@@ -244,3 +244,9 @@ end
 -- Audio and graphics settings optimization
 game:GetService("UserGameSettings").MasterVolume = 0  -- Mute sound for performance
 game:GetService("Settings").Rendering.QualityLevel = 3  -- Set rendering quality to the lowest possible setting
+
+task.wait(50)
+
+getgenv().fpslock = 5
+getgenv().whitescreen = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/vuthaison1308/vuthaison1308/refs/heads/main/fpslock_whitecreen.lua"))()
