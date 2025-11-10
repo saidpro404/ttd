@@ -105,7 +105,7 @@ _G.FishItConfig = _G.FishItConfig or {
 
 script_key="C17476FB087E0F6C41FE869A2FDE7643";
 
-loadstring(game:HttpGet("https://wintercode.dev/loader/fishit-78c86024ea87c8eca577549807421962.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/fishit-78c86024ea87c8eca577549807421962.lua"))()
 
 task.wait(30)
 
