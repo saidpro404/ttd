@@ -50,7 +50,7 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
     ["Event"] = {
-        ["Start Farm"] = false,
+        ["Start Farm"] = true,
         ["Minimum Rod"] = "Ghostfinn Rod",
         ["Event List"] = {
             "Megalodon Hunt",
@@ -95,10 +95,8 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
 
-    -- Recommended settings [ Do not Change ]
-    ["FpsBoost"] = false,
-    ["ExtremeFpsBoost"] = false,
-    ["ExtremeFpsBoost2"] = true,
+    ["ExtremeFpsBoost"] = true,
+    ["UltimatePerformance"] = false,
     ["3DRender"] = true,
     ["AutoRemovePlayer"] = true,
 }
