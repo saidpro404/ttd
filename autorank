@@ -108,68 +108,13 @@ _G.FishItConfig = _G.FishItConfig or {
     },
 
     ["ExtremeFpsBoost"] = true,
-    ["UltimatePerformance"] = false,
+    ["UltimatePerformance"] = true,
     ["Disable3DRender"] = true,
     ["AutoRemovePlayer"] = true,
-
     ["AutoReconnect"] = true,
-    ["HideGUI"] = true,
+    ["Debug"] = true,
 }
 
 script_key="C17476FB087E0F6C41FE869A2FDE7643";
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/fishit-78c86024ea87c8eca577549807421962.lua"))()
-
-task.wait(5)
-
-repeat
-    task.wait()
-until game:IsLoaded()
-
-repeat
-    task.wait()
-until game.Players.LocalPlayer
-
-repeat
-    task.wait()
-until game.Players.LocalPlayer.Character
-
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-
-local GuiService = game:GetService("GuiService")
-
--- Ghi timestamp mỗi 5 giây
-spawn(function()
-    while task.wait(5) do
-        pcall(function()
-            local timestamp = math.floor(os.time())
-            writefile(game.Players.LocalPlayer.Name .. "-Time.txt", tostring(timestamp))
-        end)
-    end
-end)
-
--- Kiểm tra lỗi disconnect
-spawn(function()
-    while task.wait(60) do
-        pcall(function()
-            for _, v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetChildren()) do
-                if v.Name == "ErrorPrompt" then
-                    game:Shutdown()
-                end
-            end
-            local errorCode = GuiService:GetErrorCode().Value
-            if errorCode >= Enum.ConnectionError.DisconnectErrors.Value then
-                game:Shutdown()
-            end
-        end)
-    end
-end)
-
--- Bắt sự kiện khi ErrorPrompt xuất hiện
-game.CoreGui.RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
-    if child.Name == "ErrorPrompt" then
-        game:Shutdown()
-    end
-end)
