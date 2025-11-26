@@ -11,7 +11,16 @@ task.wait(5)
 
 _G.FishItConfig = _G.FishItConfig or {
     ["Fishing"] = {
-        ["Auto Perfect"] = true, -- Set false if u need faster fishing
+        ["Auto Perfect"] = true,
+    },
+    ["Auto Trade"] = {
+        ["Enabled"] = false,
+        ["Whitelist Username"] = {""},
+        ["Category Fish"] = { -- Only Select one, fill in the fish category or fish name
+            "Secret",
+        },
+        ["Fish Name"] = {
+        },
     },
     ["Farm Coin Only"] = {
         ["Enabled"] = false, -- Farm coins only [ cant buy rod, bait, enchant, weather ]
@@ -20,11 +29,11 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Selling"] = {
         ["Auto Sell"] = true,
         ["Auto Sell Threshold"] = "Legendary",
-        ["Auto Sell Every"] = 50,
+        ["Auto Sell Every"] = 60,
     },
     ["Doing Quest"] = {
         ["Auto Ghostfinn Rod"] = true,
-        ["Auto Element Rod"] = true,
+        ["Auto Element Rod"] = false,
         ["Allowed Sacrifice"] = {
             "Blob Shark",
             "Ghost Shark",
@@ -42,9 +51,9 @@ _G.FishItConfig = _G.FishItConfig or {
     ["WebHook"] = {
         ["Link Webhook"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
         ["Auto Sending"] = true,
-        ["Category"] = {"SECRET"},   
+        ["Category"] = {"Secret"},
 
-         ["Link Webhook Quest Complete"] = "https://discord.com/api/webhooks/1345850034800824380/13VgiD27v1--Oi7yrXT-Pal8xN5p596-4O948zjh-5Dx1rdj7SHqtMY_EbnaMCuDosmg",
+        ["Link Webhook Quest Complete"] = "https://discord.com/api/webhooks/1345850034800824380/13VgiD27v1--Oi7yrXT-Pal8xN5p596-4O948zjh-5Dx1rdj7SHqtMY_EbnaMCuDosmg",
     },
     ["Weather"] = {
         ["Auto Buying"] = true,
@@ -55,14 +64,12 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
     ["Event"] = {
-        ["Start Farm"] = true,
+        ["Start Farm"] = false,
         ["Minimum Rod"] = "Ghostfinn Rod",
         ["Event List"] = {
-            "Black Hole",
-            "Shocked",
-            "Ghost Worm",
-            "Admin - Ghost Worm",
-            "Meteor Rain",
+            "Megalodon Hunt",
+            "Ghost Shark Hunt",
+            "Shark Hunt",
         },
     },
     ["Enchant"] = {
@@ -75,9 +82,8 @@ _G.FishItConfig = _G.FishItConfig or {
             "Prismatic I",
         },
     },
-    ["Bobber"] = {
+    ["Bait List"] = {
         ["Auto Buying"] = true,
-        ["Auto Equip"] = true,
         ["Buy List"] = {
             "Midnight Bait",
             "Chroma Bait",
@@ -87,12 +93,12 @@ _G.FishItConfig = _G.FishItConfig or {
     },
     ["Rod List"] = {
         ["Auto Buying"] = true,
-        ["Auto Equip"] = true,
         ["Buy List"] = {
             "Grass Rod",
             "Midnight Rod",
             "Astral Rod",
             "Ares Rod",
+            "Angler Rod",
         },
         ["Location Rods"] = { -- Farm location and minimum rod to start on that location, also only 1 rod and only 1 location
             ["Fisherman Island"] = {"Starter Rod"}, -- Do not change
@@ -101,11 +107,13 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
 
-    -- Recommended settings [ Do not Change ]
     ["ExtremeFpsBoost"] = true,
-    ["UltimatePerformance"] = true,
-    ["3DRender"] = true,
+    ["UltimatePerformance"] = false,
+    ["Disable3DRender"] = true,
     ["AutoRemovePlayer"] = true,
+
+    ["AutoReconnect"] = true,
+    ["HideGUI"] = true,
 }
 
 script_key="C17476FB087E0F6C41FE869A2FDE7643";
