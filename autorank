@@ -12,6 +12,10 @@ task.wait(5)
 _G.FishItConfig = _G.FishItConfig or {
     ["Fishing"] = {
         ["Auto Perfect"] = true,
+        ["Auto Favorite"] = true,
+        ["Fish Name"] = {
+            "Sacred Guardian Squid",
+        },
     },
     ["Auto Trade"] = {
         ["Enabled"] = false,
