@@ -1,8 +1,4 @@
 task.spawn(function() 
-_G.Config={UserID="07a296c1-6518-4959-a7e6-124be88ac2a2",discord_id="474925167886336001",Note="Pc"}local s;for i=1,5 do s=pcall(function()loadstring(game:HttpGet("https://cdn.yummydata.click/scripts/fishit"))()end)if s then break end wait(5)end
-end)
-
-task.spawn(function() 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/list/refs/heads/main/game"))()
 end)
 
@@ -18,8 +14,8 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
     ["Auto Trade"] = {
-        ["Enabled"] = false,
-        ["Whitelist Username"] = {""},
+        ["Enabled"] = true,
+        ["Whitelist Username"] = {"PALINGONTOT", "RajaIkanR10K", "RajaIkanR10K2", "RajaIkanR10K3", "RajaIkanR10K4", "RajaIkanR10K5", "window200189", "gakon_91", "karpetmerah0", "linlinpro42", "ANJAB2138", "ANJAB2137"},
         ["Category Fish"] = { -- Only Select one, fill in the fish category or fish name
             "Secret",
         },
@@ -33,7 +29,7 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Selling"] = {
         ["Auto Sell"] = true,
         ["Auto Sell Threshold"] = "Legendary",
-        ["Auto Sell Every"] = 60,
+        ["Auto Sell Every"] = 50,
     },
     ["Doing Quest"] = {
         ["Auto Ghostfinn Rod"] = true,
@@ -61,19 +57,23 @@ _G.FishItConfig = _G.FishItConfig or {
     },
     ["Weather"] = {
         ["Auto Buying"] = true,
-        ["Minimum Rod"] = "Element Rod",
+        ["Minimum Rod"] = "Ghostfinn Rod",
         ["Weather List"] = {
+            "Shark Hunt",
             "Cloudy",
             "Storm",
         },
     },
     ["Event"] = {
-        ["Start Farm"] = false,
+        ["Start Farm"] = true,
         ["Minimum Rod"] = "Ghostfinn Rod",
         ["Event List"] = {
-            "Megalodon Hunt",
-            "Ghost Shark Hunt",
             "Shark Hunt",
+            "Black Hole",
+            "Shocked",
+            "Ghost Worm",
+            "Admin - Ghost Worm",
+            "Meteor Rain",
         },
     },
     ["Enchant"] = {
@@ -103,7 +103,6 @@ _G.FishItConfig = _G.FishItConfig or {
             "Midnight Rod",
             "Astral Rod",
             "Ares Rod",
-            "Angler Rod",
         },
         ["Location Rods"] = { -- Farm location and minimum rod to start on that location, also only 1 rod and only 1 location
             ["Fisherman Island"] = {"Starter Rod"}, -- Do not change
@@ -116,10 +115,211 @@ _G.FishItConfig = _G.FishItConfig or {
     ["UltimatePerformance"] = true,
     ["Disable3DRender"] = true,
     ["AutoRemovePlayer"] = true,
-    ["AutoReconnect"] = true,
-    ["Debug"] = true,
+
+    ["AutoReconnect"] = false,
+    ["HideGUI"] = false,
 }
 
 script_key="C17476FB087E0F6C41FE869A2FDE7643";
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/fishit-78c86024ea87c8eca577549807421962.lua"))()
+
+task.wait(5)
+
+repeat
+    task.wait()
+until game:IsLoaded()
+
+repeat
+    task.wait()
+until game.Players.LocalPlayer
+
+repeat
+    task.wait()
+until game.Players.LocalPlayer.Character
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+local GuiService = game:GetService("GuiService")
+
+-- Ghi timestamp mỗi 5 giây
+spawn(function()
+    while task.wait(5) do
+        pcall(function()
+            local timestamp = math.floor(os.time())
+            writefile(game.Players.LocalPlayer.Name .. "-Time.txt", tostring(timestamp))
+        end)
+    end
+end)
+
+-- Kiểm tra lỗi disconnect
+spawn(function()
+    while task.wait(60) do
+        pcall(function()
+            for _, v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetChildren()) do
+                if v.Name == "ErrorPrompt" then
+                    game:Shutdown()
+                end
+            end
+            local errorCode = GuiService:GetErrorCode().Value
+            if errorCode >= Enum.ConnectionError.DisconnectErrors.Value then
+                game:Shutdown()
+            end
+        end)
+    end
+end)
+
+-- Bắt sự kiện khi ErrorPrompt xuất hiện
+game.CoreGui.RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
+    if child.Name == "ErrorPrompt" then
+        game:Shutdown()
+    end
+end)
+
+task.wait(300)
+local Player = game.Players.LocalPlayer
+for i, v in Player.PlayerGui:GetDescendants() do
+    pcall(function() v.Enabled = false end)
+end
+
+local entities = {
+    "Stats", 
+    "Chat", 
+    "Debris",
+    "CoreGui",
+}
+for _, entity in entities do
+    pcall(function()
+        for i, v in game[entity]:GetDescendants() do
+            pcall(function() v:Destroy() end)
+        end
+    end)
+end
+
+-- Variable to enable frame rate optimization features
+FrameRateBoost = true
+
+-- Function to lower texture quality and modify properties for performance optimization
+function TextureLow()
+    if not game:IsLoaded() then repeat wait() until game:IsLoaded() end
+    if hookfunction and setreadonly then
+        local mt = getrawmetatable(game)
+        local old = mt.__newindex
+        setreadonly(mt, false)
+        local sda
+        sda = hookfunction(old, function(t, k, v)
+            -- Modify material properties for performance
+            if k == "Material" then
+                if v ~= Enum.Material.Neon and v ~= Enum.Material.Plastic and v ~= Enum.Material.ForceField then v = Enum.Material.Plastic end
+            elseif k == "TopSurface" then v = "Smooth"
+            elseif k == "Reflectance" or k == "WaterWaveSize" or k == "WaterWaveSpeed" or k == "WaterReflectance" then v = 0
+            elseif k == "WaterTransparency" then v = 1
+            elseif k == "GlobalShadows" then v = false end
+            return sda(t, k, v)
+        end)
+        setreadonly(mt, true)
+    end
+
+    -- Apply changes to the existing environment
+    local g = game
+    local w = g.Workspace
+    local l = g:GetService"Lighting"
+    local t = w:WaitForChild"Terrain"
+    t.WaterWaveSize = 0
+    t.WaterWaveSpeed = 0
+    t.WaterReflectance = 0
+    t.WaterTransparency = 1
+    l.GlobalShadows = false
+
+    -- Function to change object properties
+    function change(v)
+        pcall(function()
+            if v.Material ~= Enum.Material.Neon and v.Material ~= Enum.Material.Plastic and v.Material ~= Enum.Material.ForceField then
+                pcall(function() v.Reflectance = 0 end)
+                pcall(function() v.Material = Enum.Material.Plastic end)
+                pcall(function() v.TopSurface = "Smooth" end)
+            end
+        end)
+    end
+
+    -- Apply changes to new objects added to the game
+    game.DescendantAdded:Connect(function(v)
+        pcall(function()
+            if v:IsA"Part" then change(v)
+            elseif v:IsA"MeshPart" then change(v)
+            elseif v:IsA"TrussPart" then change(v)
+            elseif v:IsA"UnionOperation" then change(v)
+            elseif v:IsA"CornerWedgePart" then change(v)
+            elseif v:IsA"WedgePart" then change(v) end
+        end)
+    end)
+
+    -- Apply changes to all existing descendants
+    for i, v in pairs(game:GetDescendants()) do
+        pcall(function()
+            if v:IsA"Part" then change(v)
+            elseif v:IsA"MeshPart" then change(v)
+            elseif v:IsA"TrussPart" then change(v)
+            elseif v:IsA"UnionOperation" then change(v)
+            elseif v:IsA"CornerWedgePart" then change(v)
+            elseif v:IsA"WedgePart" then change(v) end
+        end)
+    end
+end
+
+-- Function to remove water objects from the workspace
+function WaterRemove()
+    for i,v in pairs(workspace:GetDescendants()) do
+        if string.find(v.Name,"Water") then
+            v:Destroy()
+        end
+    end
+end
+
+-- Function to remove specific objects like trees and houses
+function ObjectRemove()
+    for i,v in pairs(workspace:GetDescendants()) do
+        if string.find(v.Name,"Tree") or string.find(v.Name,"House") then
+            v:Destroy()
+        end
+    end
+end
+
+-- Function to make non-essential objects invisible
+function InvisibleObject()
+    for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+        if (v:IsA("Part") or v:IsA("MeshPart") or v:IsA("BasePart")) and v.Transparency then
+            v.Transparency = 1
+        end
+    end
+end
+
+-- Disable unnecessary in-game UI to improve performance
+function DisableUI()
+    -- Disable CoreGui UI elements (e.g., Chat, PlayerList, etc.)
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Templates, false)
+
+    -- Disable in-game menus
+    game:GetService("StarterGui"):SetCore("ResetButtonCallback", false)  -- Disables reset button
+end
+
+-- Main block that executes the optimizations if FrameRateBoost is true
+if FrameRateBoost then
+    -- Clear all lighting and apply optimizations
+    game:GetService("Lighting"):ClearAllChildren()
+    TextureLow()
+    WaterRemove()
+    ObjectRemove()
+    InvisibleObject()
+    DisableUI()  -- Disable UI elements for performance boost
+end
+
+-- Audio and graphics settings optimization
+game:GetService("UserGameSettings").MasterVolume = 0  -- Mute sound for performance
+game:GetService("Settings").Rendering.QualityLevel = 3  -- Set rendering quality to the lowest possible setting
