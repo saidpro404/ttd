@@ -78,6 +78,8 @@ _G.FishItConfig = _G.FishItConfig or {
             "Ghost Worm",
             "Admin - Ghost Worm",
             "Meteor Rain",
+            "Megalodon Hunt",
+            "Ghost Shark Hunt",
         },
     },
     ["Enchant"] = {
