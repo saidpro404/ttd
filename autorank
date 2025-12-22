@@ -4,7 +4,7 @@ getgenv().Config = {
         ["Ghostfinn Rod"] = true
     },
     ["Webhook"] = {
-        ["URL"] = "https://discord.com/api/webhooks/",
+        ["URL"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
         ["UserID"] = "",
         ["Chance"] = "250k"
     },
