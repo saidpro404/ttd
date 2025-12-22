@@ -1,6 +1,6 @@
 getgenv().Config = {
     ["AutoQuest"] = {
-        ["Element Rod"] = true,
+        ["Element Rod"] = false,
         ["Ghostfinn Rod"] = true
     },
     ["Webhook"] = {
