@@ -11,7 +11,7 @@ getgenv().Config = {
     ["RodLocations"] = {
         ["Fisherman Island"] = {"Starter Rod"},
         ["Kohana Volcano"] = {"Grass Rod", "Midnight Rod", "Steampunk Rod"},
-        ["Esoteric Depths"] = {"Element Rod", "Ghostfinn Rod", "Astral Rod"},
+        ["Esoteric Depths"] = {"Element Rod", "Ghostfinn Rod", "Astral Rod", "Ares Rod"},
     },
     ["AutoGiftUsernames"] = {""},
 }
