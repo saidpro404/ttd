@@ -68,6 +68,19 @@ _G.FishItConfig = _G.FishItConfig or {
             "Storm",
         },
     },
+    ["Potions"] = {
+        ["Auto Use"] = true,
+        ["Minimum Rod"] = "Astral Rod",
+    },
+    ["Totems"] = {
+        ["Auto Use"] = true,
+        ["Minimum Rod"] = "Ghostfinn Rod",
+        ["Buy List"] = {
+            "Luck Totem",
+            "Mutation Totem",
+            "Shiny Totem",
+        },
+    },
     ["Event"] = {
         ["Start Farm"] = true,
         ["Minimum Rod"] = "Ghostfinn Rod",
