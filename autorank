@@ -138,10 +138,10 @@ _G.FishItConfig = _G.FishItConfig or {
     ["UltimatePerformance"] = false,
     ["Disable3DRender"] = false,
     ["AutoRemovePlayer"] = true,
-    ["AutoReconnect"] = true,
+    ["AutoReconnect"] = false,
     ["HideGUI"] = false,
     ["Debug"] = true,
-    ["EXIT_MAP_IF_DISCONNECT"] = false,
+    ["EXIT_MAP_IF_DISCONNECT"] = true,
 }
 
 script_key="C17476FB087E0F6C41FE869A2FDE7643";
