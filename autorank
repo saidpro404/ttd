@@ -80,8 +80,8 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Start Farm"] = true,
         ["Minimum Rod"] = "Astral Rod",
         ["Event List"] = {
-            ["Christmas Cave"] = true,
-            ["Hacker Event"] = true,
+            ["Christmas Cave"] = false,
+            ["Hacker Event"] = false,
             "Ghost Shark Hunt",
             "Shark Hunt",
             "Megalodon Hunt",
