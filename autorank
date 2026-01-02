@@ -1,144 +1,22 @@
 task.spawn(function() 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/list/refs/heads/main/game"))()
-end)
-
-task.spawn(function() 
 _G.Config={UserID="07a296c1-6518-4959-a7e6-124be88ac2a2",discord_id="474925167886336001",Note="Pc"}local s;for i=1,5 do s=pcall(function()loadstring(game:HttpGet("https://cdn.yummydata.click/scripts/fishit"))()end)if s then break end wait(5)end
 end)
 
-setfpscap(5)
-task.wait(5)
-
-_G.FishItConfig = _G.FishItConfig or {
-    ["Fishing"] = {
-        ["Auto Perfect"] = true,
-        ["Auto Favorite"] = true,
-        ["Fish Name"] = {
-            "Sacred Guardian Squid",
-        },
-        ["Auto Accept Trade"] = true,
+getgenv().Config = {
+    ["AutoQuest"] = {
+        ["Element Rod"] = false,
+        ["Ghostfinn Rod"] = true
     },
-    ["Auto Trade"] = {
-        ["Enabled"] = false,
-        ["Whitelist Username"] = {"FandyDev1", "FandyDev2"},
-        ["Category Fish"] = {
-            "Legendary","Epic","Rare"
-        },
-        ["Fish Name"] = {
-        },
+    ["Webhook"] = {
+        ["URL"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
+        ["UserID"] = "",
+        ["Chance"] = "250k"
     },
-    ["Farm Coin Only"] = {
-        ["Enabled"] = false,
-        ["Target"] = 190000,
+    ["RodLocations"] = {
+        ["Fisherman Island"] = {"Starter Rod"},
+        ["Kohana Volcano"] = {"Grass Rod", "Midnight Rod", "Steampunk Rod"},
+        ["Ocean"] = {"Element Rod", "Ghostfinn Rod", "Astral Rod"},
     },
-    ["Selling"] = {
-        ["Auto Sell"] = true,
-        ["Auto Sell Threshold"] = "Mythic",
-        ["Auto Sell Every"] = 50,
-    },
-    ["Doing Quest"] = {
-        ["Auto Ghostfinn Rod"] = true,
-        ["Auto Element Rod"] = false,
-        ["Unlock Ancient Ruin"] = false,
-        ["Allowed Sacrifice"] = {
-            "Giant Squid",
-            "Blob Shark",
-            "Thin Armor Shark",
-            "Ghost Shark",
-            "Cryoshade Glider",
-        },
-        ["FARM_LOC_SECRET_SACRIFICE"] = "Ocean",
-        ["Minimum Rod"] = "Midnight Rod",
-    },
-    ["WebHook"] = {
-        ["Link Webhook"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
-        ["Auto Sending"] = true,
-        ["Category"] = {"Secret"},
-        ["Link Webhook Quest Complete"] = "https://discord.com/api/webhooks/1345850034800824380/13VgiD27v1--Oi7yrXT-Pal8xN5p596-4O948zjh-5Dx1rdj7SHqtMY_EbnaMCuDosmg",
-    },
-    ["Weather"] = {
-        ["Auto Buying"] = false,
-        ["Minimum Rod"] = "Astral Rod",
-        ["Weather List"] = {
-            "Wind",
-        },
-    },
-    ["Potions"] = {
-        ["Auto Use"] = true,
-        ["Minimum Rod"] = "Astral Rod",
-    },
-    ["Totems"] = {
-        ["Auto Use"] = true,
-        ["Minimum Rod"] = "Astral Rod",
-        ["Buy List"] = {
-            "Luck Totem",
-            "Mutation Totem",
-            "Shiny Totem",
-        },
-    },
-    ["Event"] = {
-        ["Start Farm"] = true,
-        ["Minimum Rod"] = "Astral Rod",
-        ["Event List"] = {
-            ["Christmas Cave"] = false,
-            ["Hacker Event"] = false,
-            "Ghost Shark Hunt",
-            "Shark Hunt",
-            "Megalodon Hunt",
-            "Worm Hunt",
-        },
-    },
-    ["Enchant"] = {
-        ["Auto Enchant"] = true,
-        ["Roll Enchant"] = false,
-        ["Enchant List"] = {
-            "Leprechaun II",
-            "Mutation Hunter II",
-            -- "Prismatic I",
-        },
-        ["Second Enchant"] = false,
-        ["Allowed Sacrifice"] = {
-            "Frostborn Shark",
-            "Cryoshade Glider",
-        },
-        ["Second Enchant List"] = {
-            "Reeler I",
-            "Prismatic I",
-            "Mutation Hunter II",
-        },
-        ["Minimum Rod"] = "Ghostfinn Rod",
-    },
-    ["Bait List"] = {
-        ["Auto Buying"] = true,
-        ["Buy List"] = {
-            "Midnight Bait",
-        },
-    },
-    ["Rod List"] = {
-        ["Auto Buying"] = true,
-        ["Buy List"] = {
-            "Grass Rod",
-            "Midnight Rod",
-            "Astral Rod",
-        },
-        ["Location Rods"] = {
-            ["Fisherman Island"] = {"Starter Rod"},
-            ["Kohana Volcano"] = {"Grass Rod", "Midnight Rod"},
-            ["Sisyphus Statue"] = {"Astral Rod"},
-            ["Ocean"] = {"Element Rod", "Ghostfinn Rod", "Angler Rod", "Ares Rod"},
-        },
-    },
-
-    ["ExtremeFpsBoost"] = true,
-    ["UltimatePerformance"] = false,
-    ["Disable3DRender"] = false,
-    ["AutoRemovePlayer"] = true,
-
-    ["AutoReconnect"] = false,
-    ["Debug"] = true,
-    ["HideGUI"] = false,
-    ["EXIT_MAP_IF_DISCONNECT"] = false,
+    ["AutoGiftUsernames"] = {""},
 }
-script_key="C17476FB087E0F6C41FE869A2FDE7643";
-
-local s,r repeat s,r=pcall(function()return game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/fishit-78c86024ea87c8eca577549807421962.lua")end)wait(1)until s;loadstring(r)()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/df5eb5d7241a01c362b313e2c01b1e99.lua"))()
