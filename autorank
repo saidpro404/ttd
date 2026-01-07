@@ -12,7 +12,7 @@ end)
 
 _G.FishItConfig = _G.FishItConfig or {
     ["Fishing"] = {
-        ["Auto Perfect"] = true,
+        ["Auto Perfect"] = false,
         ["Auto Favorite"] = true,
         ["Fish Name"] = {
             "Sacred Guardian Squid",
