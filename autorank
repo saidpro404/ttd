@@ -77,6 +77,8 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Minimum Rod"] = "Astral Rod",
         ["Weather List"] = {
             "Wind",
+			"Cloudy",
+			"Storm",
         },
     },
     ["Potions"] = {
@@ -87,7 +89,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Auto Use"] = true,
         ["Minimum Rod"] = "Ghostfinn Rod",
         ["Buy List"] = {
-            ["Luck Totem"] = 5,
+            "Luck Totem",
             "Mutation Totem",
         },
     },
@@ -104,7 +106,7 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Enchant"] = {
         ["Auto Enchant"] = true,
         ["Roll Enchant"] = false,
-        ["Evolved Roll Enchant"] = true,
+        ["Evolved Roll Enchant"] = false,
         ["Enchant List"] = {
             "Reeler I",
         },
@@ -112,11 +114,17 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Allowed Sacrifice"] = {
             "Frostborn Shark",
             "Cryoshade Glider",
+			"Blob Shark",
+			"Skeleton Narwhal",
+			"King Crab",
+			"Queen Crab",
+			"Great Whale",
         },
         ["Second Enchant List"] = {
             "Reeler I",
             "Prismatic I",
             "Mutation Hunter II",
+			"Perfection",
         },
         ["Minimum Rod"] = "Ghostfinn Rod",
     },
