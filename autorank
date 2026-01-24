@@ -73,7 +73,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Link Webhook Quest Complete"] = "",
     },
     ["Weather"] = {
-        ["Auto Buying"] = false,
+        ["Auto Buying"] = true,
         ["Minimum Rod"] = "Astral Rod",
         ["Weather List"] = {
             "Wind",
@@ -110,7 +110,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Enchant List"] = {
             "Reeler I",
         },
-        ["Second Enchant"] = true,
+        ["Second Enchant"] = false,
         ["Allowed Sacrifice"] = {
             "Frostborn Shark",
             "Cryoshade Glider",
