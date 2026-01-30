@@ -173,7 +173,7 @@ local s,r repeat s,r=pcall(function()return game:HttpGet("https://raw.githubuser
 
 task.wait(60)
 
-local KICK_INTERVAL = 21600
+local KICK_INTERVAL = 30000
 
 while true do
 	task.wait(KICK_INTERVAL)
