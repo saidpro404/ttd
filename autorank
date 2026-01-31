@@ -89,8 +89,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Auto Use"] = true,
         ["Minimum Rod"] = "Ghostfinn Rod",
         ["Buy List"] = {
-            "Luck Totem",
-            "Mutation Totem",
+             ["Mutation Totem"] = 5,
         },
     },
     ["Event"] = {
@@ -108,7 +107,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Roll Enchant"] = false,
         ["Evolved Roll Enchant"] = false,
         ["Enchant List"] = {
-            "Reeler I",
+            "Cursed I",
         },
         ["Second Enchant"] = false,
         ["Allowed Sacrifice"] = {
