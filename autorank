@@ -63,7 +63,7 @@ getgenv().Config = {
     ["Blur_username"] = false,
     ["Blazing_Lion_Log"] = false,
     ["DiscordId"] = "474925167886336001",
-    ["Webhook"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
+    ["Webhook"] = "",
     ["LegendaryWebhook"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
     ["NeonMegaWebhook"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
 }
