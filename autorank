@@ -15,10 +15,10 @@ getgenv().Config = {
     ["PetFarmAutoSwitchFullGrown"] = false,
     ["PetFarmActive"] = false, -- farm potion
 
-    ["AutoLoopBuyChisel"] = false, -- 2026 SUGAR EVENT
+    ["AutoLoopBuyChisel"] = true, -- 2026 SUGAR EVENT
 
     ["EggFarmActive"] = true, -- farm egg, if no more eggs will farm potion, if found new egg will farm them to
-    ["EggToIgnore"] = {"Crystal Egg"}, -- eggs to ignore when eggfarm active
+    ["EggToIgnore"] = {""}, -- eggs to ignore when eggfarm active
     ["LoopBuyEgg"] = true, -- when enough bucks will buy egg, only work with eggfarm
     ["EggToBuyEgg"] = "Royal Egg",
 
