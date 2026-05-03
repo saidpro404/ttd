@@ -1,70 +1,147 @@
 task.spawn(function() 
 _G.Config={UserID="07a296c1-6518-4959-a7e6-124be88ac2a2",discord_id="474925167886336001",Note="Pc"}local s;for i=1,5 do s=pcall(function()loadstring(game:HttpGet("https://cdn.yummydata.click/scripts/adoptmee"))()end)if s then break end wait(5)end
 end)
-setfpscap(2)
+setfpscap(3)
 
-script_key = "xtwBFcyCUZITBfCeEkFDdtrxfxoqYTzN";
 getgenv().Config = {
-    ["PetAMountToBuy"] = "20", -- can be 999
-    ["WhatCategory"] = "pets", -- gifts if WhatCategory = "" then = pets
-    ["PetRemoteToBuy"] = "Royal Egg", -- exemple for gifts halloween_2025_spider_box
+    BabyFarm = true, -- Changed from false
+    
+    PetFarm = {
+        Enabled = true, -- Changed from false
+        FarmEggs = true, -- Changed from false
+        BuyEggs = true, -- Changed from false
+        EggTypes = { -- Updated list
+	        "pet_recycler_2025_crystal_egg",
+            "endangered_2026_endangered_egg",
+        },
+        BuyEggType = "endangered_2026_endangered_egg", -- Changed from "any"
+        MaxPets = 1, -- No change
+        FarmUntilFullGrown = true, -- Changed from false
+        PrioritizeFriendship = false, -- No change
+        SelectiveFarm = true, -- Changed from false
+        SelectedPetTypes = { -- Updated list
+	        "pet_recycler_2025_crystal_egg",
+                "endangered_2026_endangered_egg",
+	        "endangered_2026_sea_turtle",
+		"endangered_2026_blue_whale",
+		"endangered_2026_pangolin",
+		"endangered_2026_black_footed_ferret"
+        },
+    },
+    
+    EventFarm = {
+        CandyCliff = false, -- No change
+        MochiNail = false, -- No change
+    },
+    
+    AutoNeon = {
+        Enabled = true, -- Changed from false
+        MakeMega = true, -- Changed from false
+        NeonAll = true, -- No change
+        SelectedPets = {}, -- No change
+        MaxPerType = {}, -- Kept as empty table (JSON had 0)
+    },
+    
+    Settings = {
+        ShowOverlay = true, -- Changed from false
+        ReduceGraphics = true, -- Changed from false
+        FPSCap = 3, -- Changed from 60
+        LureId = "ice_dimension_2025_ice_soup_bait" -- No change
+    },
+    
+    AutoBuy = {
+        Enabled = true, -- No change
+        SelectedItems = { -- Updated list
+            "pet_recycler_2025_crystal_egg",
+            "endangered_2026_endangered_egg"
+        },
+        BuyAmounts = {}, -- No change
+    },
+    
+    AutoOpen = {
+        Enabled = false, -- Changed from false
+        Items = {"cracked_egg"}, -- Added item
+    },
+    
+    AutoPotion = {
+        Enabled = true, -- Changed from false
+        SelectedPets = { -- Updated list
+            "endangered_2026_blue_whale",
+            "endangered_2026_sea_turtle",
+            "pet_progression_2026_purrowl",
+        },
+        PotionVersionFilter = {
+        }, -- Not in JSON, kept from template
+    },
+    
+    AutoRecycle = {
+        Enabled = true, -- Changed from false
+        RarityFilter = { -- Updated filters
+            common = {"regular", "neon", "mega"}, -- Changed
+            uncommon = {"regular", "neon", "mega"}, -- Changed
+            rare = {"regular", "neon", "mega"}, -- Changed
+            ultra_rare = {"neon", "mega"}, -- Changed
+            legendary = {}, -- Changed
+        },
+        AgeFilter = {}, -- Changed from {} - recycles all ages
+        ExcludedPets = { -- Updated list
+            "food_pets_2026_dragonfruit_fox",
+            "penguins_2025_dango_penguins",
+            "pet_recycler_2025_emberlight",
+            "endangered_2026_sea_turtle",
+            "endangered_2026_blue_whale",
+            "endangered_2026_silverback_gorilla",
+            "diamond_unicorn",
+            "golden_unicorn",
+            "ice_dimension_2025_frostbite_bear",
+            "admin_abuse_egg_2026_robot_chicken",
+            "sugarfest_2026_easter_bunny",
+            "diamond_dragon",
+            "golden_dragon",
+            "diamond_griffin",
+            "basic_egg_2022_alicorn",
+            "basic_egg_2022_ancient_dragon",
+            "pet_progression_2026_purrowl",
+            "golden_griffin",
+            "lss_2026_glormy_crab"
+        },
+    },
+    
+    IdleProgression = {
+        Enabled = true, -- Changed from false
+        SelectedPets = { -- Updated list
+	        "pet_recycler_2025_crystal_egg",
+            "endangered_2026_endangered_egg",
+	        "endangered_2026_pangolin",
+            "endangered_2026_sea_turtle",
+            "endangered_2026_blue_whale",
+            "endangered_2026_black_footed_ferret"
+        },
+        ExcludedPets = {
+            "endangered_2026_silverback_gorilla",
+            "food_pets_2026_dragonfruit_fox",
+            "penguins_2025_dango_penguins"
+        }, -- Changed from populated list
+        PriorityOrder = {"regular"}, -- Changed from empty
+        PenVersionFilter = {
+        },
+    },
+    
+    Webhook = {
+        Enabled = true, -- Changed from false
+        URL = "", -- Updated
+        PetUnlock = {
+            Enabled = true, -- Changed from false
+            URL = "https://discord.com/api/webhooks/1489875748935438478/QEh-3a1xTu2ycKBHw4EbtFxpE2u0TSeSxwjUEP5eyGSylv4hyxnjpXOgIaGgu-enPKhv", -- Updated
+            FilterRarities = {"legendary"}, -- Changed from multiple
+        },
+    },
+    
+    TaskExclusion = {
+        Enabled = false, -- No change
+        ExcludedTasks = {}, -- No change
+    },
+};
 
-    ["check_for_2d_kitty"] = true, -- farm 2d kitty event work with eggfarm or petfarm
-
-
-    ["PetFarmAutoSwitchFullGrown"] = false,
-    ["PetFarmActive"] = false, -- farm potion
-
-    ["AutoLoopBuyChisel"] = true, -- 2026 SUGAR EVENT
-
-    ["EggFarmActive"] = true, -- farm egg, if no more eggs will farm potion, if found new egg will farm them to
-    ["EggToIgnore"] = {""}, -- eggs to ignore when eggfarm active
-    ["LoopBuyEgg"] = true, -- when enough bucks will buy egg, only work with eggfarm
-    ["EggToBuyEgg"] = "Royal Egg",
-
-
-    ["PetPenActive"] = true, -- will put pets in pen, random pets
-    ["PetPenFocusPriority"] = false, -- will focus those pets order in pen, then farm any other pets
-    ["PetPenFocusPetOrder"] = {""}, -- pet names to focus in pen exemple {"Donkey","Camel","Zebra"}
-    ["PetPenFocusPetRarity"] = false, -- PetPenFocusPriority must be false else will ignore
-    ["PetPenFocusPetRarityOrder"] = {""}, -- will farm pet rarity depending on order using pet pen exemple "common","uncommon","rare","ultra_rare","legendary"
-    ["PetPenAutoNeon"] = false, -- will try to make neon pets, check after it remove fullgrown pet from pen
-    ["PetPenAutoMega"] = false, -- will try to make mega pets, check after it remove fullgrown pet from pen
-    ["PetPenNeonMegaWebhook"] = "", -- webhook to send neon/mega info
-
-
-    ["HodDogStandHOLDER"] = "", -- will automatically setup hotdog stand you must own one
-    ["HodDogStandHOLDERPrice"] = "50", -- 1 to 50 max if not set default is 50
-    ["HodDogStandTransfer"] = false, -- enable or disable hotdog stand transfer
-
-
-    ["NeonMegaFarm"] = false,
-    ["BuyEgg"] = "", -- only work with NeonMegaFarm, will loop buy this egg when enough bucks
-
-
-    ["AutoBuyStuffRecyclePoint"] = true, -- will automatically buy stuff in recycle point shop
-    ["ItemToBuyInRecyclePoint"] = "Crystal Egg", -- item name or item kind, exemple "Crystal Egg" or "Basic Egg"
-
-
-    ["AutoReleasePet"] = true, -- work with egg/pet farm, will release selected rarity
-    ["OnlyReleasePetList"] = {""}, -- will ONLY release those pet, and will ignore every other release config, if you dont want it let ""
-    ["GlobalBlacklist"] = {""}, -- item kind or name separated by , ; |
-    ["LegendaryAllowedToRecycle"] = {""}, -- item kind or name separated by , ; |
-    ["RecycleWebhook"] = "https://discord.com/api/webhooks/1345850034800824380/13VgiD27v1--Oi7yrXT-Pal8xN5p596-4O948zjh-5Dx1rdj7SHqtMY_EbnaMCuDosmg", -- webhook to send recycle info
-    ["RecycleOnlyPetWithAge"] = "", -- 6 = full grown, let "" to recycle all, 1 2 3 4 5 6 or "" not 0
-
-    ["common"] = true,
-    ["uncommon"] = true,
-    ["rare"] = true,
-    ["ultra_rare"] = true,
-    ["legendary"] = false, -- WARNING must know what you are doing
-
-    ["HideUselessGui"] = false,
-    ["Blur_username"] = false,
-    ["Blazing_Lion_Log"] = false,
-    ["DiscordId"] = "474925167886336001",
-    ["Webhook"] = "",
-    ["LegendaryWebhook"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
-    ["NeonMegaWebhook"] = "https://discord.com/api/webhooks/1441711217155641380/ttvbAtDTg_xIrVNeRYbvYodLPKxov4JQH3q3VpmmATdhHEMW9qK-stB2hoqsLw9BBBa0",
-}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/66567bfd337b57eb059b58dbe1badb89.lua"))()
+getgenv().scriptkey="nJaxKMoOhhmCCzCLhhnjwoScXbXaBiVd"
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/Lite.lua"))()
