@@ -108,7 +108,7 @@ getgenv().UserConfig = {
     ["Webhook Note"] = "",
     ["Discord ID"] = "",
 	-- Mail
-     ["Mail To Username"] = {"Maeve_EchoBlade7928", "LadyBravebunnydude", "leg_a4144536", "LilyJumboSnow"}, -- Main account username to receive items
+     ["Mail To Username"] = {"Maeve_EchoBlade7928", "LadyBravebunnydude", "leg_a4144536", "LeviCrystal597", "ShadddowKittenPlayzf", "AbigailAquaRogue2017"}, -- Main account username to receive items
     ["Items To Mail"] = {
 		["Pet"] = {
              ["Squirrel"] = {Huge = 1, Rainbow = 1},
