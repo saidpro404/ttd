@@ -1,3 +1,7 @@
+task.wait(5)
+
+setfpscap(5)
+
 getgenv().VO_CONFIG = {
     -- === HUB / AUTH ===
     HubKey = "FD6weJVcT3MxTyjLcbNrb2rWXtfcNBUy7NpAMwe79tI",
