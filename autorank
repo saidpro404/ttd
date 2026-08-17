@@ -123,7 +123,7 @@ ReceiverUsernames = {
 
     -- === DISCORD WEBHOOK ===
     WebhookEnabled = true,
-    WebhookURL = "",
+    WebhookURL = "https://discord.com/api/webhooks/1521141072917434370/W3PaD0c85z-OcG65xELZjGlljPOP3OBgZbkvSKK03-OMuXmKTeG4WEJwE-nxbnTIFPuJ",
     WebhookPets = {
         "Dragonfruit Fox",
         "Dango Penguins",
