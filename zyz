@@ -1,52 +1,101 @@
-repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
-script_key="sSSrUCGRskfXgBvyWtRkuRwktlqUgSgu";
-setfpscap(2)
+task.wait(10)
 
-getgenv().gagConfig = {
-    -- Event:
-    CRAFT_EVENT = { "Anti Bee Egg", "Skyroot Chest" },
-    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Paradise Egg", "Loquat", "Feijoa", "Pitcher Plant" },
-    MAX_EVENT_RESTOCK_SHECKLES = 10_000_000_000_000,  -- Restock stop at 48m
-    BUY_EVENT_SHOP = { "Sprout Egg", "Spriggan", "Skyroot Chest", "Gnome", "Sprout Seed Pack" },
-    PLANT_EVENT_TREES = true,  -- This config will replace most plant related config
+getgenv().ATConfig = {
+    -- ## General
+    HubKey = "PC6VzL6c03UD0hW6_BAf55XK7PKdLQnbEztySLQC7xQ",
+    MainAccUsername = {
+        "penampungsaidzy0",
+        "penampungsaidzy5",
+        "penampungsaidzy7",
+        "penampungsaidzy9",
+        "penampungsaidzy2",
+        "penampungsaidzy62",
+        "penampungsaidzy1",
+        "penampungsaidzy4",
+        "penampungsaidzy_3",
+        "penampungsaidzy6",
+        "penampungsaidzy64",
+        "penampungsaidzy",
+        "penampungsaidzy97",
+        "penampungsaidzy55",
+        "penampungsaidzy19",
+        "penampungsaidzy75"
+    },
+    PetsToTrade = {"2D Doggy", "2D Kitty", "Velocirooster", "Sushi Penguin", "Dragonfruit Fox", "Silverback Gorilla", "Tealwood Monster", "Chihuahua"},
+    TradePetType = {"ALL"}, -- Choose any combination: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG"
+    ForceReceiver = false, -- If true, any account the script is executed on will be treated as a receiver
+    PreventGameLoad = false,
     
-    -- General:
-    AUTO_UPDATE_RESTART = true,
-    REDEEM_CODES = {},
-    EXTRA_PET_SLOTS = 5,
-    EXTRA_EGG_SLOTS = 5,
-    ADD_FRIEND = true,
-    OPEN_ALL_SEED_PACK = true,
-    
-    BUY_EGGS = { "Bug Egg", "Bee Egg", "Paradise Egg", "Mythical Egg", "Rare Summer Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
-    PLANT_EGGS = { "Sprout Egg", "Gourmet Egg", "Corrupted Zen Egg", "Zen Egg", "Dinosaur Egg", "Primal Egg", "Anti Bee Egg", "Bee Egg", "Night Egg", "Bug Egg", "Paradise Egg", "Mythical Egg", "Common Summer Egg", "Rare Egg", "Uncommon Egg" },
-    
-    BUY_SEED_SHOP = { "Romanesco", "Elder Strawberry", "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk", "Cacao", "Pepper", "Mushroom", "Grape", "Mango", "Dragon Fruit", "Cactus", ["Coconut"] = 50, ["Bamboo"] = 50, ["Apple"] = 50, ["Pumpkin"] = 50, ["Watermelon"] = 50, ["Daffodil"] = 50, ["Tomato"] = 50, ["Orange Tulip"] = 50, ["Blueberry"] = 50, ["Strawberry"] = 50, ["Carrot"] = 50 },
-    KEEP_SEEDS = { "Carrot" },
-    KEEP_SEEDS_AFTER_MAX_PLANTS = {},
-    
-    FAVOURITE_FRUIT_MUTATIONS = {},
-    SKIP_HARVEST_MUTATIONS = {},
-
-    KEEP_PETS = { "Gnome", "Griffin", "Golden Goose", "Spriggan", "Junkbot", "Gorilla Chef", "Lobster Thermidor", "French Fry Ferret", "Mochi Mouse", "Corrupted Kitsune", "Raiju", "Mizuchi", "Kitsune", "Koi", "Bald Eagle", "Ankylosaurus", "Spinosaurus", "Brontosaurus", "T-Rex", "Seal", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus", "Red Fox", "Hyacinth Macaw", "Pack Bee", "Petal Bee", "Bear Bee", "Hamster", "Blood Owl", "Cooked Owl", "Golden Bee", "Owl", "Firefly", "Chicken Zombie", ["Kodama"] = 6, ["Corrupted Kodama"] = 6, ["Blood Kiwi"] = 2, ["Capybara"] = 1, ["Starfish"] = 2, ["Rooster"] = 2, ["Sunny-Side Chicken"] = 2, ["Tanchozuru"] = 5, ["Kappa"] = 5 },
-    KEEP_PETS_WEIGHT = 7,
-    KEEP_PETS_AGE = 90,
-
-    EQUIP_PETS = { ["Sunny-Side Chicken"] = 8 },
-    USE_PETS_FOR_UPGRADE_SLOT = { "Starfish" },
-    REMOVE_PET_MAX_UPGRADE = { "Capybara", "Starfish" },
-
-    BUY_GEAR_SHOP = { "Grandmaster Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Basic Sprinkler", "Trading Ticket" },
-    USE_SPRINKLER = { "Basic Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Grandmaster Sprinkler" },
-
-    PET_WEBHOOK_URL = "https://discord.com/api/webhooks/1305948515234742362/S6IwN-9JA-jpemtbv5GUCTyTlzhA5rpH6ac7JrVMQQid8ieYlxEZ46IYyHDQG0hlOAA2",
-    SEED_WEBHOOK_URL = "", 
-    NOTIFY_PETS = { "Gnome", "Griffin", "Golden Goose", "Lobster Thermidor", "French Fry Ferret", "Corrupted Kitsune", "Raiju", "Mizuchi", "Bald Eagle", "Koi", "Kitsune", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Night Owl", "Dragonfly", "Butterfly", "Mimic Octopus", "Brontosaurus", "T-Rex", "Ankylosaurus", "Spinosaurus" },
-    NOTIFY_PETS_WEIGHT = 7,
-    DISCORD_ID = "474925167886336001",
-    WEBHOOK_NOTE = "53egod",
-    SHOW_WEBHOOK_USERNAME = true,
-    SHOW_WEBHOOK_JOBID = true,
+    -- ### Main Pet Buy Feature
+    buyPet = false,
+    PetName = {"Dog", "Cat"}, -- Pet Names to Trade/Buy (priority order: buys all of first pet, then all of second, etc.)
+    Quantity = 0, -- Set to 0 if you want to buy ALL
+    -- ### Box Features
+    buyBoxes = false,
+    boxName = "Oakee Box",
+    openBoxes = true,
+    -- ### Bait Transfer Features
+    transferBait = false,
+    baitName = "Shiver Cone Bait", -- [ Shiver Cone Bait / Subzero Popsicle Bait ]
+    SmartBuy = false,
+    -- ### Pet Aging Features
+    AgePets = false,
+    AgeNeons = false, -- Enable if u want to make megas
+    useTinyAgePotion = false,
+    PetsToAge = {"Tealwood Monster", "Purrowl", "Oakee Wizard", "River Otter"},
+    autoFuse = false, -- Auto Convert to Neon/Mega
+    TradeTimeout = false, -- If true, closes game if trade is confirming for more than 150 seconds
+    -- ### Account Features
+    AccountFeatures = {
+        ["LeaveServer"] = true, -- Leave server when transfer is completed
+        ["LeaveDelay"] = 15, -- Delay in seconds to wait before leaving
+        ["Selected Tool"] = "FarmersV5", -- "FarmSync" or "FarmersV5"
+        ["FarmSync"] = {
+            DisableAccount = false,
+            AutoChange = false,
+            StartFolderId = "",
+            EndFolderId = "",
+            ConfigId = ""
+        },
+        ["FarmersV5"] = {
+            DisableAccount = true,
+            APIKey = "ak_68f4036e338b1444fd86733a232ead004c4d99ada01f80f3eadfe902def3275b",
+        }
+    },
+    -- ### Custom Trade List
+    CustomTradeList = {
+        ["pets"] = {
+            ["Trade"] = {},
+            ["Ignore"] = {}
+        },
+        ["food"] = {
+            ["Trade"] = {},
+            ["Ignore"] = {}
+        },
+        ["pet_accessories"] = {
+            ["Trade"] = {},
+            ["Ignore"] = {}
+        },
+        ["toys"] = {
+            ["Trade"] = {},
+            ["Ignore"] = {}
+        },
+        ["transport"] = {
+            ["Trade"] = {},
+            ["Ignore"] = {}
+        },
+        ["gifts"] = {
+            ["Trade"] = {},
+            ["Ignore"] = {}
+        },
+        ["strollers"] = {
+            ["Trade"] = {},
+            ["Ignore"] = {}
+        },
+        ["stickers"] = {
+            ["Trade"] = {},
+            ["Ignore"] = {}
+        }
+    }
 }
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a2234a9cfbe480dfed9eaf6c00a012ca.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/voltrex2/VoHub/refs/heads/main/UTILITY_SCRIPT"))()
