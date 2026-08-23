@@ -1,3 +1,5 @@
+setfpscap(5)
+
 getgenv().VO_CONFIG = {
     -- === HUB / AUTH ===
     HubKey = "PC6VzL6c03UD0hW6_BAf55XK7PKdLQnbEztySLQC7xQ",
