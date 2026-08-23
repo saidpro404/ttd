@@ -6,22 +6,7 @@ getgenv().ATConfig = {
     -- ## General
     HubKey = "PC6VzL6c03UD0hW6_BAf55XK7PKdLQnbEztySLQC7xQ",
     MainAccUsername = {
-        "penampungsaidzy0",
-        "penampungsaidzy5",
-        "penampungsaidzy7",
-        "penampungsaidzy9",
-        "penampungsaidzy2",
-        "penampungsaidzy62",
-        "penampungsaidzy1",
-        "penampungsaidzy4",
-        "penampungsaidzy_3",
-        "penampungsaidzy6",
-        "penampungsaidzy64",
-        "penampungsaidzy",
-        "penampungsaidzy97",
-        "penampungsaidzy55",
-        "penampungsaidzy19",
-        "penampungsaidzy75"
+      
     },
     PetsToTrade = {"2D Doggy", "2D Kitty", "Velocirooster", "Sushi Penguin", "Dragonfruit Fox", "Silverback Gorilla", "Tealwood Monster", "Chihuahua", "Dango Penguins", "Strawberry Tortle", "Kiwi Kiwi", "Emberlight"},
     TradePetType = {"ALL"}, -- Choose any combination: "ALL", "Mega", "Neon", "Regular", "Neon_FG", "Regular_FG"
@@ -61,7 +46,7 @@ getgenv().ATConfig = {
         },
         ["FarmersV5"] = {
             DisableAccount = true,
-            APIKey = "ak_68f4036e338b1444fd86733a232ead004c4d99ada01f80f3eadfe902def3275b",
+            APIKey = "",
         }
     },
     -- ### Custom Trade List
