@@ -10,19 +10,20 @@ getgenv().VO_CONFIG = {
     KeepEggFarm = false,
     KeepPetFarm = true,
     EggName = {"Egg Name"},
-    PetFarmList = {"Oakee", "Black Tiger", "Kakapo", "Mexican Wolf", "Black Rhino", "Pangolin", "Black-Footed Ferret", "Abyssinian Cat", "Ocelot", "Orangutan", "Parakeet", "Zebra", "Badger", "Corgi", "Ginger Cat", "Gold Mahi Mahi", "Grinmoire", "Orca", "Pomeranian", "Ribbon Seal", "Robot", "Starfish", "Swordfish", "Toucan"},
+    PetFarmList = {"Oakee", "Black Tiger", "Kakapo", "Mexican Wolf", "Black Rhino", "Pangolin", "Black-Footed Ferret", "Abyssinian Cat", "Ocelot", "Orangutan", "Parakeet", "Zebra", "Badger", "Corgi", "Ginger Cat", "Gold Mahi Mahi", "Grinmoire", "Orca", "Pomeranian", "Ribbon Seal", "Robot", "Starfish", "Swordfish", "Toucan", "Blue Whale", "Sea Turtle"},
     PrioritizePet = "2D Kitty",
 
     -- === PET PEN ===
     PetPen = true,
-    CustomPenEggs = {"Endangered Egg", "Pet Egg", "Cracked Egg", "Starter Egg", "Crystal Egg"},
+    CustomPenEggs = {"Endangered Egg", "Pet Egg", "Cracked Egg", "Starter Egg", "Crystal Egg", "Admin Abuse Egg"},
     CustomPenPets = {
         "Abyssinian Cat", "Badger", "Black Rhino",
         "Black-Footed Ferret", "Corgi",
         "Ginger Cat", "Grinmoire", "Mexican Wolf",
         "Oakee Knight", "Ocelot", "Orangutan", "Orca",
         "Pangolin", "Parakeet", "Pomeranian", "Ribbon Seal",
-        "River Otter", "Robot", "Starfish", "Storm Condor", "Swordfish", "Toucan", "Zebra", "Oakee"
+        "River Otter", "Robot", "Starfish", "Storm Condor", "Swordfish", "Toucan", "Zebra", "Oakee",
+		"Blue Whale", "Sea Turtle"
     },
     PrioritizePetPenTypes = {"Egg"},
 
@@ -41,7 +42,10 @@ getgenv().VO_CONFIG = {
         "Tealwood Monster",
         "Oakee Wizard", 
         "General Sheepdog",
-        "Chihuahua"
+        "Chihuahua",
+		"Kiwi Kiwi",
+		"Blue Whale",
+		"Sea Turtle"
     },
     ReleaseTypes = {"Neon", "Mega"},
     ReleaseRarities = {},
@@ -55,7 +59,8 @@ getgenv().VO_CONFIG = {
         "Ginger Cat", "Grinmoire", "Mexican Wolf",
         "Oakee Knight", "Ocelot", "Orangutan", "Orca",
         "Pangolin", "Parakeet", "Pomeranian", "Ribbon Seal",
-        "River Otter", "Robot", "Starfish", "Storm Condor", "Swordfish", "Toucan", "Zebra"
+        "River Otter", "Robot", "Starfish", "Storm Condor", "Swordfish", "Toucan", "Zebra",
+		"Blue Whale", "Sea Turtle"
     },
     AgePetsTypes = {"ALL"},
 
